@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <h1>Edit Post</h1>
+  <form method = "post" name = "edit_post" action = "/posts/<%=@post.id%>/edit">
+    <input type = "text" name = "name" value = <%=@post.name%> >
+    <input type = "text" name = "content" value = <%=@post.content%>>
+    <button type = "submit" value = "submit">Submit</button>
+</body>
+</html>

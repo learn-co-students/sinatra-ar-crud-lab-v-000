@@ -7,7 +7,44 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/' do 
-    
+  get '/posts' do
+    @posts = Post.all
+    erb :index
+  end
+
+  get '/posts/new' do
+    erb :new
+  end
+
+  post '/new' do
+    @post = Post.create(params)
+    redirect to '/posts'
+  end
+
+  get '/posts/:id' do
+    @post = Post.find_by(id: params[:id])
+    erb :show
+  end
+
+  get '/posts/:id/edit' do
+    @post = Post.find_by(id: params[:id])
+    erb :edit
+  end
+
+  post '/posts/:id/edit' do 
+    @post = Post.find_by(id: params[:id])
+    @post.update(name: params[:name], content: params[:content])
+    redirect to "/posts/#{@post.id}"
+  end
+
+  get '/posts/:id/delete' do
+    @post = Post.find_by(id: params[:id])
+    erb :delete
+  end
+
+  post '/posts/:id/delete' do
+    @post = Post.find_by(id: params[:id])
+    @post.destroy
+    redirect to "/posts"
   end
 end
