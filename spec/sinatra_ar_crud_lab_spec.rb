@@ -17,7 +17,7 @@ describe "Blog Post App" do
       fill_in :name, :with => "my favorite blog post"
       fill_in :content, :with => "blogging!!!!"
 
-      click_button 'submit'
+      click_button 'Submit'
 
       expect(Post.all.count).to eq(3)
       expect(Post.last.name).to eq("my favorite blog post")
@@ -80,7 +80,7 @@ describe "Blog Post App" do
       fill_in :name, :with => "Second Post!!"
       fill_in :content, :with => "this is the best blog post ever written"
 
-      click_button 'submit'
+      click_button 'Submit'
       expect(Post.all.count).to eq(2)
       expect(Post.last.name).to eq("Second Post!!")
     end
@@ -97,7 +97,7 @@ describe "Blog Post App" do
 
     it "deletes a blog post from the database" do
       visit "/posts/#{@post2.id}/delete"
-      click_button "delete"
+      click_button "Delete"
       expect(Post.all.count).to eq(1)
       expect(Post.last.name).to eq("Hello World")
     end
