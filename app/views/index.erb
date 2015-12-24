@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homepage</title>
+</head>
+<body>
+  <h3 style="margin-left:30px"><a href="<%="http://localhost:9393/posts/new"%>">Create Post</a></h3>
+  <h3 style="margin-left:35px"><em>All Posts</em></h3>
+    <ul>
+      <% @posts.each do |post| %>
+      <li><a href="<%="http://localhost:9393/posts/#{post.id}"%>"><%= post.name %></a></li>
+      <% end %>
+    </ul>
+</body>
+</html>

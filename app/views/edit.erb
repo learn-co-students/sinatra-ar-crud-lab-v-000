@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Post</title>
+</head>
+<body>
+  <form action="/posts/<%=@post.id%>" method="post" style="text-align:center; padding:20px">
+    <input type="text" name="name" value="<%=@post.name%>" style="margin-bottom:10px"><br>
+    <textarea name="content" value="<%=@post.content%>" cols="30" rows="3"></textarea><br>
+    <input type="submit" value="Submit" style="margin-top:10px">
+  </form> 
+</body>
+</html>
