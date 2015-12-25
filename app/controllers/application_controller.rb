@@ -1,3 +1,4 @@
+require 'pry'
 require_relative '../../config/environment'
 
 class ApplicationController < Sinatra::Base
@@ -7,7 +8,45 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/' do 
-    
+  get '/posts' do 
+    erb :new
+  end
+
+  get '/posts/new' do 
+    erb :new
+  end
+
+  get '/posts/:id' do 
+    @post = Post.find_by_id(params[:id])
+    erb :show
+  end
+
+  post '/posts' do
+    @post = Post.create(params)
+    erb :new
+  end
+
+  get '/posts/:id/edit' do 
+    @post = Post.find_by_id(params[:id])
+    erb :edit
+  end
+
+  post '/posts/:id' do
+    @post = Post.find_by_id(params[:id])
+    @post.name = params[:name]
+    @post.content = params[:content]
+    @post.save
+    erb :new
+  end
+
+  get '/posts/:id/delete' do 
+    @post = Post.find_by_id(params[:id])
+    erb :delete
+  end
+  
+  post '/posts/:id/delete' do
+    @post = Post.find_by_id(params[:id]).delete
+    @post.save
+    erb :new
   end
 end
