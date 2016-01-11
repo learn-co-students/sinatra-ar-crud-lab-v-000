@@ -97,7 +97,7 @@ describe "Blog Post App" do
 
     it "deletes a blog post from the database" do
       visit "/posts/#{@post2.id}"
-      save_and_open_page
+      
       click_button 'delete'
       expect(Post.all.count).to eq(1)
       expect(Post.last.name).to eq("Hello World")

@@ -9,6 +9,9 @@
 
   <h3><%= @post.name %></h3><br><br>
   <p><%= @post.content %></p>
+ <form action=<%="/posts/#{@post.id}/delete"%> method ="post">
+      <button type= "submit" value= "delete" >delete</button>
+  </form>
 
 </body>
 </html>
