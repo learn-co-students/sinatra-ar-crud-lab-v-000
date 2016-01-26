@@ -11,5 +11,12 @@
   <p><a href="<%="http://localhost:9393/posts/#{@post.id}/edit" %>">Edit</a></p>
   <p><a href="<%="http://localhost:9393/posts/#{@post.id}/delete" %>">Delete</a></p>
   <p><a href="<%="http://localhost:9393/posts" %>">Homepage</a></p>
+
+  <h2>Delete your post?</h2>
+  <form action="/posts/<%=@post.id%>/delete" method="post">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  
+  <input id="delete" type="submit" value="delete">
+</form>
 </body>
 </html>
