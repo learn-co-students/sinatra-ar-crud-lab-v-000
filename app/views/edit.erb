@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Edit Post</title>
+  </head>
+  <body>
+  <form action="/posts/<%=@post.id%>/edit" method="post" style="text-align:center">
+
+    <div class="form-group">
+      <label for="name" class="col-md-4 control-label"><h3>Create Your Post Below!</h3></label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" name="name" value="<%=@post.name%>" id="name" placeholder="Title Name">
+      </div>
+    </div><br>
+
+     <div class="form-group">
+        <textarea style="center" name="content" value="<%=@post.content%>" rows="10" cols="30" placeholder="Tell me anything!"></textarea>
+    </div>
+    <input id="hidden" type="hidden" name="_method" value="patch">
+
+    <input type="submit" value="submit">
+  </form>
+  </body>
+</html>
