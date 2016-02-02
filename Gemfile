@@ -4,6 +4,8 @@ gem 'activerecord', :require => 'active_record'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 
 gem 'sinatra'
+gem 'activerecord'
+gem 'sinatra-activerecord'
 gem 'sqlite3'
 gem 'tux'
 gem 'pry'
