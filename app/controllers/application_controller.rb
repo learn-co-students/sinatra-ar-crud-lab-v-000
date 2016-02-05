@@ -48,3 +48,5 @@ class ApplicationController < Sinatra::Base
     redirect '/posts'
   end
 end
+
+#note: dynamically set the `:id` of the form action
