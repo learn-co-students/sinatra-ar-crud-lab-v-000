@@ -1,0 +1,9 @@
+<h1>Update This Post</h1>
+<form method="post" action="/posts/<%=@post.id%>">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <h2><label> Post Name:</label></h2>
+  <textarea id="textarea" name="name"><%= @post.name %></textarea>
+  <h2><label> Post Content:</label></h2>
+  <textarea id="textarea" rows="10" cols="20" name="content"><%= @post.content %></textarea>
+  <p><input type="submit" value="submit"></p>
+</form>

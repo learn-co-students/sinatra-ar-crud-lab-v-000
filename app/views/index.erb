@@ -1,0 +1,11 @@
+<% if @posts %>
+  <h1>All Posts</h1>
+  <% @posts.each do |post| %>
+    <h2><%= post.name %></h2>
+    <p><%= post.content %></p>
+  <% end %>
+<% else %>
+    <h1>Your Blog Post!</h1>
+    <h2><%= @post.name %></h2>
+    <p><%= @post.content %></p>
+<% end %>
