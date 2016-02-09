@@ -15,13 +15,13 @@ class ApplicationController < Sinatra::Base
 
   #SHOW ALL
 
-  get '/posts' do
-    @posts = Post.all
+  post '/posts' do
+    @post = Post.create(params)
     erb :index
   end
 
-  post '/posts' do
-    @post = Post.create(params)
+  get '/posts' do
+    @posts = Post.all
     erb :index
   end
 
@@ -45,7 +45,7 @@ class ApplicationController < Sinatra::Base
     @post.content = params[:content]
     @post.save
     redirect to "/posts/#{@post.id}"
-    erb :show
+    # erb :show
   end
 
   #DELETE
@@ -53,6 +53,8 @@ class ApplicationController < Sinatra::Base
   post '/posts/:id/delete' do
     @post = Post.find_by_id(params[:id])
     @post.delete
+    # erb :show
+    redirect to "/posts"
   end
 
 end
