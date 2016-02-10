@@ -44,11 +44,10 @@ class ApplicationController < Sinatra::Base
   post '/posts/:id' do
     @post = Post.find_by_id(params[:id])
     @post.name = params[:name]
-    binding.pry
     @post.content = params[:content]
     @post.save
-    redirect to '/posts/#{@post.id}'
-    # erb :show
+ 
+    erb :show
   end
 
 
