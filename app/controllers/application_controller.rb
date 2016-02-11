@@ -21,11 +21,23 @@ class ApplicationController < Sinatra::Base
   end
   get "/posts/:id" do
     @post = Post.find(params[:id])
+    @show_edit_button = true
     erb :show 
+  end
+  get "/posts/:id/edit" do 
+    @post = Post.find(params[:id])
+    erb :edit
   end
   post "/posts" do
     Post.create(params)
     @posts = Post.all
     erb :index
+  end
+  patch "/posts/:id" do 
+    @post = Post.find(params[:id])
+    @post.name = params[:name]
+    @post.content = params[:content]
+    @post.save
+    erb :show
   end
 end

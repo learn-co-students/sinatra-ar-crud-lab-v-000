@@ -16,7 +16,9 @@
       <ul class="main-menu">
         <li><a href="/">All Posts</a></li>
         <li><a href="/posts/new">New Post</a></li>
-        <!--<li></li>-->
+        <% if @show_edit_button == true %>
+        <li><a href="/posts/<%= @post.id %>/edit">Edit Post</a></li>
+        <% end %>
       </ul>
       <%= yield %>    
     </div>
