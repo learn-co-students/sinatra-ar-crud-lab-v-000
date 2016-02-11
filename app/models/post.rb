@@ -1,4 +1,9 @@
 class Post < ActiveRecord::Base
-  attr_accessor :name, :content 
+  
+  
+  # def initialize(args)
+  #   self.name = args[:name]
+  #   self.content = args[:content]
+  # end
   
 end
