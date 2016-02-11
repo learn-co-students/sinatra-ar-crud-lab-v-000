@@ -4,22 +4,30 @@
     <meta charset="UTF-8">
     <title>Sinatra ActiveRecord CRUD Lab</title>
     <style>
+      body {margin:0;padding:0;}
+      .header { background: #f0f0f0; border-bottom: 3px solid black;}
+      .header h1 {text-align: center; margin-top: 0}
       .container {width: 90%; margin: 0 auto;}
       textarea {width: 400px; height: 120px;}
-      input { width: 354px; }
+      input[type="text"] { width: 354px; } 
       .main-menu { list-style: none; margin: 0; padding: 0; }
       .main-menu li { display: inline-block; padding: 20px 5px; background: aqua;}
     </style>
   </head>
   <body>
+    <div class="header">
+      <div class="container">
+        <h1>Dakota's Sinatra CRUD App</h1>
+        <ul class="main-menu">
+          <li><a href="/">All Posts</a></li>
+          <li><a href="/posts/new">New Post</a></li>
+          <% if @show_edit_button == true %>
+          <li><a href="/posts/<%= @post.id %>/edit">Edit Post</a></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
     <div class="container">
-      <ul class="main-menu">
-        <li><a href="/">All Posts</a></li>
-        <li><a href="/posts/new">New Post</a></li>
-        <% if @show_edit_button == true %>
-        <li><a href="/posts/<%= @post.id %>/edit">Edit Post</a></li>
-        <% end %>
-      </ul>
       <%= yield %>    
     </div>
   </body>
