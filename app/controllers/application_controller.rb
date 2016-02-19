@@ -1,3 +1,4 @@
+require 'pry'
 require_relative '../../config/environment'
 
 class ApplicationController < Sinatra::Base
@@ -15,10 +16,10 @@ class ApplicationController < Sinatra::Base
     erb :new
   end
 
-  post '/posts' do
-    Post.create(params)
-    erb :index
-  end
+  post '/posts' do 
+    @post = Post.create(params)
+    redirect to '/posts'
+  end 
 
   get '/posts' do
     @posts = Post.all
@@ -48,5 +49,7 @@ class ApplicationController < Sinatra::Base
     post.destroy
     redirect '/posts'
   end
+  
+
 
 end
