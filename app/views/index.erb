@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Index of Posts</title>
+</head>
+<body>
+  <h1>All Teh Posts</h1>
+    <button type="submit"><a href="/posts/new">New Post</a></button>
+    <% if !@all.empty? %>
+      <% @all.each_with_index {|p, i| %>
+        <h3><a href='/posts/<%= p.id %>'><%= "#{i + 1}. #{p.name}"%></a></h3>
+        <p><%= p.content %></p>
+        <% } %>
+    <% end %>
+
+      
+  
+</body>
+</html>
