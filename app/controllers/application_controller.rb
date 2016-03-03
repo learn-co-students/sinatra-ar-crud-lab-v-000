@@ -16,7 +16,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts' do
-    @post = Post.create(name: params["name"], content: params["content"])
+    @post = Post.create(name: params[:name], content: params[:content])
     erb :index
   end
 
@@ -37,8 +37,8 @@ class ApplicationController < Sinatra::Base
 
   patch '/posts/:id' do
     @post = Post.find_by_id(params[:id])
-    @post.name = params["name"]
-    @post.content = params["content"]
+    @post.name = params[:name]
+    @post.content = params[:content]
     @post.save
     erb :show
   end
