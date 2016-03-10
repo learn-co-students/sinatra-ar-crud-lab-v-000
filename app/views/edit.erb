@@ -1,0 +1,11 @@
+<div>BLOGOSPHERE POSTS!</div>
+<div><a href='/posts'>Home</a>
+<div>____________</div>
+<form method='POST' action='/posts/<%= @post.id %>'>
+  <input type='text' name='name' value='<%= @post.name %>'><br>
+  <input type='text' name='content' value='<%= @post.content %>'><br>
+  <div>____________</div>
+  <br>
+  <input id='hidden' type='hidden' name='_method' value='patch'>
+  <button type='submit' value='submit'>Save Edits</button><br>
+</form>
