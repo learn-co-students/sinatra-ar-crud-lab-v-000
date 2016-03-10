@@ -1,0 +1,14 @@
+<div>BLOGOSPHERE POSTS!</div>
+<div><a href='/posts'>Home</a>
+<div>____________</div>
+<div><%= @post.name %></div>
+<div><%= @post.content %></div>
+<div>____________</div>
+<br>
+<form method='GET' action='/posts/<%= @post.id %>/edit'>
+  <button type='submit' value='submit'>Edit Post</button><br>
+</form>
+<form method='POST' action='/posts/<%= @post.id %>/delete'>
+  <input id='hidden' type='hidden' name='_method' value='delete'>
+  <button type='submit' value='delete'>Delete Post</button><br>
+</form>
