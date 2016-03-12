@@ -1,0 +1,14 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <title>Index shows all posts</title>
+  </head>
+  <body>
+      <h1>Index page</h1>
+      <% @posts.each do |post| %>
+        <p>POST NAME:<%= post.name %><p/>
+        <p>CONTENT:<%= post.content %><p/>
+      <% end %>
+
+  </body>
+</html>
