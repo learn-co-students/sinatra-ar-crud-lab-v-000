@@ -1,0 +1,9 @@
+<div>BLOGOSPHERE POSTS!</div>
+<a href='/posts/new'>Create New Post</a>
+<div>____________</div>
+<% Post.all.each do |post| %>
+  <div><a method='GET' href='/posts/<%= post.id %>'><%= post.name %></a></div>
+  <div><%= post.content %></div>
+<div>____________</div>
+<br>
+<% end %>
