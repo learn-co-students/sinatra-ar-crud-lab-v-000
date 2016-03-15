@@ -128,10 +128,10 @@ describe "Blog Post App" do
       expect(Post.last.name).to eq("Hello World")
     end
 
-    it "displays a view telling us which post was deleted" do
+    it "redirect to '/posts'" do
       visit "/posts/#{@post2.id}"
       click_button "delete"
-      expect(page.body).to include("#{@post2.name} was deleted")
+      expect(page.current_path).to eq("/posts")
     end
 
     it "submits the form via a delete request" do
