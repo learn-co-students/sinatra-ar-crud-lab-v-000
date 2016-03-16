@@ -1,0 +1,8 @@
+<h1>My Blog Posts</h1>
+<a href="/posts/new">New Post</a>
+<% @posts.each do |post| %>
+  <h2><%= post.name %></h2>
+  <p><%= post.content %></p>
+  <a href="posts/<%= post.id %>">show</a>
+  <a href="posts/<%= post.id %>/edit">edit</a>
+<% end %>
