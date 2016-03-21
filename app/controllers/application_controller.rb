@@ -41,12 +41,14 @@ class ApplicationController < Sinatra::Base
   end
 
   patch '/posts/:id' do |id|
-    binding.pry
-    @post = Post.find_by_name(params[:post][:name])
-    @post = Post.update(params[:post])
+    post = Post.find_by_id(id)
+    post.update(params[:post])
+    erb :'/post/show'
   end
 
   # delete
-  post '/posts/:id/delete' do
+  delete '/posts/:id/delete' do |id|
+    @deleted_post = Post.find_by_id(id).delete
+    erb :'/post/delete'
   end
 end
