@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+
+  <body>
+    <h1>Old Post</h1>
+    <h1><%=@post.name%></h1>
+    <h4><%=@post.content%></h4>
+    <form method="post" action='/posts/<%=@post.id%>'>
+      <h1>New Post</h1>
+      <h1>Please enter the name and conext</h1>
+          <input id="hidden" type="hidden" name="_method" value="patch">
+          <p>Name:<input type="text" name="name"></p>
+          <p>Content:<input type="text" name="content"></p>
+      <input type="submit" value="submit">
+    </form>
+  </body>
+</html>
