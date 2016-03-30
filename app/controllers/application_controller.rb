@@ -1,3 +1,4 @@
+require 'pry'
 require_relative '../../config/environment'
 
 class ApplicationController < Sinatra::Base
@@ -7,7 +8,16 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/' do 
-    
+  get '/' do
+
+  end
+
+  get '/posts/new' do
+    erb :new
+  end
+
+  post '/posts' do
+    binding.pry
+    post = Post.create(params)
   end
 end
