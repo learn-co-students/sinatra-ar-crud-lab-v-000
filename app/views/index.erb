@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>BlogPosts.com</title>
+</head>
+<body>
+
+  <h1>Blog Posts</h1>
+
+  <% @posts.each do |post| %>
+    
+    <hr>
+    <a href="/posts/<%= post[:id] %>"><h2><%= post[:name] %></h2></a>
+    <p><%= post[:content] %></p>
+
+  <% end %>
+
+  <% if @replica_post %>
+    <%= "You made another post with the same name as an existing post, so it was not added." %>
+  <% end %>
+
+  <br>
+  <a href="/posts/new">Create a new post</a>
+</body>
+</html>

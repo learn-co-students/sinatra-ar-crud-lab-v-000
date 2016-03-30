@@ -53,7 +53,7 @@ describe "Blog Post App" do
 
     describe 'show action' do 
       it 'show page responds with a 200 status code' do
-        get "/posts/#{@post1.id}"
+        get "/posts/#{@post1.id.to_s}"
         expect(last_response.status).to eq(200)
       end
 
