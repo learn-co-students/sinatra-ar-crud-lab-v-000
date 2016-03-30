@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Show an individual post</title>
+</head>
+  <body>
+    <h1>Here's Your post: </h1>
+    <h2><%= @post.name %></h2>
+    <p><%= @post.content %></p>
+    <br>
+    <button type="submit"><a href="<%= @post.id %>/edit">Edit this post?</a></button>
+    <br>
+    <form method="post" action="/posts/<%= @post.id %>/delete">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      <button type="submit" value="delete">Delete this post?</button>
+    </form>
+    <button type="submit"><a href="/posts">See all</a></button>
+
+  </body>
+</html>
