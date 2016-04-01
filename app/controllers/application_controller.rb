@@ -14,7 +14,8 @@ class ApplicationController < Sinatra::Base
   post '/posts' do # creates a post
     #raise params.inspect
     Post.create(params)
-    redirect '/posts'
+    # redirect '/posts'
+    erb :index
   end
 
   get '/posts' do # loads index page
@@ -35,8 +36,8 @@ class ApplicationController < Sinatra::Base
   patch '/posts/:id' do # updates a post
     @post = Post.find(params[:id])
     @post.update(name: params[:name], content: params[:content])
-    @post.save
-    redirect 'posts/' + @post.id.to_s
+    # redirect 'posts/' + @post.id.to_s
+    erb :show
   end
 
   delete '/posts/:id/delete' do # delete action
