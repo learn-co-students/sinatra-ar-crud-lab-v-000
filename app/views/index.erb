@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Blogged</title>
+  </head>
+  <body>
+    <% @posts.each do |post| %>
+      <h2><%= post.name %></h2>
+      <p><%= post.content %></p>
+      <p><%= post.id %></p>
+    <% end %>
+  </body>
+  <% if session['deleted'] %>
+    <%= "#{session['deleted']} was deleted." %>
+  <% end %>
+</html>
