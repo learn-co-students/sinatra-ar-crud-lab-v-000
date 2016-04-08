@@ -1,0 +1,10 @@
+
+
+
+
+#use erb to iterate over @posts and rend on page
+<h2>Posts</h2
+<% @posts.each do |post| %>
+		<p>Name: <%= post.name %></p>
+		<p>Content: <%= post.content %></p>
+<% end %>
