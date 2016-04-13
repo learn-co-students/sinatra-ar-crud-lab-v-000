@@ -1,0 +1,8 @@
+<% if session['message'] %>
+  <p><em><%= session['message'] %></em></p>
+<% end %>
+
+<% @posts.each do |post| %>
+  <h1><%= post.name %></h1>
+  <p><%= post.content %></p>
+<% end %>
