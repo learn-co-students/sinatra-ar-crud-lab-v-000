@@ -1,6 +1,4 @@
-<% @posts.all.each do |post| %>
-  <div>
-    <p><%= post.name%> </p>
-    <p><%= post.content %></p>
-  </div>
-<% end %>
+<% @posts.each do |post|%>
+  <h2><%= post.name %></h2>
+  <p><%= post.content %></p>
+<%end%>
