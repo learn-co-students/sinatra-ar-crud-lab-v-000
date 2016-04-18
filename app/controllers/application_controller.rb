@@ -33,7 +33,7 @@ class ApplicationController < Sinatra::Base
 
  patch '/posts/:id/edit' do
    @post = Post.find(params[:id])
-   @post.update(name: params[:name], content: params[:content])
+   @post.update({name: params[:name], content: params[:content]})
    redirect '/posts/' +  @post.id.to_s
  end
 
@@ -48,5 +48,5 @@ class ApplicationController < Sinatra::Base
    @post.destroy
    erb :delete
  end
- 
+
 end
