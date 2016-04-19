@@ -1,0 +1,10 @@
+<h1>User Posts</h1>
+<% @posts.each do |post| %>
+<div class="post">
+  <p><%= "POST ID: #{post.id}" %></p>
+  <p><%= "POST NAME: #{post.name}"%> </p>
+  <p>POST CONTENT:</p>
+  <p><%= post.content %></p>
+  <br>
+</div>
+<% end %>
