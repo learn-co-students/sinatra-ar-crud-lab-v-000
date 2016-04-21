@@ -13,7 +13,7 @@ class ApplicationController < Sinatra::Base
 
   post '/posts' do #creates a post
     Post.create(params)
-    redirect'/posts'
+    redirect '/posts'
   end
 
   get '/posts' do #loads index page
