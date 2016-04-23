@@ -45,6 +45,7 @@ class ApplicationController < Sinatra::Base
   end
 
   delete '/posts/:id/delete' do
+    session['delete_message'] = "#{Post.find(params[:id]).name} was deleted"
     @post = Post.find(params[:id])
     @post.destroy
     redirect to('/posts')

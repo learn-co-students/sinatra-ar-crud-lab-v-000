@@ -1,5 +1,7 @@
 <h1>Your Post</h1>
-
+<% if session['delete_message']? %>
+  <%= session['delete_message'] %>
+  <% end %>
 <p>
 <%= @post.name %> <br />
 <%= @post.content %>
