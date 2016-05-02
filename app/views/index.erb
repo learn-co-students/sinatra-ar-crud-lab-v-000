@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>Posts</head>
+  <body>
+    <% @posts.each do |post| %>
+      <p><%= post.name %></p>
+      <p><%= post.content %></p>
+    <%end%>
+    <% if @deleted %>
+      <p><%= @deleted %> was deleted</p>
+    <% end %>
+  </body>
+
+</html>
