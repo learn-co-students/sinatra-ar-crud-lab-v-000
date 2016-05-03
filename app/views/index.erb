@@ -1,8 +1,6 @@
-<h1>Posts</h1>
-<% if session['message'] %>
-  <p><em><%= session['message'] %></em></p>
-<% end %>
 <% @posts.all.each do |post| %>
-<%=  post.name %>
-<%= post.content %>
+  <div>
+    <p><%= post.name%> </p>
+    <p><%= post.content %></p>
+  </div>
 <% end %>

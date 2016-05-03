@@ -5,48 +5,50 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
-    enable :sessions
-    set :session_secret, "hullobot"
   end
 
-  get '/' do
-     @posts = Post.all
+  get '/' do     
+  end
 
-   end
+  get '/posts' do 
+    @posts = Post.all
+    @deleted = nil
+    erb :index
+  end
 
-   get '/posts/new' do
-     erb :new
-   end
+  get '/posts/new' do
+    erb :new
+  end
 
-   get '/posts' do
-     @posts = Post.all
-     erb :index
-   end
+  get '/posts/:id' do 
+    @post = Post.find(params[:id])
+    erb :show
+  end
 
-   post '/posts' do
-     Post.create(name: params[:name], content: params[:content])
-     redirect to('/posts')
-   end
+  get '/posts/:id/edit' do 
+    @post = Post.find(params[:id])
+    erb :edit
+  end
 
-   get '/posts/:id' do
-     @post = Post.find(params[:id])
-     erb :show
-   end
+  post '/posts' do 
+    Post.create(params)
+    @posts = Post.all
+    @deleted = nil
+    erb :index
+  end
 
-   get '/posts/:id/edit' do
-     @post = Post.find(params[:id])
-     erb :edit
-   end
+  patch '/posts/:id' do 
+    @post = Post.find(params[:id])
+    @post.name = params[:name]
+    @post.content = params[:content]
+    @post.save
+    erb :show
+  end
 
-   patch '/posts/:id' do
-     @post = Post.update(params[:id], name: params[:name], content: params[:content])
-     erb :show
-   end
-
-   delete '/posts/:id/delete' do
-     session['message'] = "#{Post.find(params[:id]).name} was deleted"
-     Post.delete(params[:id])
-     redirect to('/posts')
-   end
-
+  delete '/posts/:id/delete' do 
+    @deleted = Post.find(params[:id]).name
+    Post.destroy(params[:id])
+    @posts = Post.all 
+    erb :index 
+  end
 end
