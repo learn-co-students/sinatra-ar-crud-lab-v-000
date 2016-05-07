@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+  <title>Blogging App</title>
+</head>
+<body>
+  <h1>Posts</h1>
+    <% if session['message'] %>
+      <p><em><%= session['message'] %></em></p>
+    <% end %>
+    <% @posts.all.each do |post| %>
+    <%=  post.name %>
+    <%= post.content %>
+    <% end %>
+  </body>
+</html>
