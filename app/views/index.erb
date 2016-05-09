@@ -1,0 +1,12 @@
+<h1>blog blog blog blog blog</h1>
+
+<ol>
+  <% @posts.each do |post| %>
+  <li><a href="/posts/<%= post.id %>"><%= post.name %></a></li>
+  <% end %>
+</ol>
+
+<form action="/posts/new" method="get">
+  <h2><input type="submit" value="submit"> Create A New Post</h2>
+
+</form>
