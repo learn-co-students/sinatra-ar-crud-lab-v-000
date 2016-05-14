@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Index page</title>
+  </head>
+  <body>
+    <h1> Blog Feed </h1>
+    <% @posts.each do |post| %>
+      <h3>Post name:</h3>
+      <p><%= post.name %></p>
+      <h3>Post content:</h3>
+      <p><%= post.content %></p>
+      <br/>
+    <% end %>
+  </body>
+</html>
