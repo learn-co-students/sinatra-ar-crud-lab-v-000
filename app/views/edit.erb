@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<title>Post Entry</title>
+<header>Enter a New Post!</header>
+<body>
+
+ <h2>Original Content:</h2>
+ <h3><%= @post.name %></h3>
+ <h3><%= @post.content %></h3><br>
+
+ <form action="/posts/<%= @post.id %>"
+ method="POST">
+
+  <p><h2>New Title:<input type="text" name="name"></h2></p>
+  <h2>New Content:<input type="text" name="content"></h2>
+ 
+  <h2>New Content:<input id="hidden" type="hidden" name="_method" value="patch"></h2>
+  <input type="text" ...>
+
+  <button type="submit" value="submit">Submit</button>
+</form>
+</body>
+
