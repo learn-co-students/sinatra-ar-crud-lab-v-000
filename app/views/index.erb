@@ -14,5 +14,10 @@
         Content: <%= post.content %><br><br>
       <% end %>
     </p>
+    <p>
+      <% if @post_name %>
+        <%= @post_name %> was deleted
+      <% end %>
+    </p>
   </body>
 </html>
