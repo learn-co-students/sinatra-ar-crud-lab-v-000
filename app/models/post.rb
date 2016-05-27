@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   #
-  #### EVERYTHING WORKS WHEN THIS IS ALL COMMENTED OUT!!!
-  #
+  ### EVERYTHING WORKS WHEN THIS IS ALL COMMENTED OUT!!!
+
   # attr_accessor :name, :content
   # @@all = []
   #

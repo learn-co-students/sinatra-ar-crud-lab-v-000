@@ -1,5 +1,4 @@
 require_relative '../../config/environment'
-# require_relative '../models/post.rb'  # probably not needed
 
 class ApplicationController < Sinatra::Base
 
@@ -9,7 +8,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-
+    redirect to '/posts/new'
   end
 
   get '/posts/new' do
@@ -17,16 +16,8 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts' do
-    # create the post, save to db, then erb :index
-    new_post = Post.new(params[:post])
-    new_post.save # this causes problems
-
-
-    # error seems to be when trying to create or save a post object.. ie. activerecord is not happening?
-    # @posts = Post.create(params[:post])  #this also causes problems
-
-    @posts = Post.all
-    erb :index
+    Post.create(params[:post])
+    redirect to '/posts'
   end
 
   get '/posts' do
