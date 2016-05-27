@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Index Page</title>
+  </head>
+  <body>
+    <p>
+      Hello World
+    </p>
+    <p>
+      <% @posts.each do |post| %>
+        Post Name: <%= post.name %><br>
+        Content: <%= post.content %><br><br>
+      <% end %>
+    </p>
+    <p>
+      <% if @post_name %>
+        <%= @post_name %> was deleted
+      <% end %>
+    </p>
+  </body>
+</html>
