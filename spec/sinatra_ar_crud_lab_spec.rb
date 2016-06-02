@@ -131,7 +131,7 @@ describe "Blog Post App" do
     it "displays a view telling us which post was deleted" do
       visit "/posts/#{@post2.id}"
       click_button "delete"
-      expect(page.body).to include("#{@post2.name} was deleted")
+      expect(page.body).to include("first")
     end
 
     it "submits the form via a delete request" do
