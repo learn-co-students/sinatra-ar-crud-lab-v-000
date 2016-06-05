@@ -10,6 +10,10 @@
 
     <h2>Title: <%= @post.name %> </h2>
     <h2>Content: <%= @post.content %> </h2>
-        <% end %>
+    <form method="post" action="/posts/<%=@post.id%>/delete">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      <input type="submit" value="delete">
+    </form>
+
   </body>
 </html>

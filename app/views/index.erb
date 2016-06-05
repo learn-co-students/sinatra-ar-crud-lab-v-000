@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
   <title>All Posts</title>
@@ -7,10 +6,9 @@
 
   <body>
     <h1>All Posts</h1>
-    <% @posts.each.to_in do |post| %>
-        <h2>Title: <%= post.name %> </h2>
+    <% @posts.each do |post| %>
+        <h2>Name: <%= post.name %> </h2>
         <h2>Content: <%= post.content %> </h2>
         <% end %>
-
   </body>
 </html>
