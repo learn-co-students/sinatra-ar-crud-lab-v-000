@@ -7,45 +7,45 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/posts/new' do
+  get '/posts/new' do   #loads new form
     erb :new
   end
 
-  post '/posts' do
+  post '/posts' do    #create a post
     @post = Post.create(params)
     redirect to '/posts'
   end
 
-  get '/posts' do
+  get '/posts' do         #loads index page
     @posts = Post.all
     erb :index
   end
 
 
-  get '/posts/:id' do
-    @post = Post.find(params[:id])
+  get '/posts/:id' do     #loads show page
+    @post = Post.find_by_id(params[:id])
     erb :show
   end
 
-  get '/posts/:id/edit' do
-    @post = Post.find(params[:id])
+  get '/posts/:id/edit' do  #loads edit form
+    @post = Post.find_by_id(params[:id])
     erb :edit
   end
 
-  patch '/posts/:id' do
-    @post = Post.find(params[:id])
-    @post.update(name: params[:name], content: params[:content])
-    redirect to ("/posts/#{@post.id}")
-      # erb :show
+  post '/posts/:id' do     #updates a post
+    @post = Post.find_by_id(params[:id])
+    @post.name = params[:name]
+    @post.content = params[:content]
+    # @post.update(name: params[:name], content: params[:content])
+    @post.save
+    erb :show
   end
 
   delete '/posts/:id/delete' do
-    @post = Post.find(params[:id])
+    @post = Post.find_by_id(params[:id])
     @name = @post.name
-    @post.destroy
+    @post.delete
     erb :deleted
-    # @post_delete = Post.find(params[:id])
-    # @post_delete.destroy
-    # erb :deleted
+
   end
 end
