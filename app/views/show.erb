@@ -1,0 +1,15 @@
+<% if @post_copy %>
+    <%= @post_copy.name %> was deleted
+<% else %>
+    <h1>Post number <%= @post.id %></h1><br />
+    <h3><%= @post.name %></h3>
+    
+    <a href="/posts/<%= @post.id %>/edit">Edit</a>
+    <form method="post" action="/posts/<%= @post.id %>/delete">
+        <input id="hidden" type="hidden" name="_method" value="delete">
+        <input type="submit" value="delete">
+    </form>
+    <br /><br />
+    <p><%= @post.content %></p>
+
+<% end %>
