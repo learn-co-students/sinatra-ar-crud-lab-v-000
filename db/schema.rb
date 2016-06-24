@@ -13,4 +13,8 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
+      create_table :posts do |t|
+        t.string :name
+        t.string :content
+      end
 end
