@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Posts</title>
+</head>
+<body>    
+
+<p>  
+  <% @posts.find_each do |post| %>
+  <h3><%= post.name %></h3>
+  <p><%= post.content %></p>
+  <% end %>
+</p>
+
+</body>
+</html>
