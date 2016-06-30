@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>most recent post</title>
+</head>
+<body>
+
+  <h1>here's the post you just added</h1>
+      <p><%= @post.name %></p>
+      <p><%= @post.content %></p>
+
+<h3>click here to delete <%= @post.name %></h3>
+
+<form method="post" action="/posts/<%= @post.id %>/delete">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" id="delete">
+</form>
+
+  <%= @post.name %> was deleted
+
+</body>
+</html>
