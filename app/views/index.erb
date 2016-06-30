@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title>index</title>
+</head>
+<body>
+  <h1>index</h1>
+
+  <h3>here are all your old posts</h3>
+    <% @posts.each do |x| %>
+      <p><%= x.name %></p>
+      <p><%= x.content %></p>
+    <% end %>
+
+
+</body>
+</html>
