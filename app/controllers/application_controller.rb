@@ -5,6 +5,7 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
+    use Rack::MethodOverride
   end
 
   get '/posts/new' do
@@ -31,11 +32,17 @@ class ApplicationController < Sinatra::Base
     erb :edit
   end
 
-  post 'posts/:id' do
+  patch '/posts/:id' do
     @post = Post.find_by_id(params[:id])
     @post.name = params[:name]
     @post.content = params[:content]
     @post.save
+    erb :show
+  end
+
+  delete '/posts/:id/delete' do
+    @post = Post.find_by_id(params[:id])
+    @post.delete
     erb :show
   end
 end
