@@ -4,14 +4,14 @@ class Post < ActiveRecord::Base
 
 @@all = []
 
-  def initialize(name, content)
-    @name = name
-    @content = content 
-    self << @@all 
+  def initialize(params)
+    @name = params[:name]
+    @content = params[:content]
+    @@all << self 
   end
 
   def self.all
-    @@all 
-  end 
+    @@all
+  end
 
 end
