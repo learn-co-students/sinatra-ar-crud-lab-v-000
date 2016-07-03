@@ -1,3 +1,8 @@
 <a href="/posts/<%= @post.id %>"><%= @post.name %><%= @post.content %></a>
 
+<form action = "/posts/<%= @post.id %>/delete" method = "POST">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+</form>
+
 
