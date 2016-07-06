@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Blogium</title>
+  </head>
+  <body>
+    <h2>Blog Posts</h2>
+    <% @posts.each do |post| %>
+      <h4><%= post.name %></h4>
+      <p><%= post.content %></p>
+    <% end %>
+  </body>
+</html>
