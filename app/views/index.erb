@@ -1,0 +1,14 @@
+<% @posts.all.reverse.each do |post| %>
+<div class="blog-post">
+  <h2 class="blog-post-title"><a href="posts/<%= "#{post.id}" %>"><%= "#{post.name}" %></a></h2>
+
+  <p><%= "#{post.content}" %></p>
+</div><!-- /.blog-post -->
+<% end %>
+
+<nav>
+  <ul class="pager">
+    <li><a href="#">Older</a></li>
+    <li class="disabled"><a href="#">Newer</a></li>
+  </ul>
+</nav>

@@ -1,0 +1,7 @@
+<h1>Edit a Blog Post</h1>
+<form action="/posts/<%= @post.id %>" method="post">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <input class="col-xs-12" type="text" name="name" placeholder="post name" value="<%= @post.name %>" /><br />
+    <input class="col-xs-12" type="text" name="content" placeholder="post content" value="<%= @post.content %>" /><br />
+    <input class="offset-xs-5 col-xs-2" type="submit" value="submit" />
+</form>
