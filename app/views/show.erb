@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Show</title>
+</head>
+<body>
+  <p>Post Name: <%= @post.name%></p>
+  <p>Post Conent:<%= @post.content %></p>
+  <form action="/posts/<%= @post.id %>" method="post">
+    <input type="hidden" id="hidden" name="_method" value="delete">
+    <input type="submit" value="delete">
+  </form>
+</body>
+</html>
