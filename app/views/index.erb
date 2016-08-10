@@ -1,8 +1,11 @@
-<%= @posts.all.each do |post| %>
+<% @posts.all.each do |post| %>
 
 <div>
 
-  Post Name : <%= post.name %><br>
-  Post Content : <%= post.content %>
+<p><%= post.name %></p>
+<p><%= post.content %></p>
+
 </div>
-  <%end%>
+
+
+<% end %>
