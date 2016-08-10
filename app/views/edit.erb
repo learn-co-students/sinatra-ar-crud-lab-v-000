@@ -1,0 +1,9 @@
+<h1> Add a new blog post here: </h1>
+<form  action="/posts/<%= @wiki.id %>" method="POST">
+<input type="hidden" name="_method" value="PUT">
+Title: <br>
+<input type="text" value=" <%= @post.title %>" name="post[title]"><br>
+<h2> Content: </h2> <br>
+<textarea type="text" id="content" name="post[content]"> <%= post.content%></textarea>
+<input type="submit" value="Submit Your Post">
+</form>
