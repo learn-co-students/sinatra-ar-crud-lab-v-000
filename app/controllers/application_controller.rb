@@ -8,10 +8,6 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/' do 
-    
-  end
-
   get '/posts/new' do
   	erb :new
   end
@@ -22,9 +18,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts' do
-  	@posts = Post.all
-  	Post.create(name: params[:name], content: params[:content])
-
+  	@post = Post.create(params)
   	erb :index
   end
 
@@ -40,11 +34,16 @@ class ApplicationController < Sinatra::Base
 
   patch '/posts/:id' do
   	@post = Post.find(params[:id])
-  	Post.update(name: params[:name], content: params[:content])
+  	@post.name = params[:name]
+  	@post.content = params[:content]
+  	@post.save
+  	erb :show
   end
 
-  delete '/models/:id/delete' do
+  delete '/posts/:id/delete' do
   	@post = Post.find(params[:id])
+  	@post.delete
+  	erb :deleted
   end
 end
 
