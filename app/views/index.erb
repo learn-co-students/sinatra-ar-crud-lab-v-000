@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Posts Archive</title>
+</head>
+<body>
+  <div>
+    <% @posts.all.each do |post| %>
+    <p><%= post.name %> <br>
+    <%= post.content %> </p>
+  </div>
+  <% end %>
+</body>
+</html>
