@@ -1,1 +1,3 @@
-#Placeholder for a model
+class CreatePosts < ActiveRecord::Base
+
+end
