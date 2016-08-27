@@ -1,3 +1,3 @@
-class CreatePosts < ActiveRecord::Base
+class Post < ActiveRecord::Base
 
 end
