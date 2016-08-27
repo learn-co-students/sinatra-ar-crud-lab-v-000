@@ -31,7 +31,7 @@ class ApplicationController < Sinatra::Base
     erb :edit
   end
 
-  post '/posts/:id' do # --updates and shows updated post in show page
+  post '/posts/:id' do # --updates and displays updated post in show page
     @post = Post.find(params[:id])
     @post.name = params[:name]
     @post.content = params[:content]
