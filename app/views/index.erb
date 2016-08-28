@@ -4,8 +4,7 @@
   <title></title>
 </head>
 <body>
-
-<% = @message = "#{@post.name} was deleted" %>
+<%= @message %>
 <h1>Your Posts!</h1>
 <!-- # should be @posts but not working dont know why -->
 <% Post.all.each do |post| %>
