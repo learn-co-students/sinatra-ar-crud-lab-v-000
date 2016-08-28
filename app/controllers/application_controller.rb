@@ -3,11 +3,6 @@ require_relative '../../config/environment'
 class ApplicationController < Sinatra::Base
 
   configure do
-    enable :sessions unless test?
-    set :session_secret, "secret"
-  end
-
-  configure do
     set :public_folder, 'public'
     set :views, 'app/views'
   end
@@ -50,12 +45,12 @@ class ApplicationController < Sinatra::Base
     erb :show 
   end
 
-  delete '/posts/:id/delete' do 
+  delete '/posts/:id/delete' do
+    @post = Post.find(params[:id])
+    @message = "#{@post.name} was deleted"
     Post.delete(params[:id])
-    
-    redirect '/posts' do 
-      "#{session[:name]} has been deleted"
-    end
+
+    erb :index
   end
 
 
