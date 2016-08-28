@@ -27,7 +27,7 @@ class ApplicationController < Sinatra::Base
 # show.erb view page. That view should use erb to render the @post's title and content.
 
   get '/posts/:id' do 
-    @id = params[:id].to_i
+    id = params[:id].to_i
     @post = Post.find_by id: id
     erb :show 
   end

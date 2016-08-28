@@ -6,7 +6,9 @@
 <body>
 <h1>Edit Post <%= params[:id] %></h1>
 
-<form action="/posts/<%=params[:id]%>" method="post">
+<form action="/posts/<%=p%>" method="post">
+  <p> Name: <input type="text" name="name"> </p>
+  <p> Content: <textarea rows="4" cols="50" name="content"> </textarea></p>
  <input id="hidden" type="hidden" name="_method" value="patch">
   <input type="text" ...>
 
