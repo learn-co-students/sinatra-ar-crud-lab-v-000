@@ -33,12 +33,13 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts/:id/edit' do 
-
+    puts params 
     erb :edit
   end
 
   patch '/posts/:id' do 
-    Post.update(params[:id], :user_name => '#{params["name"]}', :group => '#{params["content"]}')
+    puts params
+    Post.update(params[:id], :name => '#{params["name"]}', :content => '#{params["content"]}')
     erb :show 
   end
 
