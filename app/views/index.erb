@@ -4,7 +4,10 @@
   <title></title>
 </head>
 <body>
-<%= @message %>
+  <% if @message %>
+    <p><%= @message %></p>
+  <% end %>
+  
 <h1>Your Posts!</h1>
 <!-- # should be @posts but not working dont know why -->
 <% Post.all.each do |post| %>
