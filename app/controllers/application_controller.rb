@@ -2,10 +2,10 @@ require_relative '../../config/environment'
 
 class ApplicationController < Sinatra::Base
 
-  configure do
-    enable :sessions unless test?
-    set :session_secret, "secret"
-  end
+  # configure do
+  #   enable :sessions unless test?
+  #   set :session_secret, "secret"
+  # end
 
   configure do
     set :public_folder, 'public'
@@ -17,12 +17,12 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts' do
-    new_post = Post.create(params)
-    @posts = Post.all
-    erb :index
+    @post = Post.create(params)
+    redirect to '/posts'
   end
 
-  get '/posts' do
+  get '/posts' do #this loads index page
+    @posts = Post.all
     erb :index
   end
 
@@ -55,7 +55,7 @@ class ApplicationController < Sinatra::Base
     @message = "#{@post.name} was deleted"
     Post.delete(params[:id])
 
-    erb :index
+    erb :deleted
   end
 
 

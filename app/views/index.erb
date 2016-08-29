@@ -4,13 +4,11 @@
   <title></title>
 </head>
 <body>
-  <% if @message %>
-    <p><%= @message %></p>
-  <% end %>
   
 <h1>Your Posts!</h1>
 <!-- # should be @posts but not working dont know why -->
-<% Post.all.each do |post| %>
+<% @posts.each do |post| %>
+  <%= post.id %><br>
   <%= post.name %><br>
   <%= post.content %><br><br>
   <% end %>
