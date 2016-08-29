@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  
+<h1>Your Post List</h1>
+<!-- # should be @posts but not working dont know why -->
+<% @posts.each do |post| %>
+
+  <%= post.id %> <%= post.name %><br>
+  <%= post.content %><br><br>
+  <% end %>
+</body>
+</html>
