@@ -5,10 +5,11 @@
 </head>
 <body>
   
-<h1>Your Posts!</h1>
+<h1>Your Post List</h1>
 <!-- # should be @posts but not working dont know why -->
 <% @posts.each do |post| %>
-  <%= post.name %><br>
+
+  <%= post.id %> <%= post.name %><br>
   <%= post.content %><br><br>
   <% end %>
 </body>
