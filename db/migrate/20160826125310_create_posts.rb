@@ -5,6 +5,4 @@ class CreatePosts < ActiveRecord::Migration
       t.string :content
     end
   end
-
-
 end
