@@ -1,10 +1,6 @@
 class Post < ActiveRecord::Base
 
-  attr_accessor :name, :content
+  attr_accessor :name, :content, :id
 
-  def initialize(params)
-    @name = params["name"]
-    @content = params["content"]
-  end
 
 end
