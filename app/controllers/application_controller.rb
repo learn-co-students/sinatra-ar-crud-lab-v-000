@@ -12,9 +12,40 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts' do
-    binding.pry
     @post = Post.create(params)
-
-    erb :index
+    redirect to '/posts'
   end
+
+  get '/posts' do
+    @posts = Post.all
+    erb :index
+    # if Post.all.empty?
+    #   "Go to '/posts/new' to create a new blog post"
+    # end
+  end
+
+  get '/posts/:id' do 
+    @post = Post.find(params[:id])
+    erb :show
+  end
+
+  get '/posts/:id/edit' do 
+    @post = Post.find(params[:id])
+    erb :edit
+  end
+
+  patch '/posts/:id' do
+    @post = Post.find(params[:id])
+    @post.name = params[:name]
+    @post.content = params[:content]
+    @post.save
+    erb :show
+  end
+
+  delete '/posts/:id/delete' do
+    @post = Post.find(params[:id].to_i)
+    @post.delete
+    erb :deleted
+  end
+
 end
