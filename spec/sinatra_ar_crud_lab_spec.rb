@@ -123,7 +123,7 @@ describe "Blog Post App" do
 
     it "deletes a blog post from the database" do
       visit "/posts/#{@post2.id}"
-      binding.pry
+      
       click_on 'delete'
 
 
@@ -133,7 +133,7 @@ describe "Blog Post App" do
 
     it "displays a view telling us which post was deleted" do
       visit "/posts/#{@post2.id}"
-      click_button "deletes"
+      click_button "delete"
 
 
       expect(page.body).to include("#{@post2.name} was deleted")

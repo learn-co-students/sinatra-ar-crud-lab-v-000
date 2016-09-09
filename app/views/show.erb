@@ -11,10 +11,9 @@
     <h3><%=@post.name%></h3>
     <p><%=@post.content%></p>
     <form action="/posts/<%=@post.id%>/delete" method="POST">
-      <h3>Post: <%=@post.name%> was deleted</h3>
-      <p><%=@post.content%> is gone forever</p>
+
       <input id="hidden" type="hidden" name="_method" value="delete">
-      <button id="delete" type="delete" value="deletes">deletes</button>
+      <button id="delete" type="submit" value="delete">delete</button>
     </form>
 
   </body>
