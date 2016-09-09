@@ -124,7 +124,8 @@ describe "Blog Post App" do
     it "deletes a blog post from the database" do
       visit "/posts/#{@post2.id}"
       binding.pry
-      click_button "delete"
+      click_on 'delete'
+
 
       expect(Post.all.count).to eq(1)
       expect(Post.last.name).to eq("Hello World")
@@ -132,8 +133,11 @@ describe "Blog Post App" do
 
     it "displays a view telling us which post was deleted" do
       visit "/posts/#{@post2.id}"
-      click_button "delete"
+      click_button "deletes"
+
+
       expect(page.body).to include("#{@post2.name} was deleted")
+
     end
 
     it "submits the form via a delete request" do
