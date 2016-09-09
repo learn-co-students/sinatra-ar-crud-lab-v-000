@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Posts!</title>
+  </head>
+  <body>
+    <h1>PostBook</h1>
+    <h2>Edit This Post: </h2>
+
+    <h3><%=@post.name%></h3>
+    <p><%=@post.content%></p>
+
+      <form action="/posts/<%=@post.id%>" method="POST">
+        <p>Post Id: <%=@post.id%> stays the same</p>
+
+        <input id="hide_id" type="hidden" name="id" value = "<%=@post.id%>">
+
+        <label for="POST-name">Change title:</label>
+        <input id="POST-name" type="text" name="name">
+
+        <br/>
+        <input id="hidden" type="hidden" name="_method" value="patch">
+
+        <label for="POST-content">Put new content here:</label>
+        <input id="POST-content" type="text" name="content">
+
+        <button type="submit" value="submit">Submit</button>
+      </form>
+    </body>
+  </html>
