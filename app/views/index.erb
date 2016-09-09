@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>POSTS!</title>
+  </head>
+  <body>
+    <h1>PostBook</h1>
+    <h2>ALL THE POSTS!!!</h2>
+    <%@posts.each do |post|%>
+    <h3>name: <%=post.name%></h3>
+    <p>id: <%=post.id%></p>
+    <p>content:   <%=post.content%></p>
+    <%end%>
+
+  </body>
+</html>
