@@ -34,11 +34,19 @@ class ApplicationController < Sinatra::Base
 
   end
 
-  post '/posts/:id' do
+  patch '/posts/:id' do
     @post = Post.find_by_id(params[:id])
     @post.name = params[:name]
     @post.content = params[:content]
     @post.save
     erb :show
+  end
+
+  delete '/posts/:id/delete' do 
+    @post = Post.find_by_id(params[:id])
+    @post_name = @post.name
+    @post.delete
+    @posts = Post.all
+    erb :index
   end
 end

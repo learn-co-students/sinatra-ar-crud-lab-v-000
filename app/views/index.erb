@@ -1,3 +1,7 @@
+<% if @post_name %>
+<p> post <%= @post_name %> was deleted </p>
+<% end %>
+
 <% @posts.each do |t| %>
   <p><%= t.name %> <%= t.content %></p>
    <% end %>
