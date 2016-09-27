@@ -1,0 +1,13 @@
+<h1>Edit Post <%= params[:id] %> </h1>
+<% post = Post.find(params[:id]) %>
+<%= "Current Post Name: #{post.name}" %>
+<%= "Current Post Content: #{post.content}" %>
+<form method="post" action="/posts/<%= params[:id] %>">
+<input id="hidden" type="hidden" name="_method" value="patch">
+<label for="name">Post Name:</label>
+<input type="text" id="name" name="post[name]"><br>
+<label for="content">Post Content:</label>
+<input type="text" id="content" name="post[content]"><br><br>
+<input type="hidden" name="post[id]" value="<%= params[:id] %>">
+<input type="submit" id="submit">
+</form>
