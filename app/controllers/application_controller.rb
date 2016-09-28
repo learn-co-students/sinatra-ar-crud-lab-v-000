@@ -14,7 +14,7 @@ class ApplicationController < Sinatra::Base
  
   post '/posts' do 
     @post = Post.create(params)
-    erb :index
+    redirect to '/posts'
   end
 
   # Read
@@ -46,7 +46,7 @@ class ApplicationController < Sinatra::Base
     # erb :show
   end
 
-  post '/posts/:id/delete' do
+  delete '/posts/:id/delete' do
     @post = Post.find(params[:id])
 
     @post.destroy
