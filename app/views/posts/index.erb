@@ -1,0 +1,9 @@
+<h3>This Wonderful Blog</h3>
+
+<ol>
+<% @posts.each do |post| %>
+  <li><%= "#{post.name}" %><br>
+      <%= "#{post.content}" %></li>
+
+    <%end%>
+</ol>
