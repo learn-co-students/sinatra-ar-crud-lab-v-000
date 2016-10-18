@@ -17,7 +17,7 @@ class ApplicationController < Sinatra::Base
 
   post '/posts' do #creates post
     @post = Post.create(name: params[:name], content: params[:content])
-    redirect to '/posts'
+    redirect to '/posts' #redirect url as well with correct url where erb doesnt' change url at the top!
   end
 
   get '/posts' do #loads index page
@@ -35,16 +35,15 @@ class ApplicationController < Sinatra::Base
     erb :edit
   end
 
-  post '/posts/:id' do
-    @post = Post.find_by_id(params[:id])
-    @post.name = params[:name]
-    @post.content = params[:content]
-    @post.save
+  patch '/posts/:id' do
+    @post = Post.find(params[:id]) # if you have find, it will automatically look by id
+    @post.update(name: params[:name], content: params[:content]) # this does everything that all those lines does plus saves it.
     erb :show
   end
 
   delete '/posts/:id/delete' do
-
-
+    @post = Post.find(params[:id])
+    @post.delete
+    erb :deleted
   end
 end
