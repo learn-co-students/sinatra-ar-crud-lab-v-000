@@ -5,6 +5,7 @@
     <title></title>
   </head>
   <body>
+    <%=@posts.map {|i| i.name}%>
     <%=@posts.map {|i| i.content}%>
   </body>
 </html>
