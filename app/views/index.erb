@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Posts</title>
+</head>
+  <body>
+    <h1><label for "post details">All Posts</label></h1>
+    <div>
+      <% @posts.each do |t| %>
+      <strong><p>-----Post ID: <%= t.id %>--------</p></strong>
+      <p>Post Name: <%= t.name %></p>
+      <p>Post Content: <%= t.content %></p>
+      <% end %>
+     </div>
+  </body>
+</html>
