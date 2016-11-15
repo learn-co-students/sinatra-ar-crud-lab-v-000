@@ -16,20 +16,17 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts' do
-    @posts = []
-    post = Post.create(name: params[:name], content: params[:content])
-    @posts << post
-    erb :index
+    @post = Post.create(params)
+    redirect to '/posts'
   end
 
   get '/posts' do
-    @posts = []
-    Post.find_each {|post| @posts << post}
+    @posts = Post.all
     erb :index
   end
 
   get '/posts/:id' do
-    @post = Post.find(params[:id])
+    @post = Post.find_by_id(params[:id])
     erb :show
   end
 
