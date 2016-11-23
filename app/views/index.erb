@@ -1,0 +1,11 @@
+<h1>Blog Posts:</h1>
+<% @posts.each do |post| %>
+  <h2><%= post.name %></h2>
+  <p><%= post.content %></p><br>
+<% end %>
+
+<% if !@deleted.empty? %>
+  <% @deleted.each do |deleted| %>
+    <h3><%= deleted.name %> was deleted</h3>
+  <% end %>
+<% end %>
