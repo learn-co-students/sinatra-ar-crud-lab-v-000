@@ -1,0 +1,10 @@
+<h1>Need to update your blog post?</h1>
+<h2>Here's the old one:</h2>
+<h3><%= @post.name %></h3>
+<p><%= @post.content %></p>
+<form action="/posts/<%= @post.id %>" method="post">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    New Name: <input type="text" name="name"><br>
+    New Content: <input type="text" name="content"><br>
+    <input type="submit" value="submit">
+</form>

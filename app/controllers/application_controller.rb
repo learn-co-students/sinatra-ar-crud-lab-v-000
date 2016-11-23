@@ -25,4 +25,15 @@ class ApplicationController < Sinatra::Base
     @post = Post.all.select {|post| post.id == params[:id].to_i}.first
     erb :show
   end
+
+  get '/posts/:id/edit' do
+    @post = Post.all.select {|post| post.id == params[:id].to_i}.first
+    erb :edit
+  end
+
+  patch '/posts/:id' do
+    @post = Post.all.select {|post| post.id == params[:id].to_i}.first
+    @post.update(name: params[:name], content: params[:content])
+    erb :show
+  end
 end
