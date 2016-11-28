@@ -47,8 +47,10 @@ end
 
 delete '/posts/:id/delete' do
   post = Post.find(params[:id])
+  @post1=post
 post.destroy
-redirect  '/posts'+post.id
+erb :deleted
+
   end
 
 end
