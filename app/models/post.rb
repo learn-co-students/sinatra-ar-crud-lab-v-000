@@ -2,7 +2,7 @@ require 'pry'
 
 class Post < ActiveRecord::Base
   attr_accessor :name, :content
-  @@all = []
+  ALL = []
 
 #  def initialize(params)
 #    @name = params[:name]
@@ -16,12 +16,13 @@ class Post < ActiveRecord::Base
     post = Post.new
     post.name = params[:name]
     post.content = params[:content]
-    @@all << post
+    ALL << post
+    #binding.pry
     post
   end
 
   def self.all
-    @@all
+    ALL
   end
 
 end
