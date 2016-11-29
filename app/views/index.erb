@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Blog Post</title>
+  </head>
+  <body>
+    <% @posts.each do |post| %>
+    <h2>Blog Title: <%= post.name %></h2>
+    <p><%= post.content %></p>
+    <% end %>
+  </body>
+</html>
