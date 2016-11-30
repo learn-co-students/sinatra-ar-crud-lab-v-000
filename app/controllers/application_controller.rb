@@ -31,12 +31,16 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts/:id' do
-    @posts = Post.all
-    @post = @posts.select do
-      |post| post.name == params[:id]
-    end
     #binding.pry
+    #@posts = Post.all
+    #@post = @posts.find_by name: params[:id]
+    @post = Post.all.find params[:id]
     erb :show
+  end
+
+  get '/posts/:id/edit' do
+    @post = Post.all.find params[:id]
+    erb :edit
   end
 
 end
