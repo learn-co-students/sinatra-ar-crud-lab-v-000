@@ -17,9 +17,10 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts' do
-    Post.create(params)
-    #binding.pry
+    @post = Post.create(params)
+    @post.save
     @posts = Post.all
+    binding.pry
     erb :index
   end
 
@@ -30,10 +31,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts/:id' do
-    #binding.pry
-    @post = Post.all.select do
+    @posts = Post.all
+    @post = @posts.select do
       |post| post.name == params[:id]
     end
+    #binding.pry
     erb :show
   end
 
