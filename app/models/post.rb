@@ -1,20 +1,14 @@
 require 'pry'
 
 class Post < ActiveRecord::Base
-  attr_accessor :name, :content
-  ALL = []
+#  attr_accessor :name, :content
 
-  def self.create(params)
-    post = Post.new
-    post.name = params[:name]
-    post.content = params[:content]
-    ALL << post
+#  def self.create(params)
+#    post = Post.new
+#    post.name = params[:name]
+#    post.content = params[:content]
     #binding.pry
-    post
-  end
-
-  def self.all
-    ALL
-  end
+#    post
+#  end
 
 end

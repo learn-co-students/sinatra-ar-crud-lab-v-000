@@ -20,7 +20,7 @@ class ApplicationController < Sinatra::Base
     @post = Post.create(params)
     @post.save
     @posts = Post.all
-    binding.pry
+    #binding.pry
     erb :index
   end
 
