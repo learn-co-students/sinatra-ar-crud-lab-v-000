@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Post Preview</title>
+  </head>
+  <body>
+    <% if !@posts %>
+      <h1>Post Preview</h1>
+      <h2><%= @post.name %></h2>
+      <p><%= @post.content %></p>
+    <% else %>
+      <h1>All Posts</h1>
+      <% @posts.each do |post| %>
+        <a href="/posts/<%= post.id %>"><h3><%= post.name %></h3></a>
+      <% end %>
+    <% end %>
+  </body>
+</html>
