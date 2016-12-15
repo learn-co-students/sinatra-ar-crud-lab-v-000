@@ -1,0 +1,10 @@
+<h1>A Blog Post</h1>
+<% @posts.all.each do |post| %>
+<div> 
+ <h3> <%= post.name %> </h3>  
+  <p><%= post.content %></p>
+</div>    
+<% end %>  
+
+<!-- Why is there a div there? How do I know when to use a div? -->
+<!-- Why is it @posts.all.each instead of @posts.each? isn't @posts set to 'all' in the controller? -->
