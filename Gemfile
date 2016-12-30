@@ -21,4 +21,5 @@ group :development do
   gem "shotgun"
   gem "tux"
   gem "capybara"
+  gem "rb-readline"
 end
