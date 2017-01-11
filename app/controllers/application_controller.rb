@@ -13,7 +13,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts/new' do
-    binding.pry
+    @posts = Post.new(name: params[:name], content: params[:content])
+    @post.save 
     erb :new
   end
 end
