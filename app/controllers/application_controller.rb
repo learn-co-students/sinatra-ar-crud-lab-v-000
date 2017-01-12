@@ -12,9 +12,22 @@ class ApplicationController < Sinatra::Base
 
   end
 
-  get '/posts/new' do
-    @posts = Post.new(name: params[:name], content: params[:content])
-    @post.save 
+  get '/posts/new' do #renders view page w/ form
     erb :new
+  end
+
+  post '/posts' do  #extracts the form data from the params and uses it to create a new instance of posts class
+    @post1 = Post.create(name: params[:name], content: params[:content])
+    erb :index
+  end
+
+  get '/posts' do #handles requests for all instances of a class
+    @posts = Post.all
+    erb :'posts/index'
+  end 
+
+  get '/posts/:id' do #handles request for a given instance
+    @post = Post.find(params[:id])
+    erb :show
   end
 end
