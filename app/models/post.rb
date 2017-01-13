@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  validates :name, :content, presence: true
   #attr_accessor :name, :content
 
   #POSTS = []
