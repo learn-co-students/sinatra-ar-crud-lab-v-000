@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  validates :name, :content, presence: true
+  #validates :name, :content, presence: true
   #attr_accessor :name, :content
 
   #POSTS = []
@@ -8,9 +8,9 @@ class Post < ActiveRecord::Base
   #  @name = name
   #  @content = content
   #  POSTS << self
-#  end 
+#  end
 
 #  def self.all
-#    POSTS 
-#  end 
+#    POSTS
+#  end
 end

@@ -30,4 +30,16 @@ class ApplicationController < Sinatra::Base
     @post = Post.find_by_id(params[:id])
     erb :'assignments/show'
   end
+
+  get '/posts/:id/edit' do
+  erb :edit
+  end
+
+  patch '/posts/:id' do
+
+  end
+
+  delete '/models/:id/delete' do
+    
+  end
 end
