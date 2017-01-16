@@ -12,13 +12,13 @@ class ApplicationController < Sinatra::Base
 
   end
 
-  get '/posts/new' do #renders view page w/ form
+  get '/posts/new' do #renders new view page w/ form
     erb :new
   end
 
-  post '/posts' do  #extracts the form data from the params and uses it to create a new instance of the posts class
-    @post1 = Post.create(name: params[:name], content: params[:content])
-    erb :index
+  post '/posts' do  #extracts the form data from the params and uses it to create a new instance of the post class
+    @posts = Post.create(name: params[:name], content: params[:content])
+    erb :'posts/index'
   end
 
   get '/posts' do #handles requests for all instances of a class
@@ -27,19 +27,29 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts/:id' do #handles request for a given instance
+    # binding.pry
     @post = Post.find_by_id(params[:id])
-    erb :'assignments/show'
+    erb :'posts/show'   #renders the @post object
   end
 
-  get '/posts/:id/edit' do
-  erb :edit
+  get '/posts/:id/edit' do #edits a single post, retrieves edit page
+    @post = Post.find_by_id(params[:id])
+    erb :edit
   end
 
-  patch '/posts/:id' do
-
+  patch '/posts/:id' do #finds the instance of the model to update, using the id from params, update and save that instance.
+    @post = Post.find_by_id(params[:id])
+    # <#Post: name: "DOgd", content: "I love fgos">
+    @post.update(name: params[:name], content: params[:content])
+    # <#Post : name: "Cats", contetenL "I hate cats">
+    @post.save
+    # persits that instance to the databse
+    erb :'/posts/show'
   end
 
-  delete '/models/:id/delete' do
-    
+  delete '/posts/:id/delete' do
+    @post = Post.find_by_id(params[:id])
+    @post.destroy
+    erb :deleted
   end
 end
