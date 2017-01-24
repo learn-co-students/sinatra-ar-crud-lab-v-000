@@ -24,7 +24,6 @@ class ApplicationController < Sinatra::Base
   # READ - all instances of model
   get '/posts' do
     @posts = Post.all
-    binding.pry
     erb :index
   end
 
