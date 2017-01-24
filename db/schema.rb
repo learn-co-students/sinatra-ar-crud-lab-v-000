@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20170123212517) do
 
   create_table "posts", force: :cascade do |t|
     t.string "name"
-    t.text   "content"
+    t.string "content"
   end
 
 end
