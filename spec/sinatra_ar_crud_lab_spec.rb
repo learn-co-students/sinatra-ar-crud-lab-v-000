@@ -138,12 +138,5 @@ describe "Blog Post App" do
       visit "/posts/#{@post2.id}"
       expect(find("#hidden", :visible => false).value).to eq("delete")
     end
-
-  end
-
-  
-
-
-
-    
+  end  
 end
