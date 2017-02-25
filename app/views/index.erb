@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+
+  <body>
+
+
+  <a href = "posts/new">Click here to create a new blog</a>
+
+  <div class = "posts">
+  <h1>Blog Posts</h1>
+    <%@posts.all.each do |p|%>
+      <a href = "posts/<%=p.id%>"<p><%=p.name%></p>
+      <p><%=p.content%></p>
+    <%end%>
+  </div>
+
+
+  </body>
+</html>
