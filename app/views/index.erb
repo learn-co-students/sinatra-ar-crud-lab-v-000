@@ -1,0 +1,11 @@
+<h1>All Posts</h1>
+<br><br>
+<% if (@posts != nil) && (@posts.length > 0) %>
+  <% @posts.each do |post| %>
+    <p><h2>Title: <%= post.name %></h2><br />
+    <%= post.content %></p>
+    <br />
+  <% end %>
+<% else %>
+  <h2>No posts here yet! Write some!</h2>
+<% end %>
