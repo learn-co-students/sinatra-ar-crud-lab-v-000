@@ -1,0 +1,7 @@
+<h1>Posts</h1>
+<ol>
+<%@posts.each do |post|%>
+<li><%=post.name%>: <%=post.content%> | <a href="/posts/<%=post.id%>">view</a> <a href="/posts/<%=post.id%>/edit">edit</a> </li>
+
+<%end%>
+</ol>
