@@ -8,8 +8,9 @@
 
   <form action="/posts/<%= @post.id %>" method="post">
     <input id="hidden" type="hidden" name="_method" value="patch">
-    <input type="text" name="name" value="<%= @post.name %>">
-    <input type="text" name="content" value="<%= @post.content %>">
+    Name: <br><input type="text" name="name" size="75" value="<%= @post.name %>"></input><br><br>
+    Content: <br><textarea type="text" name="content" rows="20" cols="75"><%= @post.content %></textarea><br>
+
     <input type="submit" value="submit">
   </form>
 
