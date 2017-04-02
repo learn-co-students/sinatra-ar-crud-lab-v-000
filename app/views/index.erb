@@ -1,0 +1,4 @@
+<% @posts.each do |post|%> <!--instructions want @posts here rather than Post.all tho spec doesn't check -->
+<%= post.name %>
+<%= post.content %>
+<%end%>
