@@ -1,0 +1,8 @@
+<% @posts.each do |list_post|  %>
+  <%= list_post.name %> <br>
+  <%= list_post.content %> <br>
+  <a href="/posts/<%= list_post.id %> ">Show</a>
+  <br>
+  <% end %>
+
+  <a href="/posts/new">New Post</a>
