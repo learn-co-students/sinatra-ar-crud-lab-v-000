@@ -28,8 +28,26 @@ class ApplicationController < Sinatra::Base
 
   get '/posts/:id' do
     @post = Post.find(params[:id])
-
-  erb :show
+    erb :show
   end
+
+  get '/posts/:id/edit' do
+    @post = Post.find(params[:id])
+
+    erb :edit
+  end
+
+  patch '/posts/:id' do
+    @post = Post.find(params[:id])
+    @post.update(name: params[:name],content: params[:content])
+    redirect '/posts/' + @post.id
+  end
+
+  delete '/posts/:id/delete' do
+    @post = Post.find(params[:id])
+    @post.destroy
+    erb :delete
+  end
+
 
 end
