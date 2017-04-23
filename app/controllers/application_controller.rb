@@ -1,5 +1,4 @@
 require_relative '../../config/environment'
-
 class ApplicationController < Sinatra::Base
 
   configure do
@@ -7,7 +6,20 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/' do 
-    
+  get '/posts/new' do
+    erb :new
   end
+
+  post '/posts' do
+  @p  = Post.create(name: params[:post],contemt: params[:content] )
+  redirect '/posts'
+  end
+
+get '/posts' do
+  @posts = Post.all
+  erb :index
+end
+
+
+
 end
