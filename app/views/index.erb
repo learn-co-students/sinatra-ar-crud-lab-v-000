@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>READ</title>
+  </head>
+  <body>
+    <% if Post.all.empty? %>
+      <h1>No posts to display</h1>
+    <% else %>
+      <% Post.all.each { |post| %>
+        <h2>Post Name: <%=post.name%></h2>
+        <h3>Post Content: <%=post.content%></h3>
+      <%}%>
+    <% end %>
+  </body>
+</html>
