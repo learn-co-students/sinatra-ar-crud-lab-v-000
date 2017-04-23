@@ -8,7 +8,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-
   end
 
   get '/posts/new' do
@@ -40,5 +39,13 @@ class ApplicationController < Sinatra::Base
     @id = params[:id]
     Post.find_by(id: @id).update(name: params[:post][:name], content: params[:post][:content])
     erb :show
+  end
+
+  delete '/posts/:id/delete' do
+    @id = params[:id]
+    post = Post.find_by(id: @id)
+    @name = post.name
+    post.destroy
+    erb :delete
   end
 end
