@@ -1,0 +1,8 @@
+<% if Post.all.empty? %>
+  <h1>No posts to display</h1>
+<% else %>
+  <% Post.all.each { |post| %>
+    <h2>Post Name: <%=post.name%></h2>
+    <h3>Post Content: <%=post.content%></h3>
+  <%}%>
+<% end %>

@@ -1,0 +1,8 @@
+<h2>Post Name: <%=Post.find_by(id: @id).name%></h2>
+<h3>Post Content: <%=Post.find_by(id: @id).content%></h3>
+
+<form action="/posts/<%=@id%>/delete" method="post">
+  <button type="submit" id="delete">Delete</button>
+  <!-- <input type="submit" id="delete" value="delete"> -->
+  <input id="hidden" type="hidden" name="_method" value="delete">
+</form>
