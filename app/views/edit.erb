@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Edit Post</title>
-  </head>
-  <body>
-    <form action="/posts/<%= @id %>" method="post">
-      <input id="hidden" type="hidden" name="_method" value="patch">
-      <label for="name">Name:</label><input type="text" id="name" name="post[name]" value="<%=Post.find_by(id: @id).name%>"><br>
-      <label for="content">Content:</label><br>
-      <textarea id="content" name="post[content]" rows="8" cols="80" value="<%=Post.find_by(id: @id).content%>"></textarea><br>
-      <button id="submit" type="submit">Submit</button>
-    </form>
-  </body>
-</html>
+<form action="/posts/<%= @id %>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <label for="name">Name:</label><input type="text" id="name" name="post[name]" value="<%=Post.find_by(id: @id).name%>"><br>
+  <label for="content">Content:</label><br>
+  <textarea id="content" name="post[content]" rows="8" cols="80"><%=Post.find_by(id: @id).content%></textarea><br>
+  <button id="submit" type="submit">Submit</button>
+</form>
