@@ -1,0 +1,6 @@
+<h2> Welcome to your blog </h2>
+<h4> Here are all of your blog posts. </h4>
+<% Post.all.each.with_index(1) do |p, index| %>
+  <h4> <%= index %>. <%= p.name %> </h4>
+  <p> <%= p.content %> </p>
+<% end %>
