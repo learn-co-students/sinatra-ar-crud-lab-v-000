@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Post</title>
+</head>
+<body>
+  <h2>Here are all your posts:</h2>
+  <%@posts.each do |post_data|%>
+  <p>Id: <%=post_data.id%></p>
+  <p>Name: <%=post_data.name%></p>
+  <p>Content: <%=post_data.content%></p>
+  <%end%>
+</body>
+</html>
