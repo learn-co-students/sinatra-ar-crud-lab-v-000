@@ -1,0 +1,9 @@
+<h1>All Blog Posts</h1>
+<ol>
+  <% @posts.each do |post| %>
+    <li>
+      Post Name: <%= post.name %><br>
+      Post Content: <%= post.content %><p>
+    </li>
+  <% end %>
+</ol>
