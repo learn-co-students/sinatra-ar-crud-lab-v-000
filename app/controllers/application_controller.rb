@@ -12,8 +12,8 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts' do
-    Post.create(name: params[:name], content: params[:content])
-    redirect to('/posts')
+    Post.create(params)
+    redirect to '/posts'
   end
 
   get '/posts' do
@@ -34,7 +34,7 @@ class ApplicationController < Sinatra::Base
   patch '/posts/:id' do
     post = Post.find(params[:id])
     post.update(name: params[:name], content: params[:content])
-    redirect to("/posts/#{params[:id]}")
+    redirect to "/posts/#{params[:id]}"
   end
 
   delete '/posts/:id/delete' do
