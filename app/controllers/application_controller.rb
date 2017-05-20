@@ -7,17 +7,17 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
   get '/' do
-
+     erb :index
   end
   get '/posts/:id' do
     #grab the post id, and set it equal to the post
   end
   get '/posts/new' do
-    erb :view
+    erb :new
   end
 
   post '/posts' do
-
+    erb :view
   end
 
   get '/posts'  do

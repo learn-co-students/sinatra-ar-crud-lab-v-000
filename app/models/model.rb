@@ -1,5 +1,5 @@
 #Placeholder for a model
 
-class ApplicationController::Post < ActiveRecord::Base
+class Post < ActiveRecord::Base
 
 end
