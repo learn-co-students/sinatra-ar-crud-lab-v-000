@@ -1,0 +1,10 @@
+Title: <%= @post.name %>
+Body: <%= @post.content %>
+
+
+ID: <%= @post.id %>
+
+<form action="/posts/<%= @post.id %>/delete" method="post">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" name="submit" value="delete">
+</form>
