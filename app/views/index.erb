@@ -6,6 +6,9 @@
     List all the posts</title>
   </head>
   <body>
-
+    <%@posts.each do |x| %>
+        <h1>Name: <%=x.name%></h1>
+          <h2>Content: <%=x.content%></h2>
+     <%end%>
   </body>
 </html>

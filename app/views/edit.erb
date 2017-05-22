@@ -5,9 +5,13 @@
     <title></title>
   </head>
   <body>
-    <form action="/models/<%= @model.id %>" method="post">
+    <form action="/posts/<%= @update_post.id %>" method="post">
         <input id="hidden" type="hidden" name="_method" value="patch">
-        <input type="text" ...>
+        <label for = "name">Name</label>
+        <input type = "text" name = "name" value = "<%=@update_post.name%>">
+        <label for="content">Content</label>
+        <input type="text" name="content" value="<%= @update_post.content %>">
+        <input type = "submit" value = "Edit" id = "submit">
     </form>
 
   </body>
