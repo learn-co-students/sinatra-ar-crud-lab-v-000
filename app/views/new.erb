@@ -5,14 +5,14 @@
     <title>Create a New Post</title>
   </head>
   <body>
-    <form action="/post" method="POST">
+    <form action="/posts" method="POST">
       <h1>Make your new post here!</h1>
 
-      <label for="post_name">Name:</label><br>
-      <input type="text" name="posts[][name]" id="post_name"><br>
-      <label for="post_content">Content:</label><br>
-      <input type="text" style="height:200px;" name="posts[][content]" id="post_content"><br>
-      <button type="sumbit" id="submit">submit</button>
+      <label for="name">Name:</label><br>
+      <input type="text" name="posts[][name]" id="name"><br>
+      <label for="content">Content:</label><br>
+      <textarea  name="posts[][content]" id="content" rows="8" cols="80"></textarea><br>
+      <input type="submit" name="submit" value="submit">
     </form>
   </body>
 </html>
