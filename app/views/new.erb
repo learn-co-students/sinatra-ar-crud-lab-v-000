@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Create a New Post</title>
+  </head>
+  <body>
+    <form action="/post" method="POST">
+      <h1>Make your new post here!</h1>
+
+      <label for="post_name">Name:</label><br>
+      <input type="text" name="posts[][name]" id="post_name"><br>
+      <label for="post_content">Content:</label><br>
+      <input type="text" style="height:200px;" name="posts[][content]" id="post_content"><br>
+      <button type="sumbit" id="submit">submit</button>
+    </form>
+  </body>
+</html>
