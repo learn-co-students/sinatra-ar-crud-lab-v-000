@@ -6,6 +6,10 @@
   </head>
   <body>
     <h1>Here is your post:</h1>
+    <form class="" action="/posts/<%=@id%>/delete" method="POST">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      <button type="submit" name="delete">delete</button>
+    </form>
     <h3>Name:</h3>
     <p><%=@post[:name]%></p>
     <h3>Content:</h3>
