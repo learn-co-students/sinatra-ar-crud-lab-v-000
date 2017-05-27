@@ -5,8 +5,11 @@
     <title>Index of Posts</title>
   </head>
   <body>
-    <h1>Here is your latest post:</h1>
-    <p><%=@post[:name]%></p>
-    <p><%=@post[:content]%></p>
+    <h1>Index of posts:</h1>
+    <%@posts.each_with_index do |post, i|%>
+      <h2><%="Post #{i + 1}:"%></h2>
+      <p>Name: <%=post[:name]%></p>
+      <p>Content: <%=post[:content]%></p>
+    <%end%>
   </body>
 </html>
