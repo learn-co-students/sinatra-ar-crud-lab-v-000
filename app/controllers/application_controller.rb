@@ -37,16 +37,17 @@ class ApplicationController < Sinatra::Base
   end
 
   patch '/posts/:id' do
-    puts "##################################"
-    hash = params[:posts][params[:id]]
-    name = hash[:name]
-    content = hash["content"]
-    puts "This is the name " + name
-    puts "This is the content " + content
-    puts "This is the PARAMS: #{params[:posts][params[:id]]}" #{}"  #[:posts][:id] #{params[:posts][params[:id]]}"
-    puts
-    puts "##################################"
-    @post = Post.find_by_id(params[:id]).update(:name => hash["name"], :content => hash["content"])
+    # This could be done simpler by simplifying the params in edit.erb.
+    # But, this was good practice for nested hashes
+    update_hash = params[:posts][params[:id]]
+    @post = Post.find_by_id(params[:id])
+    @post.update(update_hash) #:name => hash[:name], :content => hash[:content])
     erb :show
+  end
+
+  delete '/posts/:id/delete' do
+    @post_to_delete = Post.find_by_id(params[:id])
+    @post_to_delete.destroy
+    erb :deleted
   end
 end
