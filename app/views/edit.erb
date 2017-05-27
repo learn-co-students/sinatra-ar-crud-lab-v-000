@@ -5,12 +5,13 @@
     <title>Edit your post</title>
   </head>
   <body>
-    <form action="/" method="post">
+    <form action="/posts/<%=@post.id%>" method="post">
+      <input id="hidden" type="hidden" name="_method" value="patch">
       <h1>Please update your post:</h1>
       <label for="name">Name:</label><br>
-      <input type="text" name="posts[50][name]" id="name" value="<%=@post[:name]%>"><br>
+      <input type="text" name="posts[<%=@post.id%>][name]" id="name" value="<%=@post[:name]%>"><br>
       <label for="content">Content:</label><br>
-      <textarea  name="posts[50][content]" id="content" rows="8" cols="80"><%=@post[:content]%></textarea><br>
+      <textarea  name="posts[<%=@post.id%>][content]" id="content" rows="8" cols="80"><%=@post[:content]%></textarea><br>
       <input type="submit" name="submit" value="submit">
     </form>
   </body>

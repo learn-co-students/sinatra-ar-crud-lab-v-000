@@ -35,4 +35,18 @@ class ApplicationController < Sinatra::Base
     @post = Post.find_by_id(params[:id])
     erb :edit
   end
+
+  patch '/posts/:id' do
+    puts "##################################"
+    hash = params[:posts][params[:id]]
+    name = hash[:name]
+    content = hash["content"]
+    puts "This is the name " + name
+    puts "This is the content " + content
+    puts "This is the PARAMS: #{params[:posts][params[:id]]}" #{}"  #[:posts][:id] #{params[:posts][params[:id]]}"
+    puts
+    puts "##################################"
+    @post = Post.find_by_id(params[:id]).update(:name => hash["name"], :content => hash["content"])
+    erb :show
+  end
 end
