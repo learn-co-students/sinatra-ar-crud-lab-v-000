@@ -49,11 +49,13 @@ class ApplicationController < Sinatra::Base
     @post.update(name: params[:name], content: params[:content])
     erb :show
   end
+# END OF UPDATE ACTION
 
+# START OF DELETE ACTION
 	delete '/posts/:id/delete' do
 		@post = Post.find(params[:id])
 		@post.destroy
 		erb :delete
 	end
-
+# OBVIOUSLY THE END OF DELETE ACTION
 end
