@@ -17,8 +17,6 @@ class ApplicationController < Sinatra::Base
 
   post '/posts' do
     @post = Post.create(params)
-    # binding.pry
-    # redirect '/posts/#{@posts.id.to_sym}'
     erb :show
   end
 
@@ -38,7 +36,6 @@ class ApplicationController < Sinatra::Base
   end
 
   patch '/posts/:id' do
-    # binding.pry
     @post = Post.find(params[:id])
     Post.update(@post.id, name: params[:name], content: params[:content])
     redirect to("/posts/#{@post.id}")
