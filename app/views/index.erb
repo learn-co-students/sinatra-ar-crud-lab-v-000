@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+<%if @posts != nil%>
+<%@posts.each do |post|%>
+<h2><%=post.name%></h2><br><br>
+<%=post.content%><br><br>
+<%end%>
+<%end%>
+<form method="GET" action="/posts/new">
+	<input type="submit" value="New Post">
+</form>
+</body>
+</html>
