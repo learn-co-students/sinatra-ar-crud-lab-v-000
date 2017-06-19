@@ -46,5 +46,11 @@ patch '/posts/:id' do
 
 end
 
+delete '/posts/:id/delete' do
+  @deleted_post = Post.find(params[:id])
+  Post.delete(params[:id])
+  erb :delete
+end
+
 
 end#eoc
