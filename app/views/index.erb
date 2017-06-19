@@ -1,0 +1,16 @@
+<h1>Current Blogs </h1>
+
+
+<table>
+<tr> <th>Name</th> <th>Contents</th></tr>
+
+<% Post.all.each{ |post| %>
+                   <tr><td><%=post.name%> </td><td><%=post.content%></td></tr>
+              <%}%>
+  </table>
+
+
+<br><br><br>
+<form action="posts/new" method = "get">
+    <input type="submit" value="Mke a new post!" />
+</form>
