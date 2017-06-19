@@ -1,0 +1,8 @@
+<h1> Blog <%=@id%> </h1>
+
+<h5> <%=Post.find(@id).name%>   -- <%=Post.find(@id).content%> </h5>
+
+
+<form method = "get" action = "/">
+<input type = "submit" value = "Go Home">
+</form>

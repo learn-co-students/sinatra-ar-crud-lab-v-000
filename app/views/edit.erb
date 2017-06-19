@@ -1,0 +1,20 @@
+<h3> Edit your post. Click save to commit changes </h3>
+
+<form method = "post" action = '/posts/<%=@id%>'>
+
+<label for = "name">Name: </label>
+<input type = "text" name = "name" id = "name" value = "<%=Post.find(@id).name%>"> <br>
+
+<br>
+
+<label for "content">Content: </label>
+<input type = "text" name = "content" id = "content" value = "<%=Post.find(@id).content%>"> <br>
+
+
+
+
+
+
+<input id="hidden" type="hidden" name="_method" value="patch">
+<input type = "submit" name = "submit" value = "submit" id = "submit">
+</form>

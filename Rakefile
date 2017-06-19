@@ -9,3 +9,7 @@ require './app/controllers/application_controller'
 task :console do
   Pry.start
 end
+
+def reload!
+  require_all './app'
+  end
