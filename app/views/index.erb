@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+  </head>
+  <body>
+    <%if @posts != nil%>
+    <%@posts.each do |post|%>
+      <h1><%=post.name%></h1>
+      <br>
+      <p><%=post.content%></p>
+      <br>
+    <%end%>
+    <%end%>
+
+    <form method="GET" action="/posts/new">
+  	  <input type="submit" value="New Post" />
+    </form>
+
+  </body>
+</html>
