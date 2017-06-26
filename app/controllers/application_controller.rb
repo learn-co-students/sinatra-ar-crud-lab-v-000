@@ -11,7 +11,7 @@ class ApplicationController < Sinatra::Base
     "Dummy Page"
   end
 
-  get 'posts/new' do
+  get '/posts/new' do
     erb :new
   end
 
@@ -20,4 +20,17 @@ class ApplicationController < Sinatra::Base
     redirect to '/posts'
   end
 
+  get '/posts' do
+    @post= Post.all
+    erb :index
+  end
+
+  get '/posts/:id' do
+    @post = Post.find(params[:id])
+    erb :show
+  end
+
+  get '/posts/:id/edit' do
+    erb :update
+  end
 end
