@@ -7,7 +7,17 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/' do 
-    
+  get '/' do
+    "Dummy Page"
   end
+
+  get 'posts/new' do
+    erb :new
+  end
+
+  post '/posts' do
+    @post = Post.create(params)
+    redirect to '/posts'
+  end
+
 end
