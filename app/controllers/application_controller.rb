@@ -31,6 +31,19 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts/:id/edit' do
-    erb :update
+    @post = Post.find(params[:id])
+    erb :edit
+  end
+
+  patch '/posts/:id' do
+    @ogpost = Post.find(params[:id])
+    @ogpost.update(name: params[:name], content: params[:content])
+    redirect to '/posts/2'
+  end
+
+  delete '/posts/:id/delete' do
+    @post = Post.find(params[:id])
+    @post.delete
+    erb :delete
   end
 end
