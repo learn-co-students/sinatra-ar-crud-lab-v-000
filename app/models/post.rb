@@ -1,4 +1,4 @@
-class Post
+class Post < ActiveRecord::Base
   attr_accessor :name, :content
 
   POSTS = []
@@ -16,4 +16,5 @@ class Post
   def self.clear
     self.all.clear
   end
+  
 end
