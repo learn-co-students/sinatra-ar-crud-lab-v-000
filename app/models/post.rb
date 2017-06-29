@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
 
   POSTS = []
 
-  def initialize(name, content)
+  def initialize(name: 'tom', content: 'something')
     @name = name
     @content = content
     POSTS << self
@@ -16,5 +16,5 @@ class Post < ActiveRecord::Base
   def self.clear
     self.all.clear
   end
-  
+
 end
