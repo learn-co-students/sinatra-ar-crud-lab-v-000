@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Sinatra Blog Posts</title>
-  </head>
+<h2>All Posts</h2>
 
-  <body>
-    <h1>Index</h1>
-    <p> I love blogging </p>
-  </body>
-</html>
+<% @posts.each do |post| %>
+ <li>
+   <a href="/posts/<%= post.id %>"><%= post.name %></a> | <%= post.content %>
+ </li>
+<% end %>
+</ul>

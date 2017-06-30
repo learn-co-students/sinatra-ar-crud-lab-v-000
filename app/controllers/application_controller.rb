@@ -1,3 +1,4 @@
+require 'pry'
 require_relative '../../config/environment'
 require_relative '../../app/models/post.rb'
 
@@ -20,6 +21,36 @@ class ApplicationController < Sinatra::Base
     Post.create(name: params[:name], content: params[:content])
 
     erb :index
-    redirect to('/posts')
   end
+
+  get '/posts' do
+    @posts = Post.all
+
+    erb :index
+  end
+
+  get '/posts/:id' do
+    @post = Post.find(params[:id])
+
+    erb :show
+  end
+
+  get '/posts/:id/edit' do
+    @post = Post.find(params[:id])
+
+    erb :edit
+  end
+
+  patch '/posts/:id' do
+    @post = Post.find(params[:id])
+    @post.update(name: params[:name], content: params[:content])
+    redirect "/posts/#{params[:id]}"
+  end
+
+  delete '/posts/:id/delete' do
+    @post = Post.find(params[:id])
+    @post.destroy
+    erb :deleted
+  end
+
 end
