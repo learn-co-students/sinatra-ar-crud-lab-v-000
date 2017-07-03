@@ -1,0 +1,10 @@
+<h1>Blog Index</h1>
+<form action="/posts" method="POST">
+
+
+<% @post.each do |data|%>
+
+    <%= data.name%>
+    <%= data.content%>
+<% end%>
+
