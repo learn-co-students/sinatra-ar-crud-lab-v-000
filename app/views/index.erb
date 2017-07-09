@@ -1,4 +1,6 @@
+<!--Loop through @posts and display name and content  -->
+
 <% @posts.each do |post| %>
-     <h1>Blog Post: <%= post[:name] %><br></h1>
-     <p>Blog Content: <%= post[:content] %></p>
+     <p><li>Post Name: <%= post[:name] %></li></p>
+     <p>Post Content: <%= post[:content] %></p>
 <% end %>
