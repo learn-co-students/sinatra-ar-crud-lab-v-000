@@ -1,0 +1,12 @@
+<!-- Page showing a single blog post -->
+
+<h1>A blog post page </h1>
+<h2>Post Name: <%= @post[:name] %><br></h2>
+<p>Post Content: <%= @post[:content] %></p>
+
+<p>
+  <form method="post" action="/posts/<%=@post.id%>/delete">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      <input type="submit" value="delete">
+  </form>
+</p>
