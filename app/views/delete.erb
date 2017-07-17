@@ -1,0 +1,9 @@
+<h1><%= "#{@name}" %> was deleted</h1>
+<h1>Posts</h1>
+
+<% Post.all.each do |post| %>
+  <h2><p>
+    <a href="/posts/<%= post.id %>"><%= post.name %></a></p></h2>
+<% end %>
+
+<a href="/posts/new">Create a New Post</a>
