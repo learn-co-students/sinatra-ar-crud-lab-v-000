@@ -1,0 +1,8 @@
+<!-- should use erb to render the @post's name and content.-->
+<h1><%= @post.name %></h1>
+<p><%= @post.content %></p>
+<form method="POST" action="/posts/<%= @post.id %>/delete">
+<!--add a "delete button" to the show page.-->
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete post">
+</form>
