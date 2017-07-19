@@ -1,3 +1,4 @@
+<!--That view should use erb to iterate over @posts and render them on the page.-->
 <% @posts.each do |post| %>
 <h1><a href="/posts/<%= post.id %>"><%= post.name %></a></h1>
 <p><%= post.content %></p>

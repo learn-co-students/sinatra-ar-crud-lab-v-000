@@ -8,37 +8,42 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/' do
+#Create the get '/posts' controller action.
+  get '/posts' do
+#use Active Record to grab all of the posts and store them in an instance variable, @posts.
     @posts = Post.all
+#render the index.erb view.
     erb :index
   end
 
-  get "/posts" do
-    @posts = Post.all
-    erb :index
-  end
-
-  get "/posts/new" do
+#create a route in your controller, get '/posts/new', that renders the new.erb view.
+  get '/posts/new' do
     erb :new
   end
 
-  get "/posts/:id" do
+#Create the get '/posts/:id' controller action.
+  get '/posts/:id' do
+#This action should use Active Record to grab the post with the id that is in the params and set it equal to @post.
     @post = Post.find(params[:id])
+#render the show.erb view page.
     erb :show
   end
 
-  get "/posts/:id/edit" do
+#Create a controller action, get '/posts/:id/edit'
+  get '/posts/:id/edit' do
     @post = Post.find(params[:id])
+#renders the view, edit.erb
     erb :edit
   end
 
-  post "/posts" do
+  post '/posts' do
     Post.create(params)
     @posts = Post.all
     erb :index
   end
 
-  patch "/posts/:id" do
+#controller action, patch '/posts/:id'
+  patch '/posts/:id' do
     @post = Post.find(params[:id])
     @post.name = params[:name]
     @post.content = params[:content]
@@ -46,10 +51,10 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
-  delete "/posts/:id/delete" do
+#delete controller action, delete '/posts/:id/delete'
+  delete '/posts/:id/delete' do
     @post = Post.find(params[:id])
     @post.destroy
     erb :delete
-    #redirect to("/posts")
   end
 end

@@ -1,3 +1,4 @@
+#Post model. Make sure the class inherits from ActiveRecord::Base
 class Post < ActiveRecord::Base
   def self.create_table
     sql = <<-SQL
