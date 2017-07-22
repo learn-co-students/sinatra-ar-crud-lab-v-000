@@ -1,13 +1,8 @@
-require_relative '../../config/environment'
-
-class ApplicationController < Sinatra::Base
-
+require './config/environment'
+class Post < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
   end
 
-  get '/' do 
-    
-  end
 end
