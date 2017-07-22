@@ -1,7 +1,7 @@
 <p><%= @post.name %></p>
 <p><%= @post.content %></p>
-
-<form class="" action="posts/:id/delete" method="post">
+#http://138.197.199.78:30023/posts/posts/:id/delete
+<form class="" action="<%=@post.id%>/delete" method="post">
   <input id="hidden"
          type="hidden"
          name="_method"
@@ -9,3 +9,8 @@
   <input type="submit"
          value="delete">
 </form>
+
+<!-- <form method="post" action="/posts/<%=@post.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+
+  <input type="submit" value="delete"> -->
