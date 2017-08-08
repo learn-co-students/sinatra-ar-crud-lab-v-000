@@ -1,0 +1,5 @@
+<% @posts.each.with_index(1) do |post, index| %>
+<h4><%= "#{index}." %></h4>
+<p>Name: <%= post.name %></p>
+<p>Content: <%= post.content %></p>
+<% end %>
