@@ -18,13 +18,20 @@ class ApplicationController < Sinatra::Base
 
   post '/posts' do
     @post = Post.create(name: params[:name], content: params[:content])
-    binding.pry
     redirect to '/posts'
   end
 
   get '/posts' do
+    @posts = Post.all
     erb :index
   end
+
+  get 'posts/:id' do # This will load the show page
+    @post = Post.find_by_id(params[:id])
+    binding.pry
+    erb :show
+  end
+
 
 
 end
