@@ -9,8 +9,9 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-
+    erb :root
   end
+
 #This is the C -(create) in the CRUD
 #This is where the view that provides the form for the user's input
   get '/posts/new' do
@@ -30,15 +31,16 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
+  #now I need to find a post and show it
+  get '/posts/:id' do
+    @post = Post.find(params[:id]) # This works!  Not getting to show.erb
+    erb :show
+  end
 
-
-  #get 'posts/:id' do # This will load the show page
-  #  @post = Post.find_by_id(params[:id])
-  #  binding.pry
-  #  erb :show
-  #end
-
-
+  get '/posts/:id/edit' do
+    
+    erb :edit
+  end
 
 end
 
