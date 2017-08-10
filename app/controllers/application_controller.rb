@@ -42,6 +42,20 @@ class ApplicationController < Sinatra::Base
     erb :edit
   end
 
+# We now need to build a patch method (this modifies something)
+  patch '/posts/:id' do
+
+# We find the post and assign it an instance variable
+    @post = Post.find(params[:id])
+# We give it a new name and content (or what ever attribute)
+    @post.name =    params[:name]
+    @post.content = params[:content]
+# Save chagnes 
+    @post.save
+
+    erb :show
+  end
+
 end
 
 # put '/' do *** Replace something ***
