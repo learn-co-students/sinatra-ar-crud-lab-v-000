@@ -50,10 +50,17 @@ class ApplicationController < Sinatra::Base
 # We give it a new name and content (or what ever attribute)
     @post.name =    params[:name]
     @post.content = params[:content]
-# Save chagnes 
+# Save chagnes
     @post.save
 
     erb :show
+  end
+
+# Now we want to delete
+  delete '/posts/:id/delete' do
+    @post = Post.find(params[:id])
+    @post.delete
+    erb :deleted
   end
 
 end
