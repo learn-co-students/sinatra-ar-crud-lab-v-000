@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>All Posts</h1>
+ <% @all_posts.each do |post| %>
+ 	<h2>Name: <%= post.name %></h2>
+ 	<p><%= post.content %></p><br>
+ 	<% end %>
+
+ <a href='/posts/new'>New Post</a>
+  </body>
+</html>
