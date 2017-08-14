@@ -1,0 +1,14 @@
+<h2>Existing Post</h2>
+<ul>
+  <li>Name:<%= Post.find(params[:id]).name %></li>
+  <li>Content:<%= Post.find(params[:id]).content %></li>
+</ul>
+
+
+<form method="POST" action='/posts/<%=params[:id]%>'>
+  <% #binding.pry %>
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <p>Enter new name:<input type="text" id="name" name="name"></p>
+  <p>Enter new content:<input type="text" id="content" name="content"></p>
+  <input type="submit" id="submit">
+</form>
