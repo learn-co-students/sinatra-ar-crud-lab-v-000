@@ -1,0 +1,6 @@
+<% @posts.all.each_with_index do |post, i| %>
+  <p><%= i + 1 %>. <%= post.name %></p>
+  <p><%= post.content %></p>
+  <hr />
+<% end %>
+    
