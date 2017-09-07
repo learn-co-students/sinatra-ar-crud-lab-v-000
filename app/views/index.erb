@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Let's See Our Posts !</title>
+</head>
+<body>
+<%@posts.all.each do |p|%>
+ <h2>Name: <%=p.name%></h2>
+  <p>Content: <%=p.content%></p>
+  <%end%>
+
+ 
+</body>
+</html>
