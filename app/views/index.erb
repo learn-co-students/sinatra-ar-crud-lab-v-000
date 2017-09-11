@@ -1,0 +1,7 @@
+<ul>
+	<% Post.all.each do |p| %>
+		<li><%= p.name %></li>
+		<li><%= p.content %></li>
+		<li><%= p.id  %></li>
+	<% end %>
+</ul>
