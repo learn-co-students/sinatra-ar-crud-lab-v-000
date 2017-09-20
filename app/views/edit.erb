@@ -1,0 +1,18 @@
+<h1>Edit your post:</h1>
+
+<!--<h2>Current content:</h2>
+<h3><%= @post.name %></h3>
+<p>
+  <%= @post.content %>
+</p>-->
+
+<form action="/posts/<%= @post.id %>" method="post" >
+  <input id="hidden" type="hidden" name="_method" value="patch" />
+  <label for="name">Name</label>
+  <input name="name" type="text" id="name" value="<%= @post.name %>"/>
+  <label for="content">Content</label>
+  <input name="content" type="text" id="content" value="<%= @post.content %>"/>
+  <button value="submit">Update</button>
+</form>
+
+<a href="/posts">Back to all posts</a>
