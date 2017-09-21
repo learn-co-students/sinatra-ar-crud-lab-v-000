@@ -1,0 +1,22 @@
+
+  <h1>Edit Your Post Here</h1>
+
+  <form method='POST' action="/posts/<%= @post.id %>">
+    <input id='hidden' type='hidden' name='_method' value='patch'>
+
+    <p>
+      <label for='name_change'>Title: </label>
+      <!-- value displays the current info in text box -->
+      <input type='text' value="<%= @post.name %>" name='name' id='name'>
+    </p>
+
+    <p>
+      <label for='content_change'>Content: </label>
+      <input type="text" value="<%=@post.content%>" name="content">
+    </p>
+
+    <!-- this way works too -->
+    <!-- <input type="submit" id="submit"> -->
+    <button type='submit' value='submit'>Submit</button>
+
+  </form>
