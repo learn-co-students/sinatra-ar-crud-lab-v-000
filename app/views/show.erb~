@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <!-- <title>Title: <%= @post.name %></title> -->
+    <h1><%= @post.name %></h1>
+
+  </head>
+
+  <body>
+    <h3>Content</h3>
+
+    <p><%= @post.content %></p>
+
+    <!-- this renders a delete button on the show page, allows the user to  -->
+      <!-- delete the post -->
+
+    <!-- can't have any additional spaces outside the <%= %> tags changes url -->
+    <form method='POST' action="/posts/<%= @post.id %>/delete">
+
+      <input id='hidden' type='hidden' name='_method' value='delete'>
+
+      <!-- <input type="submit" value="delete"> -->
+      <button type='submit' value='delete'>Delete</button>
+    </form>
+</body>
+
+</html>
