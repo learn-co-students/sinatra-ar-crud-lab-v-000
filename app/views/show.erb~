@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <!-- <title>Title: <%= @post.name %></title> -->
     <h1><%= @post.name %></h1>
+
   </head>
 
   <body>
@@ -21,5 +23,6 @@
       <!-- <input type="submit" value="delete"> -->
       <button type='submit' value='delete'>Delete</button>
     </form>
-  </body>
+</body>
+
 </html>

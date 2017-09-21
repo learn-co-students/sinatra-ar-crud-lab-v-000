@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html>
+
   <head>
+    <!-- the title tags place content in a werid pos -->
+    <!-- <title>Posts</title> -->
     <h1>Posts</h1>
+
   </head>
 
   <body>
+
     <% @posts.each do |post| %>
       <h3>Title: <%= post.name%></h3>
       <p>Content: <%= post.content %></p>
     <% end %>
+
   </body>
 </html>
+
+<!-- Post.all.each do |post|
+post.name
+post.content
+end -->
