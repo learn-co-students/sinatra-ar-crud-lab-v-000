@@ -1,0 +1,11 @@
+<h1>All Posts</h1>
+<div class="container">
+	<% Post.all.each do |post|%>
+		<%next if post.name.nil?%>
+		<div>
+			<h3><%=post.name%></h3>
+			<p><%=post.content.gsub(/\n/, '<br>')%></p>
+			<br>
+		</div>
+	<%end%>
+</div>
