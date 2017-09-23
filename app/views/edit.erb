@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+    textarea {
+      width: 300px;
+      height: 300px;
+    }
+    </style>
+    <title>Edit a Post</title>
+  </head>
+  <body>
+
+    <h1>Please Edit Your Post</h1>
+
+    <form action="/posts/<%= @post.id %>" method="POST">
+
+      <input id="hidden" type="hidden" name="_method" value="patch">
+      <label for="name">Name of the Post: </label>
+      <input id="name" type="text" name="name" value="<%= @post.name %>"><br><br>
+      <label for="content">Content of the Post: </label><br>
+      <textarea name="content"><%= @post.content %></textarea>
+
+      <p><input type="submit" value="submit"></p>
+
+    </form>
+
+  </body>
+</html>
