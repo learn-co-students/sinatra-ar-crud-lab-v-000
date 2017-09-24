@@ -1,0 +1,8 @@
+<h1>This is the Index page</h1>
+
+<ul>
+<% @post.each do |p| %>
+    <li><h2><%= p.name %></h2></li>
+    <li><%= p.content %></li>
+<% end %>
+</ul>
