@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>New</title>
+  </head>
+  <body>
+    <h1>Add a New Post Here</h1>
+
+    <form method="post" action="/posts">
+      <p>Enter your blog post information:</p>
+      <textarea name="name">Name: </textarea>
+      <textarea name="content">Content: </textarea>
+      <br>
+      <button type="submit" value="submit">Submit</button>
+    </form>
+
+    <h2>Post Name: <%=@post.name%></h2>
+    <p>Post Content: <%=@post.content%></p>
+
+    <form method="post" action="/posts/<%= @post.id %>/delete">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      <input type="submit" value="delete">
+    </form>
+
+  </body>
+</html>
