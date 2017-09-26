@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Blogged</title>
+  </head>
+  <body>
+    <h2><%= @post.name %></h2>
+    <p><%= @post.content %></p>
+    <form action="/posts/<%=@id%>/delete" method="post">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      <input value="delete" type="submit">
+    </form>
+  </body>
+</html>
