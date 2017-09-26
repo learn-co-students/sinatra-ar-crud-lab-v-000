@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Post by ID</title>
+</head>
+  <body>
+    <h1><label>Your Post: Found by ID</label></h1>
+    <div>
+      <p>Post ID: <%= @post.id %></p>
+      <p>Post Name: <%= @post.name %></p>
+      <p>Post Content: <%= @post.content %></p>
+    </div>
+    <div>
+      <form method="post" action="/posts/<%= @post.id %>/delete">
+        <input id="hidden" type="hidden" name="_method" value="delete">
+        <input type="submit" value="delete">
+      </form>
+    </div>
+  </body>
+</html>
