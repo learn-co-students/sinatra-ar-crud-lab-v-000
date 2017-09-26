@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Posts</title>
+</head>
+<body>
+
+<h1>All Your Posts</h1>
+  <% @posts.each do |x| %>
+  <h2><%= x.id.to_s + ". " + x.name %></h2><br>
+  <h5><%= x.content %></h5><br>
+  <% end %>
+
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Edit Page</title>
+</head>
+<body>
+
+<h1>Edit Post <%= @id.to_s %></h1>
+
+<h1>Post <%=@post_id%>: </h1>
+
+<h2><%= @post.name %></h2><br>
+<h5><%= @post.content %></h5>
+
+<form action="/posts/<%= @post_id %>" method="post">
+<input id="hidden" type="hidden" name="_method" value="patch">
+<label>Name: <input type="text" name="post[name]" id="name"</label><br>
+  <br>
+  <label>Content: <textarea name="post[content]" id="content"></textarea><br>
+    <br>
+    <button type="submit" name="submit">submit</button>
+</form>
+
+</body>
+</html>
+Try it yourself »
