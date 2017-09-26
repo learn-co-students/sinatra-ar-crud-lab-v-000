@@ -1,0 +1,14 @@
+#use erb to render the @post's title and content
+
+<h1>Post</h1>
+	<p>Name: <%= @post.name %></p>
+	<p>Content: <%= @post.content %></p>
+
+#form to delete
+<form method="post" action="/posts/<%=@post.id%>/delete">
+	<input id="hidden" type="hidden" name="_method" value="delete">
+	<input type="submit" value="delete">
+</form>
+
+<h2><%=@post.name %> was deleted</h2>
+
