@@ -16,21 +16,23 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts' do
-    Post.create(:name => params[:name], :content => params[:content])
+
+    Post.create(params)
+  # Post.create(:name => params[:name], :content => params[:content])
     redirect '/posts'
   end
 
-  get '/posts' do
+  get '/posts' do #loads index page
     @posts = Post.all
     erb :index
   end
 
   get '/posts/:id' do
     @found_post = Post.find(params[:id])
-    erb :action
+    erb :show
   end
 
-  get '/posts/:id/edit' do
+  get '/posts/:id/edit' do #loads edit form
     @found_post = Post.find(params[:id])
     erb :edit
   end
@@ -46,9 +48,6 @@ class ApplicationController < Sinatra::Base
     @post_to_be_deleted.destroy
     erb :delete
   end
-
-
-
 
 end
 
