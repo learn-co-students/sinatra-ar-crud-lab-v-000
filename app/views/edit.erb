@@ -1,0 +1,12 @@
+<h3>Here's the original post:</h3>
+<p>Post Name: <%=@post.name%></p>
+<p>Post Content: <%=@post.content%></p>
+
+<form action="/posts/<%= @id %>", method="POST">
+<input id="hidden" type="hidden" name="_method" value="patch">
+<label for="name">Update Post Name:</label>
+<p><input type="text" id="name" name="name" /></p>
+<label for="content">Update Post Content:</label>
+<p><textarea name="content" rows="10" cols="30">Enter content here</textarea></p>
+<input type="submit" value="Submit" id="submit" />
+</form>
