@@ -1,0 +1,19 @@
+<style>
+  body {
+    text-align : center;
+    margin-top: 15%;
+    font-family: helvetica;
+  }
+</style>
+
+<h1><%= Post.find(@id).name %></h1>
+<p><%= Post.find(@id).content %></p>
+
+<form action="/posts/<%= @id %>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <label> New Title of Post</label><br>
+  <input type="text" name="name"><br>
+  <label> New Content of Post</label><br>
+  <input type="text" name="content"><br>
+  <input type="submit" value="submit">
+</form>

@@ -1,0 +1,19 @@
+<style>
+  body {
+    text-align : center;
+    margin-top: 15%;
+    font-family: helvetica;
+  }
+  textarea  {
+    width: 500px;
+    height: 200px;
+  }
+</style>
+
+<form method=POST action="/posts">
+  <label> Title of Post</label><br>
+  <input type="text" id="name" name="name"><br>
+  <label> Blog Post Content</label><br>
+  <input type="text" id="content" name="content"><br>
+  <button type="submit" value="submit">Submit</button>
+</form>
