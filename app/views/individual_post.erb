@@ -1,0 +1,19 @@
+<style>
+  body {
+    font-family: helvetica;
+  }
+</style>
+
+
+  <h1>Here are all your Blog Entries.</h1><br>
+
+  <% new_post = Post.find(@id) %>
+      <h2><%= "#{new_post.name}" %></h2>
+      <p><%= "#{new_post.content}" %></p>
+      <form action="/posts/<%= @id %>/delete" method="post">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      <input type="submit" value="delete">
+      </form>
+      <form action="/posts/<%= @id %>/edit" method="get">
+      <input type="submit" value="edit"></input>
+      </form>

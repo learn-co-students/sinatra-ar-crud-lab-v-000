@@ -1,0 +1,23 @@
+<style>
+  body {
+    font-family: helvetica;
+  }
+</style>
+
+
+  <h1>blog blog blog blog blog</h1><br>
+
+  <% Post.all.each do |post| %>
+      <a href = "/posts/<%= post.id%>"><%= post.name%></a><br>
+  <% end %>
+  <br>
+  <br>
+
+  <form action="/posts/new" method="get">
+  <input type="submit" value="Add Post"></input>
+  </form>
+
+  <form action="/posts/delete-all" method="post">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="Remove All Posts">
+  </form>
