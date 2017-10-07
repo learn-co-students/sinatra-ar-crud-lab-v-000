@@ -1,0 +1,9 @@
+<head>
+  <title>Index</title>
+</head>
+<body>
+  <% @posts.each do |post| %>
+  <%= post.name %><br>
+  <% post.content %>
+  <% end %>
+</body>
