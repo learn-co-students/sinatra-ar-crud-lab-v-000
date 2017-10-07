@@ -6,7 +6,7 @@
   </head>
   <body>
 
-<% @posts.each do |post| %>
+<% @posts.all.each do |post| %>
     <h2><%= post.name %></h2>
     <p><%= post.content %></p>
   <br>
