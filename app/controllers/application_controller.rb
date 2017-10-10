@@ -8,49 +8,49 @@ class ApplicationController < Sinatra::Base
   end
 
 #CREATE
-  get '/posts/new' do
+  get '/posts/new' do #displays form to create a new object
     erb :new
   end
 
-  post '/posts' do
+  post '/posts' do #creates a new object from user's input in form
     # @post = Post.create(params)
     @post = Post.create(name: params[:name], content: params[:content])
 
-    redirect to '/posts'
+    redirect to '/posts' #redirects user to where they can see all posts.
   end
 
 #READ
-  get '/posts' do
+  get '/posts' do #displays ALL posts.
     @posts = Post.all
     erb :index
   end
 
-  get '/posts/:id' do
+  get '/posts/:id' do #displays a particular post
     @post = Post.find(params[:id])
-    erb :show
+    erb :show #displays post and a delete button
   end
 
   #UPDATE
-  get '/posts/:id/edit' do
+  get '/posts/:id/edit' do #displays form for user to update
     @post = Post.find(params[:id])
     erb :edit
   end
 
-  patch '/posts/:id' do
+  patch '/posts/:id' do #finds the post being updated and updates the info
     @post = Post.find(params[:id])
     # @post.name = params[:name]
     # @post.content = params[:content]
     # @post.save
     @post.update(name: params[:name], content: params[:content])
-    erb :show
+    erb :show #displays updated content
   end
 
 #DELETE
-  delete '/posts/:id/delete' do
+  delete '/posts/:id/delete' do #If user pushes delete button, this will find and delete that post from database.
     @post = Post.find(params[:id])
     @post.delete
 
-    erb :delete
+    erb :delete #Confirmation that post has been deleted.
   end
 
 end
