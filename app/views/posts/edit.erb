@@ -1,0 +1,15 @@
+
+
+  <h2>Entry Editor Form</h2>
+
+  <form class="" action="/posts/<%= @post.id %>" method="post">
+    <input type="hidden" id="hidden" name="_method" value="patch">
+    <p><label for="name">Name:</label></p>
+<input type="text" name="name" value="<%= @post.name %>" id="name">
+    <p><label for="content">Content:</label></p>
+    <input type="text" name="content" value="<%=@post.content%>" maxlength='50' size="25" id="content" >
+
+    <p>
+    <input type="submit" name="submit" id="submit">
+    </p>
+  </form>
