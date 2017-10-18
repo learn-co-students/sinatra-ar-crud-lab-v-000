@@ -1,0 +1,7 @@
+
+    <% Post.all.each do |obj| %>
+    <p> No. <%= obj.id %> </p>
+    <p> Name: <%=obj.name %> </p>
+    <p> Content: <%=obj.content %> </p>
+    <br>
+    <% end %>
