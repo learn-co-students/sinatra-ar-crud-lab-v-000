@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
   # POST to posts, create new Post object from params, display index
   post '/posts' do
     @post = Post.create(params)
-    redirect to '/posts'
+    erb :show
   end
 
   ### READ ###
@@ -49,7 +49,7 @@ class ApplicationController < Sinatra::Base
     @post.name = params[:name]
     @post.content = params[:content]
     @post.save
-    redirect "/posts/#{@post.id}"
+    erb :show
   end
 
   ### DELETE ###
