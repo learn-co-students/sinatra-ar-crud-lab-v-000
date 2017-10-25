@@ -15,7 +15,7 @@ class ApplicationController < Sinatra::Base
     erb :new
   end
 
-  # POST to posts, create new Post object from params, display index
+  # POST to posts, create new Post object from params, display show page
   post '/posts' do
     @post = Post.create(params)
     erb :show
