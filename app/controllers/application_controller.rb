@@ -7,7 +7,28 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/' do 
-    
+  get '/' do
+
+    erb :homepage
+  end
+
+  get '/posts/new' do
+
+    erb :new
+  end
+
+  get '/posts' do
+    @posts = Post.all
+    erb :index
+  end
+
+  get 'posts/:id' do
+    @post = Post.find_by(:id)
+    erb :show
+  end
+
+  post "/posts" do
+
+    redirect to 'posts/#{}'
   end
 end
