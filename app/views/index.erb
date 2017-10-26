@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Index Page</title>
+</head>
+<body>
+  <h1>Welcome to the index page</h1>
+  <p><a href="/posts/new">Click here to create a new post</a></p>
+
+  <h2>Posts!</h2>
+  <% @posts.each do |post| %>
+  <p><a href ="/posts/<%=post.id%>"><%=post.name%></a></p>
+  <p> <%= post.content %></p>
+  <% end %> 
+
+
+</body>
+</html>
+
