@@ -1,0 +1,7 @@
+<h1>Here are all your posts:</h1>
+<% @posts.each do |post| %>
+  <ul>
+    <li><%= post.name %></li>
+    <li><%= post.content %></li>
+  </ul>
+<% end %>
