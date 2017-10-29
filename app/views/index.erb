@@ -1,5 +1,5 @@
-
-<h1><%= @post.name%></h1>
-<p>
-  <%= @post.content%>
-</p>
+<% @posts.each do |post| %>
+<h1> <%=  post.name  %></h1>
+ <p><%=  post.content  %></p>
+ <br />
+<% end %>
