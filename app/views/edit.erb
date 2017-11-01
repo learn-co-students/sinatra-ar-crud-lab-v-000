@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<%#Contains form to update a specific post and post it%>
+<html>
+  <head>
+    <title>Update Post</title>
+  </head>
+  <body>
+    <h1> Update Post </h1>
+    <form action="/posts/<%=@post.id%>" method="post">
+    <h3>Current Name: <%=@post.name%></h3>
+    <h3> New Name: </h3><input type="text" name="name">
+
+    <h3>Current Post: <%=@post.content%></h3>
+    <h3> New Post: </h3><input type="text" name="content">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+  </br>
+    <input type="submit" value="submit">
+  </form>
+  </body>
+</html>

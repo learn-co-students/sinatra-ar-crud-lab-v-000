@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<%#Renders a view of ALL posts%>
+<html>
+  <head>
+    <title>Post Collection</title>
+  </head>
+  <body>
+    <h1> The Post Collection </h1>
+    <%@posts.each_with_index do |post, i|%>
+    <h3><%=i+1%>. <%= post.name%></h3>
+    <p><%= post.content%></p>
+    <%end%>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<%#Will show and indiv post!%>
+<html>
+  <head>
+    <title>Blog Post</title>
+  </head>
+  <body>
+    <h1><%=@post.name%></h1>
+      <p><%=@post.content%></p>
+
+    <form>
+      <form method="post" action="/posts/<%= @post.id %>/delete">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      <input type="submit" value="delete">
+    </form>
+  </body>
+</html>
