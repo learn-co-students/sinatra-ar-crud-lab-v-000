@@ -1,0 +1,8 @@
+binding.pry
+
+<form method="post" action="/posts/<%=@post.id%>">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <input type="text" id="name" name="post[name]" value="<%=@post.name%>">
+  <input type="text" id="content" name="post[content]" value="<%=@post.content%>">
+  <input type="submit" id="submit">
+</form>
