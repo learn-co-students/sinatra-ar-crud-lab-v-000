@@ -16,13 +16,11 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts' do
-    post = Post.create({name: params[:name], content: params[:content]})
-    @posts = Post.all
+    Post.create({name: params[:name], content: params[:content]})
     erb :index
   end
 
   get '/posts' do
-    @posts = Post.all
     erb :index
   end
 
@@ -44,7 +42,7 @@ class ApplicationController < Sinatra::Base
 
   delete '/posts/:id/delete' do
     @post = Post.find(params[:id])
-    Post.delete(params[:id])
+    @post.delete
     erb :delete
   end
 

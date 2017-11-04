@@ -1,4 +1,4 @@
-<% @posts.each do |post| %>
+<% Post.all.each do |post| %>
   <p><%= post.name %><br>
   <%= post.content %></p>
 <% end %>
