@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Blog Posts</title>
+ </head>
+ <body>
+   <h1>Blog Posts:</h1>
+   <h2><%= @posts.each {|p| "#{p[:name]}#{p[:content]}"} %> </h2>
+
+ </body>
+</html>
