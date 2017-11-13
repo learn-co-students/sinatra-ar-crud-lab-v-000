@@ -2,11 +2,13 @@ require_relative '../../config/environment'
 
 class ApplicationController < Sinatra::Base
 
-    set :method_override, true
-
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
+  end
+
+  get '/' do
+
   end
 
   get '/posts/new' do
@@ -33,7 +35,7 @@ class ApplicationController < Sinatra::Base
     erb :edit
   end
 
-  post '/posts/:id' do
+  patch '/posts/:id' do
     @post = Post.find_by_id(params[:id])
     @post.name = params[:name]
     @post.content = params[:content]
@@ -42,7 +44,7 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
-  post '/posts/:id/delete' do
+  delete '/posts/:id/delete' do
     @post = Post.find_by_id(params[:id])
     @post.delete
     erb :delete
