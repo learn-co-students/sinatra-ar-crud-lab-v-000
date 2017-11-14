@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Post</title>
+  </head>
+  <body>
+    <%Post.all.each do |post|%>
+    <div>
+      <%=post.name %>
+      <%=post.content%>
+  </div>
+    <%end%>
+
+  </body>
+</html>
