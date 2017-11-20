@@ -1,0 +1,4 @@
+<h1> Post List </h1>
+<% @posts.each.with_index(1) do |post, i| %>
+<p><%= i %>. <%= post.name %></p>
+<% end %>
