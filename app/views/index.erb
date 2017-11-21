@@ -4,6 +4,7 @@
 
 <b><%= p.name %></b><br>
 <%= p.content %>
-<form action="/posts/<%= p.id %>/delete"><input type="submit" value="delete"></form>
+<br><a href="/posts/<%= p.id %>/edit">Edit</a><br>
+<form action="/posts/<%= p.id %>/delete" method="post"><input id="hidden" type="hidden" name="_method" value="delete"><input type="submit" value="delete"></form>
 
 <% } %>
