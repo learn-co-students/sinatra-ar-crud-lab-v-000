@@ -1,0 +1,10 @@
+<h1>My Blog Posts!</h1>
+
+<% @posts.each{|p| %>
+
+<b><%= p.name %></b><br>
+<%= p.content %>
+<br><a href="/posts/<%= p.id %>/edit">Edit</a><br>
+<form action="/posts/<%= p.id %>/delete" method="post"><input id="hidden" type="hidden" name="_method" value="delete"><input type="submit" value="delete"></form>
+
+<% } %>
