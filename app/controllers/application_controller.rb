@@ -7,12 +7,16 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-    get '/' do
-
-    end\
+# post
+# name
+# contents
+  get '/' do
+    "Hello World"
+  end
 
 #loads the new form
     get '/posts/new' do
+
         erb :new
     end
 
@@ -20,7 +24,7 @@ class ApplicationController < Sinatra::Base
    post '/posts' do
     #use AR to grab post with the id in the params, set equal to @post
         @post = Post.create(params)
-        # redirect to '/posts'??
+        redirect to '/posts'
         erb :show # shows an individual post
     end
 
