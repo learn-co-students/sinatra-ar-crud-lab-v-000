@@ -9,29 +9,52 @@ class ApplicationController < Sinatra::Base
 
     get '/' do
 
-    end
-#create blog post and save to database
+    end\
+
+#loads the new form
     get '/posts/new' do
-
-      erb :new
+        erb :new
     end
-#show
-   get '/posts/:id'
-    #use AR to grab post with the id in the params, set equal to @post
-    @post =
 
-    erb :show # shows an individual post
+#show
+   post '/posts' do
+    #use AR to grab post with the id in the params, set equal to @post
+        @post = Post.create(params)
+        # redirect to '/posts'??
+        erb :show # shows an individual post
     end
 
 #index
-   get '/posts'
-   #use AR to grab all the posts and store them in instance variable,
-   #@posts
-   @posts =
-   erb :index # lists all the posts
+     get '/posts' do
+     #use AR to grab all the posts and store them in instance variable,
+     #@posts
+        @posts = Post.all
+        erb :index # lists all the posts
+      end
 
-#update = edit controller action
-  get /'posts/:id/edit'
+      get '/posts/:id' do
+        @post = Post.find_by_id(params[:id])
+        erb :show
+      end
+  #update, two parts : load the form so user can fill it out and 2/post that data to the db
+    get '/posts/:id/edit' do # load the edit form
+      @post = Post.find_by_id(params[:id])
+      erb :edit
+    end
+# then update the blog post
+    post '/posts/:id' do
+      @post = Post.find_by_id(params[:id])
+      @post.name = params[:name]
+      @post.content = params[:content]
+      @post.save
+      erb :show
+    end
 
-  erb :edit
+
+# delete
+  delete '/posts/:id/delete' do
+    @post = Post.find_by_id(params[:id])
+    @post.delete
+    erb :delete # confirms the deletion
+  end
 end

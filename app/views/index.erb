@@ -1,7 +1,11 @@
 <!-- iterate over @posts and render to the page -->
 
-<%@posts.each_with_index do |post, index|
-  index.post
-  <%end %>
+<% @posts.all.each do |post| %>
 
-  
+<div>
+    <p><%= post.name %> </p>
+    <p><%= post.content %> </p>
+
+  </div>
+
+<% end %>
