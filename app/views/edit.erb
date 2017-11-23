@@ -1,0 +1,11 @@
+<%= @post.name %><br>
+
+<%= @post.content %><br>
+
+<form action="/posts/<%= @post.id %>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  New Name: <input id="name" name="name" type="text"><br>
+  New Content: <input id="content" name="content" type="text"><br>
+
+  <p><input id="Submit" type="submit" value="submit"></p>
+</form>
