@@ -1,19 +1,26 @@
 require_relative '../../config/environment'
+require 'pry'
 
 class ApplicationController < Sinatra::Base
+
+set :views, Proc.new { File.join(root, "../views/") }
+#ask coach to explain, pulled this over from the other lab
 
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
   end
 
-    get '/' do #load form
+#shouldn't there be one that's '/' and then erb :index?
+    get '/posts/new' do #load form
       erb :new
     end
 
+
 #show individual post
    post '/posts' do
-      @post = Post.create(params)
+
+      @post = Post.create(params[:post])
       redirect to '/posts'
     end
 
@@ -48,7 +55,6 @@ class ApplicationController < Sinatra::Base
   delete '/posts/:id/delete' do
     @post = Post.find_by_id(params[:id])
     @post.delete
-    redirect to 'posts'
     erb :deleted # confirms the deletion
   end
 end
