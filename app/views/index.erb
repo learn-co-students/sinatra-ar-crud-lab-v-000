@@ -1,0 +1,10 @@
+<!-- iterate over @posts and render to the page -->
+
+<% @posts.all.each do |post| %>
+
+<div>
+    <p><%= post.name %> </p>
+    <p><%= post.content %> </p>
+</div>
+
+<% end %>
