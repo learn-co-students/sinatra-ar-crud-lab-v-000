@@ -7,15 +7,10 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-# post
-# name
-# contents
-  # post_name
-  # post_contents
-
-    get '/' do
+    get '/' do #load form
       erb :new
     end
+
 #show individual post
    post '/posts' do
       @post = Post.create(params)
@@ -31,7 +26,6 @@ class ApplicationController < Sinatra::Base
 
    get '/posts/:id' do
       @post = Post.find_by_id(params[:id])
-      binding.pry
       erb :show
    end
   #update, two parts : load the form so user can fill it out and 2/post that data to the db
@@ -40,7 +34,7 @@ class ApplicationController < Sinatra::Base
       erb :edit
     end
 # then update the blog post
-    post '/posts/:id' do
+    patch '/posts/:id' do
       @post = Post.find_by_id(params[:id])
       @post.name = params[:name]
       @post.content = params[:content]
@@ -51,9 +45,10 @@ class ApplicationController < Sinatra::Base
 
 # delete
 
-  post '/posts/:id/delete' do
+  delete '/posts/:id/delete' do
     @post = Post.find_by_id(params[:id])
     @post.delete
+    redirect to 'posts'
     erb :deleted # confirms the deletion
   end
 end
