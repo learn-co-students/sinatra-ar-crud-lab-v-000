@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<h1>All Blog Posts</h1>
+</head>
+<body>
+<%Post.all.each_with_index do |post, i| %>
+<h2><%=i+1%>. Post Name: <%=post.name%></h2>
+<h3>Post Contents: <%=post.content%>
+<%end%>
+</body>
+<html>
