@@ -1,16 +1,16 @@
-<!-- <!DOCTYPE html> -->
-<!-- <html>
+<!DOCTYPE html>
+<html>
   <head>
     <meta charset="UTF-8">
     <title>title</title>
   </head>
-  <body> -->
+  <body>
   <h1>this is your vanlife blog</h1>
-
   <ul>
-    <%@posts.each do |post| %>
+    <% @posts.each do |post| %>
     <li><a href="#"><%=post.name%></a></li>
+    <li><a href="#"><%=post.content%></a></li>
     <%end%>
   </ul>
-  <!-- </body>
-</html> -->
+  </body>
+</html>
