@@ -6,14 +6,24 @@
   </head>
   <body>
     <h1>Edit your post</h1>
-    <form action="/posts/<%= @post.id %>" method="post">
-        <input id="hidden" type="hidden" name="_method" value="patch">
+    <form action="/posts/<%= @post.id %>"
+          method="post">
+        <input  id="hidden"
+                type="hidden"
+                name="_method"
+                value="patch">
 
         <label for="name">Name:</label> </br>
-      	<input id="name" name="post[name]" type="text" value="<%= @post.name %>" /> </br>
+      	<input  id="name"
+                name="name"
+                type="text"
+                value="<%= @post.name %>" /> </br>
 
       	<label for="content">Content:</label> </br>
-      	<textarea id="content" name="post[content]" rows="5"><%= @post.content %></textarea>  </br>
+        <input  id="content"
+                name="content"
+                type="text"
+                value="<%= @post.content %>" /> </br>
 
         <button type="submit" value="submit">Save</button>
 

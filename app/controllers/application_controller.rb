@@ -7,13 +7,13 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/posts/new' do
-    erb :new
-  end
-
   get '/' do
     @posts = Post.all
     erb :index
+  end
+
+  get '/posts/new' do
+    erb :new
   end
 
   get '/posts' do
@@ -24,6 +24,7 @@ class ApplicationController < Sinatra::Base
   post '/posts' do
     Post.create(name: params[:name], content: params[:content])
     @posts = Post.all
+    redirect to '/posts'
     erb :index
   end
 
@@ -34,21 +35,18 @@ class ApplicationController < Sinatra::Base
 
   get '/posts/:id/edit' do
     @post = Post.find(params[:id])
-
     erb :edit
   end
 
   patch '/posts/:id' do
   	@post = Post.find(params[:id])
-
-    @post.name = params[:name]
-    @post.content = params[:content]
+    @post.update(name: params[:name], content: params[:content])
     @post.save
-
     erb :show
   end
 
   post '/posts/:id/delete' do
-
+    @post = Post.find(params[:id])
+    erb :delete
   end
 end
