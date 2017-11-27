@@ -1,0 +1,7 @@
+<h2>Your blog posts:</h2>
+
+<% @posts.each do |post| %>
+  <p>Id: <%= post.id %></p>
+  <p>Name: <%= post.name %></p>
+  <p>Content: <%= post.content %></p>
+<%end%>
