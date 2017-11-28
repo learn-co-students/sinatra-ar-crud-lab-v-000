@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <title>title</title>
   </head>
-  <body>
-  <h1>Here's Your Post</h1>
-    <h3><%=@post.name%></h3>
-    <h4><%=@post.content%></h4>
+  <h2><%= @post.name %></h2>
+  <h3><%= @post.content %></h3>
+  <form method="post" action="/posts/<%=@post.id%>/delete">
+    <input id="hidden"
+           type="hidden"
+           name="_method"
+           value="delete">
+    <input type="submit" value="delete">
+  </form>
   </body>
 </html>

@@ -5,14 +5,6 @@
     <title>title</title>
   </head>
   <body>
-  <h1>Here's Your Post</h1>
-    <h3><%=@post.name%></h3>
-    <h4><%=@post.content%></h4>
+  <h2>"Your <%= @post.name%> was deleted"</h2>
   </body>
 </html>
-
-
-<form method="post" action="/models/<%= @model.id %>/delete">
-  <input id="hidden" type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="delete">
-</form>
