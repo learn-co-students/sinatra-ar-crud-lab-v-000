@@ -1,5 +1,16 @@
+<<<<<<< HEAD
 <h1>Blog Posts</h2>
   <% @posts.each do |post| %>
   <p><%= post.name %></p>
   <p><%= post.content %></p>
   <% end %>
+=======
+<h1>Posts</h2>
+
+<% @posts.all.each do |post| %>
+  <div>
+    <p><%= post.name%> </p>
+    <p><%= post.content %></p>
+  </div>
+<% end %>
+>>>>>>> 8a45b38c12ab3caa52928c2d185035368e5474b3
