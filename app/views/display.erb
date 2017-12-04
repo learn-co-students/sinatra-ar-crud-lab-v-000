@@ -1,0 +1,13 @@
+<h2>Retrieved Blog Posts</h2>
+<% if @all.size == 0 %>
+  <p>There are no blog posts</p>
+<%else%>
+  <% @all.each do |post| %>
+    <h3>Name: <%=    post.name %></h3>
+    <h3>Content: <%= post.content %></h3>
+    <a href="/posts/<%= post.id %>">View Post</a>
+    <br/>
+    <% end %>
+<% end %>
+<br/>
+<a href="/posts/new">Create New Post</a>
