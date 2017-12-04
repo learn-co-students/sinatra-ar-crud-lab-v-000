@@ -1,0 +1,8 @@
+<h1>Edit Post <%= params[:id] %></h1>
+
+<form action="/posts/<%= @post.id %>" method="post">
+  <input type="hidden" id="hidden" name="_method" value="patch">
+  <input type="text" name="name" id="name" value="<%= @post.name %>"><br>
+  <input type="text" name="content" id="content" value="<%= @post.content %>">
+  <input type="submit" name="" value="submit">
+</form>
