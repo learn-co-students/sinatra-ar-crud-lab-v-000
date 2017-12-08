@@ -41,9 +41,14 @@ class ApplicationController < Sinatra::Base
 
   patch '/posts/:id' do
     @post = Post.find(params[:id])
-    @post.update(params)
-    binding.pry
+    @post.update(params[:edit_post])
     @post.save
     erb :show
+  end
+
+  delete '/posts/:id/delete' do
+    @post = Post.find(params[:id])
+    @post.delete
+    erb :delete
   end
 end
