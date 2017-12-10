@@ -1,0 +1,7 @@
+<h2>Update your blog post below:</h2>
+<form method="post" action="/posts/<%= @post.id %>">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <p>Name: <input type="text" value="<%= @post.name %>" name="name"> name="name"></p>
+  <p>Content: <input type="text" value="<%= @post.content %>" name="content"></p>
+  <input id="submit" value="submit" type="submit" name="submit">
+</form>
