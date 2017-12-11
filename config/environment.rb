@@ -1,4 +1,5 @@
 ENV['SINATRA_ENV'] ||= "development"
+# use Rack::MethodOverride
 
 require 'bundler/setup'
 Bundler.require(:default, ENV['SINATRA_ENV'])
