@@ -1,0 +1,17 @@
+<!-- That view should use erb to render the @post's title and content. -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Show</title>
+  </head>
+  <body>
+    <p>Title: <%= @p.name %> </p>
+    <p>Content: <%= @p.content %> </p>
+
+    <form method="POST" action="/posts/<%=@p.id%>/delete">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      <input type="submit" value="delete">
+    </form>
+  </body>
+</html>
