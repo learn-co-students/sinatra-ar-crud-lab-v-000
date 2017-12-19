@@ -26,7 +26,7 @@ class ApplicationController < Sinatra::Base
 #here we create an instance variable using ActiveRecord Create from CRUD
       @post = Post.create(name: params[:name], content: params[:content])
 #here we redirect to '/posts'
-      redirect to '/posts'
+      redirect to '/posts'  #this will navigate to our controller below and not to an erb file
   end
 
   get '/posts' do
@@ -36,18 +36,21 @@ class ApplicationController < Sinatra::Base
   end
   #READ  we are able to extract a Post via the primary key id and assign that to a variable
   get '/posts/:id' do
+      #the ":id" in the route makes this a dynamic url route that allows the user to input something here to be searched in code below
       @post = Post.find(params[:id])
       erb :show
+      #in the show.erb we also provide a delete button that will direct to the route below for delete (last)
   end
   get '/posts/:id/edit' do
    	@post = Post.find(params[:id])
    	erb :edit
    end
 
+   #this sets up the edit patch route
      patch '/posts/:id' do
        	@post = Post.find(params[:id])
        	@post.update(name: params[:name], content: params[:content])
-       	redirect to "/posts/#{params[:id]}"
+       	redirect to "/posts/#{params[:id]}" #navigates to the above route, not a erb file
      end
 
 
@@ -56,4 +59,5 @@ class ApplicationController < Sinatra::Base
       @post.destroy
       erb :delete
   end
+  #as a note, after a post has been deleted, the primary id key does not change for the other table rows that still exist
 end
