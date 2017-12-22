@@ -102,13 +102,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord
+  activerecord (= 4.2.5)
   capybara
   database_cleaner!
   pry
   pry-nav
   rack-test
-  rake
+  rake (= 10.4.2)
   require_all
   rspec
   shotgun
@@ -118,4 +118,4 @@ DEPENDENCIES
   tux
 
 BUNDLED WITH
-   1.10.6
+   1.16.0
