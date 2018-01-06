@@ -1,0 +1,5 @@
+  <h1>All of the posts live here</h1>
+  <% @posts.each do |post|%>
+    <h2><%= post.name %></h2>
+    <p style="border:1px solid; padding: 5px"><%= post.content %></p>
+    <% end %>
