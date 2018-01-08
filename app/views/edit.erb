@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Edit Post</title>
+  </head>
+</body>
+  Edit Post:
+  <form action="/posts/<%=@post.id%>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+  </form>
+</body>
+</html>
