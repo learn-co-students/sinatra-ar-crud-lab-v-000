@@ -34,16 +34,15 @@ class ApplicationController < Sinatra::Base
   end
 
   patch '/posts/:id' do
-    @name = params[:name]
-    @content = params[:content]
+    # binding.pry
     @post = Post.find(params[:id])
-    @post.update(name: @name)
-    @post.update(content: @content)
+    @post.update(name: params[:name], content: params[:content])
     erb :show
   end
-
+  #
   delete '/posts/:id/delete' do
     @post = Post.destroy(params[:id])
-    redirect to("/posts")
+
+    "#{@post.name} was deleted"
   end
 end
