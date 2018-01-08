@@ -11,10 +11,10 @@
       <p>Content: <%= @post.content %></p>
 
     <form action="/posts/<%= @post.id %>" method="post">
-        <input id="hidden" type="hidden" name="_method" value="patch">
-        <p>New Name: <input type="text" name="name" value=""></p>
-        <p>New Content: <input type="text" name="content" value=""></p>
-        <input type="submit" name="" value="submit">
+        <input type="hidden" name="_method" value="patch">
+        <p><label for="name">Rename Your Post:</label> <input type="text" name="name" id="name"></p>
+        <p><label for="content">Change Content of Your Post:</label> <input type="text" name="content" id="content"></p>
+        <input type="submit" value="update">
     </form>
 
   </body>
