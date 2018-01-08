@@ -8,6 +8,9 @@
   Edit Post:
   <form action="/posts/<%=@post.id%>" method="POST">
     <input id="hidden" type="hidden" name="_method" value="patch">
+    Blog Name: <input type="text" name="name">
+    Blog Content: <input type="text" name="content">
+    <input type="submit" id="submit">
   </form>
 </body>
 </html>
