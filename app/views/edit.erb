@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Edit Post</title>
+  </head>
+<body>
+  Edit Post:
+  <h1><%= @post.name %></h1>
+  <h3><%= @post.content %></h3>
+  <form action="/posts/<%=@post.id%>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    Blog Name: <input type="text" name="name">
+    Blog Content: <input type="text" name="content">
+    <input type="submit" id="submit">
+  </form>
+</body>
+</html>
