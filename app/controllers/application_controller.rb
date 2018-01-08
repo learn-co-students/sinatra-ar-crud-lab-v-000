@@ -23,6 +23,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts' do
+    post = Post.new(params)
+    post.save
     @posts = Post.all
     erb :index
   end
