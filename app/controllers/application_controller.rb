@@ -39,4 +39,9 @@ class ApplicationController < Sinatra::Base
     @post.content = params[:content]
     erb :show
   end
+
+  delete '/posts/:id/delete' do
+    @post = Post.destroy(params[:id])
+    redirect to("/posts")
+  end
 end
