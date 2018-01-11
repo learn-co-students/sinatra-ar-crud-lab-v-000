@@ -3,11 +3,19 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Welcome - Blog</title>
+  <title>Posts - Blog</title>
 </head>
 
 <body>
-  <h1>Welcome!</h1>
-  <a href="/post/new">Click Here To Create A Blog</a>
+  <h1>Posts</h1>
+
+  <ul>
+  <% @posts.each do |post|%>
+    <li>
+      <a href="/posts/<%= post.id %>"><%= post.name %></a>
+      <p><%=post.content %></p>
+    </li>
+  <% end %>
+  </ul>
 </body>
 </html>
