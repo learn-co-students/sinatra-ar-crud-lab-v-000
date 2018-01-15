@@ -105,6 +105,7 @@ DEPENDENCIES
   activerecord
   capybara
   database_cleaner!
+  json
   pry
   pry-nav
   rack-test
@@ -118,4 +119,4 @@ DEPENDENCIES
   tux
 
 BUNDLED WITH
-   1.10.6
+   1.16.0
