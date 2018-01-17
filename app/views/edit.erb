@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<header>
+  <title>Edit Blog Post</title>
+</header>
+
+<body>
+  <h1><%= @post.name %></h1>
+  <p><%= @post.content %></p>
+
+  <form method="POST" action="/posts/<%=@post.id%>">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+
+    <h1>Blog Name</h1>
+    <input type="text" id="name" name="name">
+
+    <br>
+    <h2>Blog Content</h2>
+    <input type="text" id="content" name="content">
+
+    <br>
+    <button type="submit" value="submit">Submit</button>
+  </form>
+</body>
+
+</html>

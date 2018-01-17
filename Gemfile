@@ -11,6 +11,7 @@ gem 'pry-nav'
 gem 'rake'
 gem 'rspec'
 gem 'rack-test'
+gem 'to_words'
 gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
 gem 'require_all'
 
