@@ -1,0 +1,10 @@
+<% post = Post.all.find(@post) %>
+  <h1> <%= post.name %> </h1>
+  <p> <%= post.content %> </p>
+
+<form method="post" action='/posts/<%=@post%>'>
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  Name: <input type="text" name="name"><br>
+  Content: <input type="text" name="content"><br>
+  <input type="submit" value="submit">
+</form>
