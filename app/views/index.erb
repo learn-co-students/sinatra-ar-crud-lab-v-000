@@ -1,0 +1,6 @@
+<h2>Welcome to posts index page</h2>
+</br>
+<% @posts.each do |post| %>
+  <h3><%= post.name %></h3>
+  <p><%= post.content %></p>
+<% end %>
