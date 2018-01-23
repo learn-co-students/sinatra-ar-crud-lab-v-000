@@ -1,0 +1,15 @@
+<html>
+   <head>
+     <title>Blog Index</title>
+   </head>
+  <body>
+
+  <div>
+  <% @posts.map do |post| %>
+  <h1>Post Name:<%= post.name %></h1>
+  <h3>Post Content:<%= post.content %></h3>
+  <% end %>
+
+  </div>
+</body>
+</html>
