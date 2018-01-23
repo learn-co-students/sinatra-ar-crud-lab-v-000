@@ -1,0 +1,9 @@
+<h1>Welcome to the blog post creator!</h1>
+<a href="/posts/new"> Create a new blog post </a>
+
+Here is a list of all the current blog posts:
+<ol>
+  <% @posts.each do |post| %>
+   <li> <a href = "/posts/<%=post.id%>"><%=post.name%></a></li>
+   <% end %>
+ </ol>
