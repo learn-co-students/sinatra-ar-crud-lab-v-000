@@ -1,0 +1,15 @@
+Current Blog Name: <%= @post.name %>
+Content: <%= @post.content %>
+
+<!-- here we are setting up the edit form-->
+
+<form action="/posts/<%= @post.id %>" method="POST">
+	<p><label for="name">Edit Post Name:</label>
+    	<input type="hidden" name="id" value="<%= @post.id %>">
+    	<input id="hidden" type="hidden" name="_method" value="patch">
+    	<input type="text" name="name"></input></p>
+	<p><label for="content">Edit Post Content:</label>
+    	<input type="text" name="content"></input></p>
+
+	<button type="submit" value="submit">Submit</button>
+</form>

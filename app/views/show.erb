@@ -1,0 +1,15 @@
+<h1><%= @post.name %></h1>
+<h2><%= @post.content %></h2>
+
+
+<!-- this is a delete button
+the form action is dynamic and uses the @post created in the controller
+hidden is inportant so we dont get hackes
+value delete sends a delete request
+-->
+
+<form action="/posts/<%= @post.id %>/delete" method="post">
+	<input id="hidden" type="hidden" name="_method" value="delete">
+	<input type="submit" name="submit" value="delete">
+
+</form>
