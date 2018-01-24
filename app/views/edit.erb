@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+
+  <body>
+
+
+  <h1>Edit Post</h1><br>
+   <form method = "post" action = "/posts/<%=@post.id%>">
+     <h2><label id = "name" for = "name">Name: </label></h2>
+     <input id = "hidden" type = "hidden" name = "_method" value ="patch">
+     <input type = "text" name = "name" value="<%=@post.name%>"><br>
+     <h2><label for = "content">Content: </label></h2>
+     <input type="textarea" name = "content" value= "<%=@post.content%>"><br>
+     <h3><label for "submit">Submit: </label></h3>
+     <input id = "submit" type = "submit" value = "submit">
+   </form>
+
+
+
+
+
+
+
+  </body>
+</html>
