@@ -1,0 +1,12 @@
+<% if @deleted_name %>
+  <p><strong><%= @deleted_name %> was deleted</strong></p>
+<% end %>
+
+<h1>Blog posts:</h1>
+<% @posts.each do |post| %>
+  <h2><%= post.name %></h2>
+  <p><%= post.content %></p>
+  <p><a href="/posts/<%= post.id %>/edit">edit</a></p>
+  <p><a href="/posts/<%= post.id %>">view</a></p>
+<% end %>
+<p><a href="/posts/new">click here to make a new post</a></p>
