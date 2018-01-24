@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+
+<body>
+  <h1>Edit Post Below:</h1>
+
+  <h3><%= @post.name %></h3><br><br>
+  <p><%= @post.content %></p>
+
+  <form action=<%="/posts/#{@post.id}"%> method="post">
+  Name: <input type="text" name="name">
+  Content: <input type="text" name="content">
+  <button type="submit" value="submit">submit</button>
+  </form>
+
+</body>
+</html>
