@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <h1>Delete Post</h1>
+  <br><br>
+  <h3><font color="red">You want to delete: <%= @post.name %></h3></font>
+  <h4>This cannot be undone!<h4>
+  <h5>Click "delete" to delete forever</h5>
+  <br>
+  <form action=<%="/posts/#{@post.id}/delete" %> method = "post">
+  <input type="submit" value="delete">
+  </form>
+</body>
+</html>
