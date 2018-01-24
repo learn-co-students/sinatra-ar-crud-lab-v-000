@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <h1>Delete This Post?</h1>
+  <h3><%=@post.name%></h3>
+  <p><%=@post.content%></p>
+  <form method = "post" name = "delete_post" action = "/posts/<%=@post.id%>/delete"> 
+    <button type = "submit" value = "delete">Delete</button>
+  </form>
+</body>
+</html>
