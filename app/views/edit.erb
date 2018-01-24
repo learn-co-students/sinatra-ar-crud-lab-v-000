@@ -1,0 +1,12 @@
+<h1>Old Blog Post</h1>
+
+  <h2>Post name: <%= @post.name %></h2>
+ <h2>Post content: <%= @post.content %></h2>
+
+<h1>New Blog Post</h1>
+<form action="/posts/<%= @post.id%>" method="post">
+<input id="hidden" type="hidden" name="_method" value="patch">
+  Name: <input type="text"  name="name" value="<%=@post.name%>">
+  Content: <input type="text"  name="content" value="<%=@post.content%>">
+  <input type="submit" id ="submit">
+</form>
