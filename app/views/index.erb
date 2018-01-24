@@ -1,0 +1,7 @@
+<% @posts.each do |post| %>
+<a href="/posts/<%= post.id %>"><%= post.name %></a>
+<br>
+<% end %>
+<form action="/posts/new">
+	<input type="submit" value="Create New Post">
+</form>

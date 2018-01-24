@@ -12,6 +12,7 @@ gem 'rake'
 gem 'rspec'
 gem 'rack-test'
 gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
+gem 'rack'
 gem 'require_all'
 
 
