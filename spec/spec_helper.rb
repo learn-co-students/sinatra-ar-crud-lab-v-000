@@ -10,8 +10,8 @@ if defined?(ActiveRecord::Migrator) && ActiveRecord::Migrator.needs_migration?
 end
 
 RSpec.configure do |config|
-  config.run_all_when_everything_filtered = true
-  config.filter_run :focus
+  config.run_all_when_everything_filtered = false
+  config.filter_run :focus=>true
   config.include Rack::Test::Methods
   config.include Capybara::DSL
 
