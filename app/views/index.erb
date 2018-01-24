@@ -1,0 +1,7 @@
+<body>
+<%=@deleted %>
+<% @posts.each do |post| %>
+    <h1>Name: <%= post.name%> </h1> 
+    <p>Content: <%= post.content%></p> 
+    <% end %>
+</body>
