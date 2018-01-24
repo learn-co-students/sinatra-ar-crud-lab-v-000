@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body> 
+    <ol>
+      <%@posts.each do |post|%>
+      <li><%=post.name%>
+        <ul>
+          <%=post.content%>
+        </ul>
+      </li>
+      <%end%>
+    </ol>
+
+   </body>
+</html>
