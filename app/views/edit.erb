@@ -1,0 +1,9 @@
+<h1>Update Post</h1>
+<form method="POST" action="/posts/<%= @post.id %>" id="blogpost">
+<input id="hidden" type="hidden" name="_method" value="patch">
+<h2>Post Title: <%= @post.name %></h2>
+<h2>Edit Title: <input type="text" name="name" value="<%= @post.name %>"></h2>
+<h2>Edit Content: </h2>
+<p><textarea name="content" form="blogpost"><%= @post.content %></textarea>
+</form>
+<input type="submit" id="submit" form="blogpost">
