@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+	<form action="/posts/<%=@post2[:id]%>" method="POST">
+		<input type="hidden" id="hidden" name="_method" value="patch">
+		<p>Fill in your name here: <input type="text" name="name" id="name" value=<%=@post2[:name]%>></p>
+		<p>Content: <textarea type="text" name="content" id="content"><%=@post2[:content]%></textarea></p>
+		<input type="submit" id="submit">
+	</form>
+</body>
+
+</html>
