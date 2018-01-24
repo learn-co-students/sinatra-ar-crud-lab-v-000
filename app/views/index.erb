@@ -1,0 +1,11 @@
+<DOCTYPE html>
+  <html>
+<body>
+
+<% Post.all.each do |post| %>
+  <h3><%= post.name %></h3>
+  <p><%= post.content %></p>
+<% end %>
+
+</body>
+</html>
