@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create a Blog</title>
+    </head>
+    <body>
+      <h1><a href="<%="http://localhost:9393/posts/new"%>"> Create a New Post</a></h1>
+      <ul>
+      <% @posts.each do |post| %>
+      <li><a href="<%="http://localhost:9393/posts/#{post.id}"%>"><%=post.name%></a></li>
+      <li><%=post.content%></li>
+
+      <% end %>
+    </body>
+</html>
