@@ -9,6 +9,7 @@ class ApplicationController < Sinatra::Base
 
 # shows index page
   get '/' do
+    @posts = Post.all
     erb :index
   end
 
@@ -53,9 +54,8 @@ class ApplicationController < Sinatra::Base
   end
 
 #deletes the post
-  post '/posts/:id/delete' do #delete action
+  delete '/posts/:id/delete' do #delete action
     @post = Post.find_by_id(params[:id])
-    binding.pry
     @post.delete
     erb :deleted
   end
