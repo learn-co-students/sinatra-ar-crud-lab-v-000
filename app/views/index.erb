@@ -1,5 +1,5 @@
 <h1> Posts </h1>
-<% @posts.all.each do |post| %>
+<% @posts.all.each_with_index do |post, index| %>
   <div>
     <h2><%= post.name%></h2>
     <p><%= post.content %></p>

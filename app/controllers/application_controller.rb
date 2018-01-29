@@ -29,8 +29,34 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
-#shows all posts on the index page
-    get '/posts/:id' do
-      erb :show
-    end
+#finds a post
+  get '/posts/:id' do
+    @post = Post.find(params[:id])
+    #binding.pry
+    erb :show
+  end
+
+#edits a post
+  get '/posts/:id/edit' do
+    @post = Post.find(params[:id])
+    #binding.pry
+    erb :edit
+  end
+
+#updates the edited post
+  patch '/posts/:id' do
+    @post = Post.find(params[:id])
+    edited_post = {:name => params[:name], :content => params[:content]}
+    @post.update(edited_post)
+    @post.save
+    redirect to "/posts/#{params[:id]}"
+  end
+
+#deletes the post
+  post '/posts/:id/delete' do #delete action
+    @post = Post.find_by_id(params[:id])
+    binding.pry
+    @post.delete
+    erb :deleted
+  end
 end
