@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New Post</title>
+  </head>
+  <body>
+    <h1>Create a Post</h1>
+    <form action="/posts/<%=@post.id%>" method="POST">
+      <input type="hidden" id="hidden" name="_method" value="patch">
+      <p>Title: <input type="text" name="post[name]" id="name" value="<%=@post.name%>"></p>
+
+      <p>Body:
+      <textarea name="post[content]" id="content"><%=@post.content%></textarea>
+      </p>
+      <input type="submit" name="submit" id="submit"/>
+    </form>
+  </body>
+</html>

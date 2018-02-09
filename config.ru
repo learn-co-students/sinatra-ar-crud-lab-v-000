@@ -7,4 +7,5 @@ end
 
 use Rack::MethodOverride
 
+use PostController
 run ApplicationController
