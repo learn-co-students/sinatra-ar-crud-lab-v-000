@@ -1,0 +1,8 @@
+<h1>Below are your blog posts!</h1>
+<% @posts.all.each.with_index(1) do |post, index| %>
+
+	<h2><%= index %></h2>
+	<p><%= post.name %></p>
+	<p><%= post.content %></p>
+
+<% end %>
