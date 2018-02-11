@@ -54,6 +54,13 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
+  delete '/posts/:id/delete' do
+    @post = Post.find_by(id: params[:id])
+    @post.delete
+
+    erb :deleted
+  end
+
   not_found do
     "That resource does not exist!"
   end
