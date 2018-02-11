@@ -8,6 +8,22 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do 
+    "Welcome to my blog!"
+  end
+
+  get '/posts/new' do
+    erb :new
+  end
+
+  post '/posts' do
+    Post.create(params)
     
+    redirect '/posts'
+  end
+
+  get '/posts' do
+    @posts = Post.all
+
+    erb :index
   end
 end
