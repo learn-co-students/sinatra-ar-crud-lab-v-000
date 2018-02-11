@@ -1,0 +1,14 @@
+<h1>Edit Your Post!</h1>
+
+<form action="/posts/<%= @post.id %>" method="POST">
+    <input type="hidden" id="hidden" name="_method" value="patch" />
+
+    <% ["name", "content"].each do |field_name| %>
+        <div class="labeled_form_field">
+            <label for=<%= field_name %>><%= field_name.capitalize %>:</label>
+            <input type="text" name=<%= field_name %> id=<%= field_name %> value="<%= @post.send(field_name) %>" />
+        </div>
+    <% end %>
+
+    <input type="submit" id="submit" />
+</form>
