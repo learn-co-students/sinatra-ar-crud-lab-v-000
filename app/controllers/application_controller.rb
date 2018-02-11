@@ -37,6 +37,23 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  get '/posts/:id/edit' do
+    @post = Post.find_by(id: params[:id])
+
+    if @post
+      erb :edit
+    else
+      not_found
+    end
+  end
+
+  patch '/posts/:id' do
+    @post = Post.find_by(id: params[:id])
+    @post.update(name: params[:name], content: params[:content])
+
+    erb :show
+  end
+
   not_found do
     "That resource does not exist!"
   end
