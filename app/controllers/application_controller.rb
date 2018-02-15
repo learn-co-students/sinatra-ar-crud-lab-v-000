@@ -43,7 +43,7 @@ class ApplicationController < Sinatra::Base
         binding.pry
         # erb :show
 
-        redirect '/posts/:id'
+        redirect to '/posts/:id'
     end
 
 end
