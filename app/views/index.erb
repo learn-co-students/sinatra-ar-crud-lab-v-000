@@ -1,7 +1,7 @@
-<form method = "GET" action = 'posts/new'>
+<h1> Posts </h1>
 
-<h2> Select Submit to Go to New Page <h2>
-
-  <input type = "submit" value = "submit">
-
-</form>
+<%@posts.each_with_index do |post, i|%>
+  <label>Post #: <%= i + 1 %> </label>
+  <h3> Post Name: <%=post.name%></h3>
+  <h3> Post Content: <%=post.content%></h3>
+  <%end%>

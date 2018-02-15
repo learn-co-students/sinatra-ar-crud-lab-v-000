@@ -1,5 +1,5 @@
 require_relative '../../config/environment'
-
+require 'pry'
 class ApplicationController < Sinatra::Base
 
   configure do
@@ -7,18 +7,22 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/' do
-    erb :index
-  end
 
-  get '/posts/new' do
+  get '/posts/new' do #loads new form
     erb :new
   end
 
-  post '/posts' do
-    @post = Post.create(params[:post])
+  post '/posts' do #creates a post
+    @post = Post.create(params)
 
+    redirect to '/posts'
+  end
+
+  get '/posts' do # loads index page/shows all posts
+    @posts = Post.all
     erb :index
   end
+
+  
 
 end
