@@ -18,16 +18,20 @@ class ApplicationController < Sinatra::Base
     redirect to '/posts'
   end
 
-  get '/posts' do # loads index page/shows all posts
-    @posts = Post.all
-    erb :index
-  end
+    get '/posts' do # loads index page/shows all posts
+      @posts = Post.all
+      erb :index
+    end
 
-    get '/posts/:id' do
-    @post = Post.find(params[:id])
-    
-    erb :show
+    get '/posts/:id' do #finds a single post
+      @post = Post.find(params[:id])
 
-  end
+      erb :show
+    end
+
+    get '/posts/:id/edit' do
+
+      erb :edit
+    end
 
 end
