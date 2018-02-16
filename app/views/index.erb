@@ -1,0 +1,12 @@
+<h1>All Posts</h1>
+<div class="container">
+	<% @posts.all.each do |post|%>
+		<%next if post.name.nil?%>
+		<div>
+			<h3><%=post.name%></h3>
+			<p><%=post.content.gsub(/\n/, '<br>')%></p>
+			<a href="/posts/<%=post.id%>" method="get">Show Post</a>
+			<br>
+		</div>
+	<%end%>
+</div>
