@@ -13,7 +13,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts/new' do    #loads new form
-  end
     erb :new
   end
 
