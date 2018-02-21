@@ -3,6 +3,6 @@
 <p><%= @post.content %></p>
 
 <form class="" action="/posts/<%= @post.id %>/delete" method="post">
-  <input type="hidden" name="_method" value="DELETE" id="hidden">
+  <input type="hidden" name="_method" value="delete" id="hidden">
   <input type="submit" name="delete" value="delete">
 </form>
