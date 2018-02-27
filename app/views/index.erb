@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<% if @posts%>
+		<% @posts.each do |post| %>
+			<h2><%= post.name %></h2>
+			<p><%= post.content %></p>
+		<% end %>
+	<%elsif @post%>
+		<h2><%= @post.name %></h2>
+		<p><%= @post.content %></p>
+	<% end %>
+	
+</body>
+</html>
