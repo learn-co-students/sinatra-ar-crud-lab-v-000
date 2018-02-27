@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Write Your Blog Post</title>
+    </head>
+    <body>
+        <form method="post" action="/posts">
+            <% @posts.each do |p| %>
+            <h3><%= p.name %></h3>
+            <p><%= p.content %></p>
+            <% end %>
+        </form>
+    </body>
+</html>
