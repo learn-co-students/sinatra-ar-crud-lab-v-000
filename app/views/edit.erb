@@ -1,0 +1,12 @@
+<!--Edit-->
+<form method="post" action="/posts/<%=@post.id%>">
+  <!--patch field-->
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  
+  <!--changes-->
+  Name: <input type="text" value="<%=@post.name%>" name="name">
+  Contents: <input type="text" value="<%=@post.content%>" name="content">
+  
+  <!--submit-->
+  <input type="submit" value="submit">
+</form>
