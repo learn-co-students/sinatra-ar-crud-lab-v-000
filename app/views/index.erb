@@ -1,0 +1,5 @@
+
+    <% @posts.all.each.with_index do |member, index| %> <%#not using index this time %>
+      Post Name: <%=member.name%><br>
+      Post Content: <%=member.content%><br>
+    <%end%>

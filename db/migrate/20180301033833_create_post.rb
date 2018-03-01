@@ -6,3 +6,5 @@ class CreatePost < ActiveRecord::Migration
     end
   end
 end
+#first, bundle exec rake db:create_migration NAME=create_post
+#had to use bundle exec db:migrate SINATRA_ENV=test
