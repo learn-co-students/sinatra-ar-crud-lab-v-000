@@ -1,0 +1,9 @@
+Post Name: <%=@post.name%><br>
+Post Content: <%=@post.content%><br>
+
+
+
+<form action="/posts/<%=@post.id%>/delete" method='post'>
+<input type="hidden" value="delete" name="_method" id="hidden">
+<button type="submit" value="delete"> DELETE </button> <!-- value case sensitive for rspec, lowercase this time lol, wait needs a button -->
+</form>
