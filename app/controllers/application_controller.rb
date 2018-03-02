@@ -36,6 +36,10 @@ class ApplicationController < Sinatra::Base
   end
 
   patch '/posts/:id' do
+    @post = Post.find(params[:id])
+    @post.name = params[:name]
+    @post.content = params[:content]
+    @post.save
     erb :posts
   end
   #The controller action should use the Create CRUD action to create the blog post and save it to the database. Then, the action uses erb to render the index view page.
