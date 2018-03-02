@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Blog Post</title>
+  </head>
+  <body>
+    <h1>Blog Post You Requested</h1>
+    <h6><%= @post.name %></h6>
+    <p><%= @post.content %></p>
+
+    <form action="/posts/<%= @post.id %>/delete" method="post">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      <input type="submit" value="delete">
+    </form>
+
+
+  </body>
+</html>
