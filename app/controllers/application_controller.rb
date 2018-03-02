@@ -31,7 +31,7 @@ class ApplicationController < Sinatra::Base
 
   post '/posts' do
     newpost = Post.create(name: params[:name], content: params[:content])
-    newpost.save
+    @posts = Post.all
     erb :index
   end
 
@@ -41,6 +41,12 @@ class ApplicationController < Sinatra::Base
     @post.content = params[:content]
     @post.save
     erb :posts
+  end
+
+  delete '/posts/:id/delete' do
+    @post2 = Post.find(params[:id])
+    Post.delete(params[:id])
+    "#{@post2.name} was deleted"
   end
   #The controller action should use the Create CRUD action to create the blog post and save it to the database. Then, the action uses erb to render the index view page.
 
