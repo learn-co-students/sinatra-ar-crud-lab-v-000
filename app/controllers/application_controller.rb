@@ -7,7 +7,18 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/' do 
-    
+  get '/' do
+
   end
+
+  get '/posts/new' do
+    erb :new
+  end
+
+  post '/posts' do
+    erb :posts
+  end
+  #The controller action should use the Create CRUD action to create the blog post and save it to the database. Then, the action uses erb to render the index view page.
+
+
 end
