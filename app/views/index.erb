@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <ul>
+      <%Post.all.each do |post_obj|%>
+      <li><%=post_obj.name%></li>
+      <%end%>
+    </ul>
+
+  </body>
+</html>
