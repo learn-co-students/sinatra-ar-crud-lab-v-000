@@ -1,0 +1,14 @@
+<h2>Blog <%= @post[:id] %></h2>
+<h3><u><%= @post[:name] %></u></h3>
+<p><%= @post[:content] %></p>
+
+<!--View all blog posts-->
+<p><a href="/posts">View All Posts</a></p>
+<!--Edit-->
+<p><a href="/posts/<%=@post.id%>/edit">Edit This Post</a></p>
+<!--Delete Option-->
+<form method="post" action="/posts/<%=@post.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+
+  <input type="submit" value="delete">
+</form>
