@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Edit  Post</title>
+  </head>
+  <body>
+    <h1>EDIT BLOG POST</h1>
+    <h3>Blog post # <%=@post.id%> currently has the following info: </h3>
+    <p><%=@post.name%></p>
+    <p><%=@post.content%><p>
+    <!-- <form method = "PATCH" action= "/posts/:id"> -->
+        <form method= "POST" action= "/posts/<%= @post.id %>">
+        <input id= "hidden" type="hidden" name="_method" value="patch">
+      <p>Name: <input type="text" id= "name" name="name"></p>
+      <textarea name="content" id= "content" cols="50" rows="5">
+        Input your updated text here...
+      </textarea>
+    <br />
+    <input type="submit" id="submit" name ="submit">
+    </form>
+
+<!-- </form> -->
+  </body>
+</html>
