@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Sinatra CRUD</title>
+   </head>
+   <body>
+      <h1>Post found by ID</h1>
+      <p>Post name:
+         <%=@post.name%></p>
+      <p>Post content:
+         <%=@post.content%></p>
+         <form action="/posts/<%=@post.id%>/delete" method="post">
+            <input id="hidden" type="hidden" name="_method" value="delete">
+            <input type="submit" name="delete" value="delete" id="delete">
+         </form>
+   </body>
+</html>

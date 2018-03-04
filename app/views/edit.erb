@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Sinatra CRUD</title>
+   </head>
+   <body>
+      <form action="/posts/<%=@post.id%>" method="post">
+         <input id="hidden" type="hidden" name="_method" value="patch">
+         <p>Post name:
+            <input type="text" name="name" value="<%=@post.name%>"></p>
+         <p>Post content<input type="text" name="content" value="<%=@post.content%>"></p>
+
+         <input type="submit" value="submit">
+      </form>
+   </body>
+</html>
