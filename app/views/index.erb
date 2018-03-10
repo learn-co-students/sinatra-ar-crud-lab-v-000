@@ -1,0 +1,10 @@
+<h1>Welcome to Your Blog!</h1>
+<h3><a href="/posts/new">New Post</a></h3>
+<%if @posts == nil%>
+<h2>No posts yet</h2>
+<%else%>
+<%@posts.each {|post|%>
+  <h2><%=post.name%></h2>
+  <p><%=post.content%></p>
+<%}%>
+<%end%>
