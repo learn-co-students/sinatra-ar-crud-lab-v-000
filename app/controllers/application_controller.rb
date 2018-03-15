@@ -11,4 +11,47 @@ class ApplicationController < Sinatra::Base
   get '/' do
 
   end
+
+  get '/posts/new' do
+    erb :new
+  end
+
+  post '/posts' do
+    Post.create(params)
+
+    redirect '/posts'
+  end
+
+  get '/posts' do
+    @posts = Post.all
+
+    erb :index
+  end
+
+  get '/posts/:id' do
+    @post = Post.find(params[:id])
+
+    erb :show
+  end
+
+  get '/posts/:id/edit' do
+    @post = Post.find(params[:id])
+
+    erb :edit
+  end
+
+  patch '/posts/:id' do
+    @post = Post.find(params[:id])
+    @post.update(name: params[:name], content: params[:content])
+
+    #should we be redirecting here? redirect '/posts/#{@post.id}'
+    erb :show
+  end
+
+  delete '/posts/:id/delete' do
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    erb :delete
+  end
 end
