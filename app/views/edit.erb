@@ -1,0 +1,23 @@
+<form action="/posts/<%= @post.id %>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <h1>ORIGINAL POST</h1>
+    <h1>Title: <%= @post.name %></h1>
+    <h4>Content: <%= @post.content %></h4>
+  <h1>ENTER YOUR UPDATED POST BELOW</h1>
+    <label for="name">Name:</label>
+      <input type="text" name="name" id="name"><br>
+    <label for="content">Content:</label>
+      <input type="textarea" name="content" id="content"><br>
+    <input type="submit" value="submit">
+</form>
+
+<!-- another way to do this would've been:
+
+<form method="post" action="/posts/<%=@post.id%>">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  Name<input type="text" value="<%=@post.name%>" name="name">
+  Contents<input type="text" value="<%=@post.content%>" name="content">
+  <input type="submit" value="submit">
+</form>
+
+This will show the existing Post object info in the input fields so the user can edit them in place-->
