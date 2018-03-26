@@ -1,3 +1,6 @@
 <h1> Posts </h1>
-<p><%= @new_post_name%></p>
-<p><%= @new_post_content %></p>
+
+<%@posts.each do |post| %>
+  <p><%= post.name%></p>
+  <p><%= post.content%></p>
+<%end%>
