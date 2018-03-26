@@ -25,24 +25,32 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts/:id' do
-    @post=Post.all.find_by(params[:id])
-    erb :show
+    #binding.pry
+     @post=Post.find_by(id: params[:id])
+      erb :show
   end
 
   get '/posts/:id/edit' do
     #binding.pry
-    @post = Post.all.find_by(params[:id])
+    @post = Post.find_by_id(params[:id])
+
     erb :edit
   end
 
   patch '/posts/:id' do
-
-    @post=Post.all.find_by(params[:id])
+    @post=Post.find_by(id: params[:id])
     @post.update(name: params[:name], content: params[:content])
-    #binding.pry
-    redirect to "/posts/#{params[:id]}"
+    @post.save
+    erb :show
+
   end
 
+  delete '/posts/:id/delete' do
+    @post=Post.find_by(id: params[:id])
+    #binding.pry
+    @post.delete
+    erb :delete
+  end
 
 
 
