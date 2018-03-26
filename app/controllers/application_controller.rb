@@ -26,10 +26,16 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts' do
+
+    @all = Post.all
     erb :'index'
   end
 
-  get '/posts/:id' do
+  get "/posts/:id" do
+    @all = Post.all
+    Post.find_by(id: "#{@post.id}")
+
+    erb :'show'
   end
 
 
