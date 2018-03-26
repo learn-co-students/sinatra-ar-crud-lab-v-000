@@ -4,12 +4,8 @@
 </head>
 
 <body>
-    <p>Blog Post Name: </p>
-    <% @all.each do |article|%>
-    <% end %>
-
-
-    <p>Blog Post Content: </p>
-    <a href="/posts"><input type="submit" name="submit" id="submit" value="submit"></a>
+    <p>Blog Posts: </p>
+      <p><%= @post.name %></p>
+      <p><%= @post.content %></p>
 </body>
 </html>
