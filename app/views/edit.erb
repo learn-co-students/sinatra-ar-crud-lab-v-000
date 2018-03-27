@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+  <form method="GET" action="/update">
+    <p>Edit Your Blog Post:
+      <% @post.each do |info|%>
+        <p><%= info.name %></p>
+        <p><%= info.content %></p>
+      <% end %>
+    <p><input type="text" name="name" value="patch"></p>
+    <p><input type="text" name="content" value="patch"></p>
+    <a href="/update"><input type="submit" name="submit" id="submit" value="submit"></a>
+  </form>
+</body>
+</html>

@@ -16,13 +16,14 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts' do
-    @post = Post.new
-    @post.name = params[:name]
-    @post.content = params[:content]
-    @post.save
-    @all = Post.all
 
-    redirect to('/posts')
+        @post = Post.new
+        @post.name = params[:name]
+        @post.content = params[:content]
+        @post.save
+        @all = Post.all
+
+      redirect to('/posts')
   end
 
   get '/posts' do
@@ -32,12 +33,34 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/posts/:id" do
-    @all = Post.all
-    Post.find_by(id: "#{@post.id}")
-
+    @post = Post.where(id: params[:id])
     erb :'show'
   end
 
+  get "/posts/:id/edit" do
+    @post = Post.where(id: params[:id])
+
+    erb :'edit'
+  end
+
+  get "/update" do
+
+    @post = Post.all
+
+    if @post.includes(:name => params[:name], content: params[:content])
+      @post.update(:name => params[:name], :content => params[:content])
+    end
+
+    redirect to ('/posts/2') #CHECK - IS THIS RIGHT?!
+  end
+
+  delete '/posts/:id/delete' do
+    @post = Post.find_by_id(params[:id])
+    @post.delete
+    redirect to ('/posts')
+  end
+
+  # https://learn.co/tracks/full-stack-web-development-v3/sinatra/activerecord/sinatra-restful-routes
 
 
 end
