@@ -4,16 +4,14 @@
 </head>
 
 <body>
-  <form method="post" action="/update">
+  <form method="post" action="/posts/<%=@post.id%>">
     <p>Edit Your Blog Post:
-      <% @post.each do |info|%>
-        <p><%= info.name %></p>
-        <p><%= info.content %></p>
-      <% end %>
+        <p><%= @post.name %></p>
+        <p><%= @post.content %></p>
     <input name="_method" id="hidden" type="hidden" value="patch">
     <p><input type="text" name="name"></p>
     <p><input type="text" name="content"></p>
-    <a href="/update"><input type="submit" name="submit" id="submit" value="submit"></a>
+    <a href="/posts/<%=@post.id%>"><input type="submit" name="submit" id="submit" value="submit"></a>
     <a href="/posts/:id/delete"><input type="button" name="delete" id="delete" value="delete"></a>
   </form>
 </body>

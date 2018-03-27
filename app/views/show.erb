@@ -3,10 +3,12 @@
 <head>
 </head>
 <body>
+  <form method="post" action="/posts/<%=@post.id%>/delete">
   <p>Blog Post Names: </p>
-  <% @post.each do |info|%>
-    <p><%= info.name %></p>
-    <p><%= info.content %></p>
-  <% end %>
+    <p><%= @post.name %></p>
+    <p><%= @post.content %></p>
+  <input type="submit" id="delete" value="delete">Delete</input>
+  <input id="hidden" type="hidden" name="_method" value="delete">
+</form>
 </body>
 </html>
