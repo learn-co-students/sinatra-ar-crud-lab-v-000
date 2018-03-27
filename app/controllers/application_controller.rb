@@ -43,21 +43,19 @@ class ApplicationController < Sinatra::Base
     erb :'edit'
   end
 
-  get "/update" do
-
+  patch "/update" do
     @post = Post.all
-
     if @post.includes(:name => params[:name], content: params[:content])
       @post.update(:name => params[:name], :content => params[:content])
     end
-
-    redirect to ('/posts/2') #CHECK - IS THIS RIGHT?!
+    redirect to ('/posts/2')
   end
 
   delete '/posts/:id/delete' do
-    @post = Post.find_by_id(params[:id])
-    @post.delete
-    redirect to ('/posts')
+    old_post = Post.find(params[:id].to_i)
+    @name = old_post.name
+    old_post.destroy
+    erb :delete
   end
 
   # https://learn.co/tracks/full-stack-web-development-v3/sinatra/activerecord/sinatra-restful-routes
