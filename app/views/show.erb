@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <form method="post" action="/posts/<%=@post.id%>/delete">
+  <p>Blog Post Names: </p>
+    <p><%= @post.name %></p>
+    <p><%= @post.content %></p>
+  <input type="submit" id="delete" value="delete">Delete</input>
+  <input id="hidden" type="hidden" name="_method" value="delete">
+</form>
+</body>
+</html>

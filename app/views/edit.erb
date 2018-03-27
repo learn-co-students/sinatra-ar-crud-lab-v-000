@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+  <form method="post" action="/posts/<%=@post.id%>">
+    <p>Edit Your Blog Post:
+        <p><%= @post.name %></p>
+        <p><%= @post.content %></p>
+    <input name="_method" id="hidden" type="hidden" value="patch">
+    <p><input type="text" name="name"></p>
+    <p><input type="text" name="content"></p>
+    <a href="/posts/<%=@post.id%>"><input type="submit" name="submit" id="submit" value="submit"></a>
+    <a href="/posts/:id/delete"><input type="button" name="delete" id="delete" value="delete"></a>
+  </form>
+</body>
+</html>
