@@ -1,0 +1,7 @@
+<h1>Hello World!</h1>
+<% if @posts != nil %>
+<% @posts.each do |post| %>
+<h3><a href="../posts/<%= post.id %>"><%= post.name %></a></h3>
+<p><%= post.content %></p>
+<% end %>
+<% end %>
