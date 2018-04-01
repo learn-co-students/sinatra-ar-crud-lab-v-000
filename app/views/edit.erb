@@ -1,0 +1,9 @@
+<p>Blog Title: <%=@post.name%></p>
+<p>Blog Content: <%=@post.content%></p>
+
+<form method="post" action="/posts/:id">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <<p>New Post Name: <input type="text" name="name"></p>
+  <p>New Post Content: <input type="text" name="content"></p>
+  <input type="submit" id="submit">
+</form>
