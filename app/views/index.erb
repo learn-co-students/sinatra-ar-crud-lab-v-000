@@ -1,1 +1,6 @@
-<h1>@posts.name</h1>
+<h1>List of posts</h1>
+<ul>
+  <% @posts.each do |post|%>
+    <li><%= post.name %></li>
+  <% end%>
+</ul>
