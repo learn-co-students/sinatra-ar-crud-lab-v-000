@@ -1,0 +1,13 @@
+<form action='/posts/<%= @post.id %>' method="post">
+  <h1>Blog Post Entry Update</h1>
+  <label>Current Name: </label>
+  <%= @post.name %><br>
+  <label>Current Content: </label>
+  <%= @post.content %><br>
+  <label>Updated Name: </label>
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <input type="text" id="name" name="name"><br>
+  <label>Updated Content: </label>
+  <input type="text" id="content" name="content"><br>
+  <input type="submit" id="submit">
+</form>
