@@ -50,7 +50,10 @@ class ApplicationController < Sinatra::Base
   end
 
   delete '/posts/:id/delete' do 
-    Post.last.destroy
+    @post = Post.find(params[:id])
+    @post.delete
+
+    redirect to '/posts'
   end
 
 
