@@ -6,17 +6,17 @@
   </head>
   <body>
 
-    <h1>Edit Post: <%= "#{@post.name}" %> </h1>
-    <p><%= "#{@post.content}" %></p>
+    <h1>Edit Post: <%= @post.id %> </h1>
+
 
     <form action="/posts/<%= @post.id %>" method="post">
       <input id="hidden" type="hidden" name="_method" value="patch">
 
       <label for="name">New Title:</label>
-      <input type="text" name="name" id="name">
+      <input type="text" name="name" id="name" value="<%=@post.name%>">
       <br>
       <label for="content">New Content: </label>
-      <textarea name="content" rows="8" cols="80" id="content"></textarea>
+      <input type="text" name="content" id="content" value="<%=@post.content%>">
       <br>
       <input type="submit" name="submit" id="submit">
     </form>

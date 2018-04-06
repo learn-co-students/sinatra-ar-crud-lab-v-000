@@ -17,36 +17,30 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts' do
-    # raise params.inspect
-    Post.create(name: params[:name], content: params[:content])
-    @posts = Post.all
-
-    erb :index
+    @post = Post.create(name: params[:name], content: params[:content])
+    redirect to '/posts'
+    # @posts = Post.all
+    # erb :index
   end
 
   get '/posts' do
     @posts = Post.all
-
     erb :index
   end
 
   get '/posts/:id' do
-    # binding.pry
     @post = Post.find(params[:id])
-
     erb :show
   end
 
   get '/posts/:id/edit' do
     @post = Post.find(params[:id])
-
     erb :edit
   end
 
   patch '/posts/:id' do
     @post = Post.find(params[:id])
     @post.update(name: params[:name], content: params[:content])
-
     erb :show
   end
 
