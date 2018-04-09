@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+  </head>
+  <body>
+    <h1>Blog post log</h1><br>
+    <% @post.each.with_index do |p, i| %>
+      <h2>Post # <%= i +1 %></h2>
+      <h3>Title: <%= p.name %></h3>
+      <p>Content: <%= p.content %></p>
+      <p>Post by ID: <%= p.id %></p><br>
+    <% end %>
+  </body>
+</html>
