@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+Please update your post using the form below:
+
+<form method="post" action="/posts/<%=@post.id%>">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+
+  <label for="name">Post Name:</label>
+  <input type="text" name="name" value="<%=@post.name%>" />
+
+  <label for="content">Post Body:</label>
+  <input type="text" name="content" value="<%=@post.content%>" />
+  <input type="submit" id="submit" />
+
+</form>
+
+  </body>
+</html>
