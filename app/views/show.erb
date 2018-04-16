@@ -1,0 +1,10 @@
+<h1>Show Page</h1>
+
+<h2><%=@post.name%></h2>
+
+<p><%=@post.content%></p>
+
+<form method="POST" action="/posts/<%= @post.id %>/edit">
+  <input id="hidden" type="hidden" name="_method">
+  <input type="submit" value="edit">
+</form>
