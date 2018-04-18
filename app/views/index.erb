@@ -1,0 +1,18 @@
+<h1>All blogs listed below</h1>
+
+<form method="get" action="/posts/new">
+<input id="hidden" type="hidden" name="_method">
+  <input type="submit" value="new blog">
+ </form>
+
+<%@posts.each do |post|%>
+<p><%=post.id%></p>
+<p>Post Name: <%=post.name%></p>
+<p>Post Content: <%=post.content%></p>
+<form method="get" action="/posts/<%= post.id %>/edit">
+  <input id="hidden" type="hidden" name="_method">
+  <input type="submit" value="edit">
+</form>
+<p>------------</p>
+<%end%>
+
