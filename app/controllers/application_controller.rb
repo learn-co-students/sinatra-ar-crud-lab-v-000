@@ -11,4 +11,39 @@ class ApplicationController < Sinatra::Base
   get '/' do
 
   end
+  
+  get '/posts/new' do 
+    erb :'new'
+  end
+  
+  post '/posts' do
+    Post.create(params)
+    @posts = Post.all
+    erb :'index'
+  end
+  
+  get '/posts' do
+    
+    erb :'index'
+  end
+  
+  get '/posts/:id' do
+    @post = Post.find(params[:id])
+    erb :'show'
+  end
+  
+  get '/posts/:id/edit' do
+    @post = Post.find(params[:id])
+    erb :'edit'
+  end
+  
+  patch '/posts/:id' do
+    @params = params
+    erb :'what'
+  end
+  
+  delete '/posts/:id/delete' do
+    erb :'delete'
+  end
+  
 end
