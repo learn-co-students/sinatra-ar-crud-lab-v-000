@@ -23,7 +23,7 @@ class ApplicationController < Sinatra::Base
   end
   
   get '/posts' do
-    
+    @posts = Post.all
     erb :'index'
   end
   
@@ -38,11 +38,17 @@ class ApplicationController < Sinatra::Base
   end
   
   patch '/posts/:id' do
-    @params = params
-    erb :'what'
+
+    @post = Post.find(params[:id])
+    @post.name = params[:name]
+    @post.content = params[:content]
+    @post.save
+    erb :'show'
   end
   
   delete '/posts/:id/delete' do
+    @post = Post.find(params[:id])
+    @post.destroy
     erb :'delete'
   end
   
