@@ -19,7 +19,6 @@ class ApplicationController < Sinatra::Base
   post '/posts' do
     @post = Post.create(params)
     #get info from params to post to index / create a new instance of post class!
-    #why is Post class not being used here?
     # erb :index
     redirect to '/posts'
   end
@@ -31,10 +30,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts/:id' do
-    # This action should use Active Record to grab the post with the id that is in
-    # the params and set it equal to @post.
-    # binding.pry
-
     @post = Post.find_by_id(params[:id])
     erb :show
   end
@@ -42,7 +37,6 @@ class ApplicationController < Sinatra::Base
   get '/posts/:id/edit' do
     @post = Post.find_by_id(params[:id])
     erb :edit
-
   end
 
   patch 'posts/:id' do
@@ -50,6 +44,7 @@ class ApplicationController < Sinatra::Base
     @post.name = params[:name]
     @post.content = params[:content]
     @post.save
+    # redirect to "/posts/#{@post.id}"
     erb :show
   end
 
