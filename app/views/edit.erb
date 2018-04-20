@@ -1,0 +1,10 @@
+<form action='/posts/<%=@post%>' method="post">
+<input id="hidden" type="hidden" name="_method" value="patch">
+
+  <h1>Name: <%=Post.find(@post).name%></h1><br>
+  <h1>Content: <%=Post.find(@post).content%></h1><br>
+
+  <input type="text" name=name>
+  <input type="text" name=content>
+  <input type="submit" value="submit">
+</form>
