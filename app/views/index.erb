@@ -1,3 +1,8 @@
-index
+<% @posts.each do |p| %>
+  <p>Title: <%= p.name %></p>
+  <p>Content: <%= p.content %></p>
+</br>
+<% end %>
+
 
 <!--  interate over all posts and display them using @posts-->
