@@ -18,7 +18,6 @@ describe "Blog Post App" do
       fill_in :content, :with => "blogging!!!!"
 
       click_button 'submit'
-
       expect(Post.all.count).to eq(3)
       expect(Post.last.name).to eq("my favorite blog post")
     end
@@ -93,6 +92,7 @@ describe "Blog Post App" do
       fill_in :content, :with => "this is the best blog post ever written"
 
       click_button 'submit'
+      
       expect(Post.all.count).to eq(2)
       expect(Post.last.name).to eq("Second Post!!")
     end

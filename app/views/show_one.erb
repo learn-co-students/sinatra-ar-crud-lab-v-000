@@ -1,0 +1,13 @@
+
+<% if params[:name] || params[:content]%>
+  <% @post.update({:name => params[:name], :content => params[:content]}) %>
+  <p>updated the post!</p>
+<% end %>
+
+  <h1><%= @post.name %></h1>
+  <p><%= @post.content %></p>
+
+<form action="/posts/<%= @post.id %>/delete" method="post">
+  <input type="hidden" name="_method" value="delete" id="hidden">
+  <input type="submit" name="" value="delete">
+</form>
