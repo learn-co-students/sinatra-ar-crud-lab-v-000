@@ -1,0 +1,7 @@
+<% @posts.all.each do |post| %>
+  <div>
+    <p>Name: <%= post.name%> </p>
+    <p>Content: <%= post.content %></p>
+    <p>ID <%= post.id%></p><br>
+  </div>
+<% end %>
