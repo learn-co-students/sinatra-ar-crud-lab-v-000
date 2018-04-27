@@ -1,0 +1,8 @@
+Post Name: <%= @post[:name] %>
+<br />
+Post Content: <%= @post[:content] %>
+
+<form action="/posts/<%= @post[:id] %>/delete" method="post">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete"></input>
+</form>
