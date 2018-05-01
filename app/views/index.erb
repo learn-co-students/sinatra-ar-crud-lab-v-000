@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>Active Record CRUD: Index</title>
+  </head>
+  <body>
+    <h1>Posts</h1>
+    <% @posts.each do |post| %>
+      <h2><%= post.name %></h2>
+      <p><%= post.content %></p>
+      <hr />
+    <% end %>
+
+
+
+  </body>
+</html>
