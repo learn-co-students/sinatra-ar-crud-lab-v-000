@@ -2,13 +2,14 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>New Post Page</title>
+    <title>Edit Post Page</title>
   </head>
   <body>
-    <h1>Create a Post</h1>
+    <h1>Edit Post</h1>
     <form method="POST" action="/posts">
       <input type="text" id="name" name="name">
       <input type="text" id="content" name="content">
+      <input id="hidden" type="hidden" name="_method" value="patch">
       <input type="submit" id="submit" name="submit">
     </form>
   </body>

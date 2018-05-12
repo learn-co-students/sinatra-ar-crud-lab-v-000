@@ -2,7 +2,7 @@
 
 class Post < ActiveRecord::Base
 
-  attr_reader :name, :content
+  attr_accessor :name, :content
 
   POSTS = []
 

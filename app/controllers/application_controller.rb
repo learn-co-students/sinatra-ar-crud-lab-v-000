@@ -31,4 +31,18 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
+  get '/posts/:id/edit' do
+    @post = Post.find_by(:id)
+    erb :edit
+  end
+
+  delete '/posts/:id/delete' do
+    @post = Post.find_by(:id)
+    erb :delete
+  end
+
+  post '/posts/:id/delete' do
+
+  end
+
 end
