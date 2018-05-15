@@ -1,6 +1,5 @@
 
 require_relative '../../config/environment'
-require_relative '../models/post.rb'
 
 class ApplicationController < Sinatra::Base
 
@@ -14,7 +13,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts' do
-    @post = Post.new(params)
+    @post = Post.new(params[:name], params[:content])
     @posts = Post.all
     erb :index
   end
@@ -25,22 +24,22 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts/:id' do
-    @post = Post.find_by(:id)
+    @post = Post.find(params[:id])
     erb :show
   end
 
-  get '/posts/:id/edit' do
-    @post = Post.find_by(:id)
-    erb :edit
-  end
+  # get '/posts/:id/edit' do
+  # @post = Post.find(params[:id])
+  #   erb :edit
+  # end
 
-  delete '/posts/:id/delete' do
-    @post = Post.find_by(:id)
-    erb :delete
-  end
+  # delete '/posts/:id/delete' do
+  #   @post = Post.find(params[:id])
+  #   erb :delete
+  # end
 
-  post '/posts/:id/delete' do
-
-  end
+  # post '/posts/:id/delete' do
+  #
+  # end
 
 end

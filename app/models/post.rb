@@ -2,14 +2,18 @@
 
 class Post < ActiveRecord::Base
 
-  attr_accessor :name, :content
+  attr_accessor :id, :name, :content
 
   POSTS = []
 
-  def initialize(args)
-    @name = args[:name]
-    @content = args[:content]
+  def initialize(name, content)
+    @name = name
+    @content = content
     POSTS << self
+  end
+
+  def self.create(name:, content:)
+    self.new(:name, :content)
   end
 
   def self.all
