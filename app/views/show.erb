@@ -8,5 +8,11 @@
       <h1>Post Name: <%= @post.name %></h1>
       <h2>Post Id: <%= @post.id %></h2>
       <h2>Post Content: <%= @post.content %></h2>
+
+      <form method="post" action="/models/<%= @post.id %>/delete">
+        <input id="hidden" type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete">
+      </form>
+
   </body>
 </html>
