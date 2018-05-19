@@ -36,16 +36,16 @@ class ApplicationController < Sinatra::Base
 
   # Update
   get '/posts/:id/edit' do
-    @post = Post.find(params[:id])
+    @post = Post.find_by_id(params[:id])
     erb :edit
   end
 
   patch '/posts/:id' do
-    @post = Post.find(params[:id])
+    @post = Post.find_by_id(params[:id])
     @post.name=params[:name]
     @post.content=params[:content]
     @post.save
-    redirect '/posts/'+params[:id]
+    erb :show
   end
 
   # Delete (from Show id page)
