@@ -11,6 +11,9 @@ class Post < ActiveRecord::Base
     @@all << self
   end
 
+  def self.create(name:, content:)
+  end
+
   def self.all
     @@all
   end
