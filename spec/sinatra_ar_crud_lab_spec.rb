@@ -7,6 +7,7 @@ describe "Blog Post App" do
   before do
     @post1 = Post.create(:name => post_name, :content => post_content)
     @post2 = Post.create(:name => "second post", :content => "i'm a really good blogger")
+
   end
 
   describe "Create Action" do
@@ -18,6 +19,7 @@ describe "Blog Post App" do
       fill_in :content, :with => "blogging!!!!"
 
       click_button 'submit'
+
 
       expect(Post.all.count).to eq(3)
       expect(Post.last.name).to eq("my favorite blog post")
