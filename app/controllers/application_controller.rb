@@ -1,4 +1,3 @@
-
 require_relative '../../config/environment'
 
 class ApplicationController < Sinatra::Base
@@ -9,14 +8,12 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts/new' do
+
     erb :new
   end
 
   post '/posts' do
-    params.each do |post|
-      binding.pry
-      Post.new(post[:name],post[:content])
-    end
+    Post.create(params[:name],params[:content])
     @posts = Post.all
 
     erb :index
