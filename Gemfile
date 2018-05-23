@@ -17,7 +17,6 @@ gem 'require_all'
 
 group :development do
   gem "capybara"
-  gem "sqlite3"
   gem "pry"
   gem "shotgun"
   gem "tux"
