@@ -1,7 +1,7 @@
 <h1>Here is the original post:  </h1>
 <p><%=@post_edit.name%>: <%=@post_edit.content%></br></p>
 
-<form action="/posts/<%=#{@post_edit}.id%>" method="post">
+<form method="post" action="/posts/<%=@post_edit.id%>">
   <input id="hidden" name="_method" value="patch">
   New Blog Name: <input type="text" name="name">
   New Blog Content: <input type="text" name="content">
