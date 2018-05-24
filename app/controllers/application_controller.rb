@@ -19,6 +19,10 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
+  get '/posts' do
+    
+  end
+
   get '/posts/:id' do
     @post_id = @posts.select {|post| post.id == params[:id]}
 
