@@ -1,0 +1,8 @@
+<!DOCTYPE HTML>
+<html>
+  <% @posts.each_with_index do |blog, number| %>
+    <h2>Blog <%= number %>:</h2><br>
+    <strong><%= blog.name %></strong><br>
+    <p><%= blog.content %></p>
+  <% end %>
+</html>
