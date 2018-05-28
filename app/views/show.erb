@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Show - Sinatra ActiveRecord CRUD Lab</title>
+  </head>
+  
+  <body>
+    <h1>Welcome to the Sinatra ActiveRecord CRUD lab!</h1>
+    <h2>Here's that blog post you requested:</h2>
+    
+    <h2><%=@post.name%></h2>
+    
+    <p><%=@post.content%></p>
+    
+    <br>
+    <h4>Post Options</h4>
+    <ol>
+      <li><a href="/posts/<%=@post.id%>/edit">Edit</a></li>
+      <li>
+        <form action="/posts/<%=@post.id%>/delete" method="post">
+          <input id="hidden" type="hidden" name="_method" value="delete" />
+          <button>delete</button>
+        </form>
+      
+      </li>
+    </ol>
+    
+  </body>
+
+</html>

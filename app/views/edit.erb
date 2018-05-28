@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit - Sinatra ActiveRecord CRUD Lab</title>
+  </head>
+  
+  <body>
+    <h1>Welcome to the Sinatra ActiveRecord CRUD lab!</h1>
+    <h2>Let's edit that post</h2>
+    
+    <form action="/posts/<%=@post.id%>" method="POST">
+      <input id="hidden" type="hidden" name="_method" value="patch" />
+      <p>
+        <label for="name">Blog Post Title:</label>
+        <input type="text" id="name" name="name" value="<%=@post.name%>" />
+      </p>
+      <p>
+        <label for="content">Blog Post Body:</label>
+        <input type ="text" id="content" name="content" value="<%=@post.content%>" />
+      </p>
+      <input type="submit" value="submit" />
+    </form>
+    
+  </body>
+
+</html>
