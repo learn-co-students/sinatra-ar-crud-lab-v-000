@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Show - Sinatra ActiveRecord CRUD Lab</title>
+  </head>
+  
+  <body>
+    <h1>Welcome to the Sinatra ActiveRecord CRUD lab!</h1>
+    <h2>Here are all of our blog posts</h2>
+    
+    <ol>
+    <% @posts.each do |bp| %>
+      <li><a href="/posts/<%= bp.id %>"><%= bp.name %></a>
+        <ul>
+          <li><%= bp.content %></li>
+        </ul>
+      </li>
+    <% end %>
+    </ol>
+    
+  </body>
+
+</html>
