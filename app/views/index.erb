@@ -1,0 +1,8 @@
+ <% @posts.each do |post| %>
+  <div>
+    <h3>Post<%=post.id%></h3>
+    <label>Post_Name: <%= post.name %></label><br>
+    <label>Post_Content: <%= post.content %></label>
+  </div>
+  <br>
+ <% end %>
