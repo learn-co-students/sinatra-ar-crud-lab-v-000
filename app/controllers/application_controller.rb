@@ -31,26 +31,27 @@ class ApplicationController < Sinatra::Base
                 erb :'posts/show'
               end
 
-  # update form
-  get '/posts/:id/edit' do
-    # edit form displayd here
-    @post = Post.find(params[:id])
-    erb :'posts/edit'
-  end
+              # update form
+              get '/posts/:id/edit' do
+                # edit form displayd here
+                @post = Post.find(params[:id])
+                erb :'posts/edit'
+              end
 
-  # update
-  patch '/posts/:id' do
-    @post = Post.find(params[:id])
-    @post.name = params[:name]
-    @post.content = params[:content]
-    erb :'posts/show'
-  end
+              # update
+              patch '/posts/:id' do
+                @post = Post.find(params[:id])
+                @post.name = params[:name]
+                @post.content = params[:content]
+                @post.save
+                erb :'posts/show'
+              end
     
 
   # delete
   delete '/posts/:id/delete' do
     # delete post here
-
+    Post.find(params["id"]).delete
     @posts = Post.all
     erb :'posts/index'
   end
