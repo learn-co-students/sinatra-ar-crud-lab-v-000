@@ -2,6 +2,7 @@
 <ol>
  <% @posts.all.each do |post|%>
     <li>
+    <label>id:<%= post.id%></label><br>
      <label><%= post.name%></label><br>
      <label><%=post.content%></label>
     </li>
