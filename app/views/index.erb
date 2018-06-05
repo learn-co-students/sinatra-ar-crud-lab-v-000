@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Index</title>
+</head>
+<body>
+  <% @posts.each do |post| %>
+  <div class="post">
+    <p>Name: <%= post.name %></p><br>
+    <p>Content: <%= post.content %></p><br>
+
+  </div><br>
+<% end %>
+
+
+</body>
+</html>
