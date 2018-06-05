@@ -1,0 +1,9 @@
+<label><%=@single_post.id%></label><br>
+<label><%=@single_post.name%></label><br>
+<label><%=@single_post.content%></label>
+
+<form method="post" action='/posts/<%=@single_post.id%>/delete'>
+  <input id="hidden" type="hidden" name="_method" value="delete">
+
+  <input type="submit" value="delete">
+</form>
