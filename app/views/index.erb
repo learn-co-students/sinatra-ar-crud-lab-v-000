@@ -5,7 +5,13 @@
   <title>Index.erb</title>
 </head>
 <body>
-  <h1>test</h1>
+  <% @posts.each do |post| %>
+  <div class="post">
+    <p>Name: <%= post.name %></p><br>
+    <p>Content: <%= post.content %></p><br>
+
+  </div><br>
+<% end %>
 
 
 </body>
