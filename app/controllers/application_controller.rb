@@ -16,6 +16,7 @@ class ApplicationController < Sinatra::Base
   post '/posts' do
     #binding.pry
     @post1 = Post.create(name: params[:name], content: params[:content])
+
     erb :index
   end
 
