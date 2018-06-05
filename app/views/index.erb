@@ -1,0 +1,10 @@
+<form action="/posts/:id" method="POST">
+<ol>
+ <% @posts.all.each do |post|%>
+    <li>
+     <label><%= post.name%></label><br>
+     <label><%=post.content%></label>
+    </li>
+ <%end%>
+</ol>
+</form>
