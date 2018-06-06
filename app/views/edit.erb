@@ -1,0 +1,16 @@
+<h1>Time to Fix Your Mistakes</h1>
+
+<form action="/posts/<%= @post.id %>" method="post">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <label for="change_post_title">Change Your Post Title Here<br>
+    ...ya big flippy-flopper.</label><br>
+    <input type="text" name="name" id="change_post_title" value="<%= @post.name %>"><p>
+
+    <label for="change_entry">Change your content here if you really want to...<br>
+    ...just like 2007-era John Kerry. <em>Swoon.</em> JK.</label><br>
+    <textarea name="content" rows="8" cols="80" id="change_entry" value=<%= @post.content %>></textarea><p>
+
+    <label for="submit">Ready to publish that blogging gold?  Fucking tap that submit button!</label><p>
+    <input type="submit" value="Submit" id="submit">
+
+</form>
