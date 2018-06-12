@@ -1,0 +1,24 @@
+<!--
+<form action="/posts/<%= @post.id %>" method="patch">
+    <h1> <%= @post.name %></h1>
+    <h1> New Post Name: </h1>
+    <h1> New Post Content: </h1>
+
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <input type="text" ...>
+
+</form>
+ -->
+
+<form action="/posts/<%= @post.id %>" method="post">
+
+  <h1> Current name: <%= @post.name %></h1>
+  <h1> Current content: <%= @post.content %></h1>
+
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <input type="text" name="name">
+  <input type="text" name="content">
+
+
+  <input type="submit" name="submit" value="submit">
+</form>
