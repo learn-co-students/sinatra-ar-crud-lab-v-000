@@ -5,9 +5,11 @@
     <title>Show Blog Post</title>
   </head>
   <body>
-    <% @posts.each do |post| %>
-      <h1><%= post.name %></h1>
-      <h4><%= post.content %></h4>
-    <% end %>
+    <h3><%= @post.name %></h3>
+    <h3><%= @post.content %></h3>
+    <form method="post" action="/posts/<%= @post.id %>/delete">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      <input type="submit" value="delete">
+    </form>
   </body>
 </html>
