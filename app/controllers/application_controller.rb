@@ -1,4 +1,3 @@
-
 require_relative '../../config/environment'
 
 require 'pry'
@@ -19,13 +18,14 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts' do
-    @post = Post.create(name: params[:name], content: params[:content])
-
+    @post = Post.create()
+    
     erb :"../views/index"
   end
 
   get '/posts' do
     @posts = Post.all
+
     erb :"../views/show"
   end
 end
