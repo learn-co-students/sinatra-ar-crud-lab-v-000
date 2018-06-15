@@ -26,12 +26,12 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts/:id' do
-    @post = Post.find_by_id(params[:id].to_i)
+    @post = Post.find(params[:id].to_i)
     erb :show
   end
 
   get '/posts/:id/edit' do
-    @post = Post.find_by_id(params[:id].to_i)
+    @post = Post.find(params[:id].to_i)
     erb :edit
   end
 
@@ -41,11 +41,10 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
-  post '/posts/:id/delete' do
+  delete '/posts/:id/delete' do
     @post = Post.find(params[:id].to_i)
     @post.destroy
     erb :delete
   end
-
 
 end
