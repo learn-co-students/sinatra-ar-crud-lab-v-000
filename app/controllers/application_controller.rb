@@ -8,15 +8,12 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  
-    
   get '/posts' do
     #get all posts
     
     @posts = Post.all
     erb :index
   end
-  
 
   get '/posts/new' do 
     erb :new
@@ -39,7 +36,6 @@ class ApplicationController < Sinatra::Base
   end
 
   patch '/posts/:id' do 
-    # "patch"
     id = params[:id]
     og_post = Post.find(id)
     up_hash = {}
