@@ -1,0 +1,15 @@
+
+<h1>Index.erb</h1>
+
+<h1>Posts</h1>
+
+<ol>
+  <%@posts.each do |post|%>
+
+    <li>Name: <%=post.name%></li>
+    <li>Content: <%=post.content%></li>
+    
+  <%end%>
+
+</ol>
+
