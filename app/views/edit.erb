@@ -1,0 +1,9 @@
+<h1>Change your post number <%= @post.id %> here:.</h><br>
+  <h2>Current name: <%= @post.name %></h2><br>
+  <h2>Current content: <%= @post.content %></h2><br>
+<form action="/posts/<%= @post.id %>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  New Name: <input type="text" name="name"><br>
+  New Content: <input type="text" name="content"><br>
+  <button type="submit" id="submit">Submit</button>
+</form>
