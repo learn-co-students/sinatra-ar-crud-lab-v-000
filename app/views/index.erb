@@ -1,0 +1,6 @@
+<h1>Some Amazing Blog Posts to Read</h1>
+<% @posts.each do |post|%>
+   <h3>Name: <%= post.name %></h3>
+   <p>Blog: <%= post.content %></P>
+   <p><a href="/posts/<%= post.id %>">Link</a> to post page</p>   
+<% end %>

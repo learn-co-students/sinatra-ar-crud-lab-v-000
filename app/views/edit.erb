@@ -1,0 +1,14 @@
+
+<form action="/posts/<%= @post.id %>" method="post">
+
+  <h2> Current Title: <%= @post.name %></h2>
+  <h4> Current Content: <%= @post.content %></h4>
+
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <h2><label for="name"> Update Your Title: </label>
+  <input type="text" id="name" name="name"></h2>
+  <br>
+  <label for="content"</label><textarea rows="25" cols="50" name="content" id="content">Enter your new content here...</textarea>
+
+  <input type="submit" value="submit">
+</form>
