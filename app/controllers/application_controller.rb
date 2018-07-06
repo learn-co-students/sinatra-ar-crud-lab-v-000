@@ -8,18 +8,13 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/' do
-
-  end
-
   get '/posts/new' do
     erb :new
   end
 
   post '/posts' do
     @post = Post.create(params)
-    @post.name
-    @post.content
+    redirect to '/posts'
   end
 
   get '/posts' do
@@ -30,6 +25,7 @@ class ApplicationController < Sinatra::Base
   get '/posts/:id' do
     id = params["id"].to_i
     @post = Post.find_by(id: id)
+    binding.pry
     erb :show
   end
 
