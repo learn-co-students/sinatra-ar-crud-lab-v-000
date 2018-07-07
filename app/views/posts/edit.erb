@@ -1,0 +1,19 @@
+<!DOCTYPE>
+<html>
+<head>
+  <body>
+    <form action = "/posts/<% @post.id %>" method = "POST">
+      <input type = "hidden" id = "hidden" name = "_method" value = "PATCH">
+      <h1> <label for "name"> Edit <%= Post.name %> </label> </h1>
+      <p> </p>
+      <input type = "text" name = "name" id = "name" value: <%=post.name%>
+      <br>
+      <h2> <label for content> Post Content: <%= post.content%> </h2></label>
+      <input type = "text" content = "content" id = "content" value: <%=post.content%>
+
+      <button type = 'submit' value = 'submit' id = 'submit'>Submit</button>
+    </form>
+  </body>
+
+
+</html>
