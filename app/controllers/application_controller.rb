@@ -16,7 +16,6 @@ class ApplicationController < Sinatra::Base
   post '/posts' do
     Post.create(params)
     redirect '/posts'
-    #binding.pry
   end
 
   get '/posts/new' do #create a new blogpost
@@ -40,15 +39,12 @@ class ApplicationController < Sinatra::Base
   end
 
   patch "/posts/:id" do #submits and saves the updates
-
     @post = Post.find_by_id(params[:id])
-    @post.name = params[:name]
-    @post.content = params[:content]
-    @post.save
-    redirect to "/posts/#{post.id}"
+    @post.update(name: params[:name], content: params[:content])
+    redirect to "/posts/#{@post.id}"
   end
 
-  delete '/posts/:id/delete' do
+  delete '/posts/:id/delete' do #deletes the post
     @post = Post.find(params[:id])
     @post.destroy
     erb :delete
