@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+  </head>
+  <body>
+    <% @posts.each_with_index do |post, i| %>
+      <%= i + 1 %>.<br>
+      <%= post.name %><br>
+      <%= post.content %><br>
+      <% end %>
+  </body>
+</html>
