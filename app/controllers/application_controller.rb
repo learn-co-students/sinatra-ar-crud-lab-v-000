@@ -55,6 +55,7 @@ class ApplicationController < Sinatra::Base
 
   delete '/posts/:id/delete' do
     @post = Post.find(params[:id])
+    # http://guides.rubyonrails.org/active_record_basics.html#delete
     @post.destroy
     @posts = Post.all
     erb :index
