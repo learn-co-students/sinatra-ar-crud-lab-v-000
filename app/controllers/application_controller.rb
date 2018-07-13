@@ -14,11 +14,19 @@ class ApplicationController < Sinatra::Base
     erb :new
   end
 
-  get 'posts/:id' do
-    binding.pry
+  get '/posts/:id' do
     @post = Post.find(params[:id])
     erb :show
   end
+
+  get '/posts/:id/edit' do
+    erb :edit
+  end
+
+  patch '/posts/:id' do
+    Post.find(params[:id])
+  end
+
 
   get "/posts" do
     @posts = Post.all
