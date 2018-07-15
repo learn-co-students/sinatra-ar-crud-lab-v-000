@@ -1,6 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE>
 <html>
   <body>
-    <%= @post.name %> was deleted!
+    <form action="/posts/<%= @post.id %>/delete" method="post">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      <%= @post.name %> was deleted!
+      <input type="submit" value="delete">
   </body>
 </html>
+</form>

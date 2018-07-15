@@ -1,23 +1,24 @@
 require_relative '../../config/environment'
+require 'pry'
 
 class ApplicationController < Sinatra::Base
 
-  configure do
-    set :public_folder, 'public'
-    set :views, 'app/views'
-  end
+configure do
+  set :public_folder, 'public'
+  set :views, 'app/views/posts'
+end
 
   get '/' do
 
   end
 
   get '/posts/new' do
-    erb :new
+    erb :'new'
   end
 
   post '/posts' do
     Post.create(params)
-    redirect '/posts'
+    rediret '/posts'
   end
 
   get '/posts' do
@@ -26,29 +27,30 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts/:id' do
-    @post = Post.find(params["id"])
+    @post = Post.find(params[:id])
     erb :show
   end
 
-  get '/posts/:id/edit' do
-    @post = Post.find(params["id"])
+  get '/posts/:id/edit'  do  #load edit form
+    @post = Post.find(params[:id])
     erb :edit
   end
 
   patch '/posts/:id' do
-    id = params["id"]
-    new_params = {}
-    old_post = Post.find(id)
-    new_params[:name] = params["name"]
-    new_params[:content] = params["content"]
-    old_post.update(new_params)
+  Post.update(
+    params[:id].to_i,
+    name: params[:name],
+    content: params[:content]
+  )
 
-    redirect "/posts/#{id}"
-  end
+  redirect "/posts/#{params[:id]}"
+end
 
-  delete '/posts/:id/delete' do
-    @post = Post.find(params["id"])
-    @post.destroy
-    erb :delete
-  end
+
+ delete '/posts/:id/delete' do #delete action
+  @post = Post.find_by_id(params[:id])
+  @post.destroy
+  erb :delete
+end
+
 end
