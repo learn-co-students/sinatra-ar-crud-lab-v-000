@@ -38,5 +38,5 @@ end
 Capybara.app = app
 
 ./Gemfile.lock
-./db/*.sqlite
-./db/schema.rb
+db/*.sqlite
+db/schema.rb
