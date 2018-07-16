@@ -1,7 +1,9 @@
 
-# rework this to save using the database
+# these methods should all be default to ActiveRecord
 
 class Post < ActiveRecord::Base
+
+=begin
   attr_accessor :name, :content
   POSTS = []
 
@@ -22,5 +24,6 @@ class Post < ActiveRecord::Base
   def self.last
     all[-1]
   end
+=end
 
 end
