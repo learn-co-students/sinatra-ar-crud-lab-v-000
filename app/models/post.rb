@@ -1,4 +1,6 @@
 
+# rework this to save using the database
+
 class Post < ActiveRecord::Base
   attr_accessor :name, :content
   POSTS = []
