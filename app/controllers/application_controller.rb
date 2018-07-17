@@ -15,7 +15,8 @@ class ApplicationController < Sinatra::Base
 
   post '/posts' do
     @post = Post.create(name: params[:name], content: params[:content])
-    erb :index
+    #erb :index
+    redirect to '/posts'
   end
 
 #-----------READ --CRUD--
@@ -47,5 +48,5 @@ class ApplicationController < Sinatra::Base
     @post = Post.find(params[:id])
     @post.destroy
     erb :delete
-  end   
+  end
 end
