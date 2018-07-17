@@ -2,27 +2,8 @@
 
 <p> <%= @post.content %> </p>
 
-<% # TODO delete a specific post %>
-
-<!--
-- add delete button to show page that's actually a form
-
-- it will send a post requre to this delete controller action
-
-- after the deletion render the view below which confirms deletion
-
-- make a form that has no input fields, only a "submit" button with a value
-  of "delete"
-
-- give your form a method of "post" and an action of "/posts/:id/delete'
-
-- Make sure to dynamically set the :id of the form action
-
-- be sure the form includes the hidden input tag to change the request from
-  post to delete
-
 <form action="/posts/<%= @post.id %>/delete" method="post">
   <input id="hidden" type="hidden" name="_method" value="delete">
+
   <input type="submit" value="delete">
 </form>
--->
