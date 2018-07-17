@@ -15,8 +15,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts/new' do
-
-    # form to create posts
     erb :new
   end
 

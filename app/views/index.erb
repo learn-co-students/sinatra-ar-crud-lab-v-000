@@ -1,1 +1,8 @@
-<% TODO show all posts %>
+<h1>All Blog Posts</h1>
+
+<% @all.each do |post| %>
+  <div class="post">
+    <p> <%= post.name %> </p>
+    <p> <%= post.content %> </p>
+  </div>
+<% end %>
