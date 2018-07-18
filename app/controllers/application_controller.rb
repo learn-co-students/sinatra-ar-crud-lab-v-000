@@ -19,7 +19,8 @@ class ApplicationController < Sinatra::Base
 
   post '/posts' do  #creates a post
     @post = Post.create(params)
-    redirect to '/posts'
+    # redirect to '/posts'
+    erb :index
   end
 
   get '/posts/:id' do
@@ -43,7 +44,8 @@ class ApplicationController < Sinatra::Base
   delete '/posts/:id/delete' do
     @post = Post.find_by_id(params[:id])
     @post.delete
-    redirect to '/posts'
+    # redirect to '/posts'
+    erb :deleted
   end
 
 
