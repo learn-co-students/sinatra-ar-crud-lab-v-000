@@ -1,0 +1,14 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css" type="text/css">
+  </head>
+    <body>
+    <form method="post" action="/posts/<%=@post.id%>/delete">
+      <h1>Name: <%=@post[:name]%></h1>
+      <p>Content: <%=@post[:content]%></p>
+      <input id="hidden" type="hidden" name="_method" value="delete" />
+      <input type="submit" id="submit" value="delete"/>
+    </form>
+  </body>
+</html>
