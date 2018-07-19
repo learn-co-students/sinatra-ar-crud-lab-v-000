@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Edit Post</title>
+  </head>
+  <body>
+    <form method ="POST" action="/posts/<%= @post.id %>">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+      <fieldset>
+        <legend>
+            Modify
+        </legend>
+        <label>
+          Name:
+          <input type="text" name="name"><%= @post.name %></input>
+        </label>
+        <br />
+        <textarea name="content"  rows="4" cols="40"><%= @post.content %></textarea>
+      <input type="submit" id="submit" value="submit">
+      </fieldset>
+    </form>
+  </body>
+</html>
