@@ -35,15 +35,18 @@ class ApplicationController < Sinatra::Base
 
   patch '/posts/:id' do
     @post = Post.find(params[:id])
+    @post.update(name: params[:post][:name], content: params[:post][:content])
     @post.save
     #  binding.pry
     redirect to "/posts/#{post.id}"
 
   end
 
-  delete '/posts/:id/delete' do
-    
-    erb :'delete'
+   delete '/posts/:id/delete' do
+    @post = Post.find(params[:id])
+    @post.delete
+
+    redirect to "index"
   end
 
 
