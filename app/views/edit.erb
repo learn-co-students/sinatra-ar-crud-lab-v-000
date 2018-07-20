@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css" type="text/css">
+  </head>
+  <body>
+    <form method="post" action="/posts/<%=@post.id%>">
+       Name: <input type="text" id="name" name="post[name]" /><%=@post.name%><br>
+       Content: <input type="text" id="content" name="post[content]" /><%=@post.content%><br>
+       <input id="hidden" type="hidden" name="_method" value="patch"/>
+       <input type="submit" id="submit">
+    
+    </form>
+  </body>
+</html>
