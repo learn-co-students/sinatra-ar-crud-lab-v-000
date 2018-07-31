@@ -4,7 +4,7 @@ Current Post:
 
 <form "/posts/<%= @post.id %>"  method="post">
     <input id="hidden" type="hidden" name="_method" value="patch">
-    <p><input type="name" name="name" value="Name"></p>
-    <p><input type="content" name="content" value="Content"></p>
+    <p>Name:<input type="name" name="name"></p>
+    <p>Content:<input type="content" name="content"></p>
     <p><button type="submit" value="submit">Submit</button></p>
 </form>
