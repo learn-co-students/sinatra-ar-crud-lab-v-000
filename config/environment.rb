@@ -9,8 +9,5 @@ ActiveRecord::Base.establish_connection(
 )
 
 use Rack::MethodOverride
-run ApplicationController
 
 require_all 'app'
-
-app/controllers/application_controller.rb
