@@ -1,1 +1,9 @@
-<h1>Posts</h1>
+<h1>All Posts</h1>
+<br>
+<% @posts.each do |post| %>
+  <div class="post">
+    <p><<%= post.name %>>
+    <p><%= post.content %>
+    <br>
+  </div>
+<% end %>
