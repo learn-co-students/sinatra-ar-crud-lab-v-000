@@ -3,10 +3,8 @@ source 'http://rubygems.org'
 gem 'activerecord', :require => 'active_record'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 
+gem 'learn-co', '3.8.12'
 gem 'sinatra'
-gem 'sqlite3'
-gem 'tux'
-gem 'pry'
 gem 'pry-nav'
 gem 'rake'
 gem 'rspec'
@@ -21,5 +19,4 @@ group :development do
   gem "pry"
   gem "shotgun"
   gem "tux"
-  gem "capybara"
 end
