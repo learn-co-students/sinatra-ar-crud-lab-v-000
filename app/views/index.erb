@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Posts Index</title>
+  	</head>
+	<body>
+		<h1> POST INDEX </h1>
+		<% if @posts == nil %>
+		<% NO POSTS TO DISPLAY AT THIS TIME %>
+		<% else %>
+			<% @posts.each do |post| %>
+				<h2> Name: <%= post.name %></h2>
+				<h2> Content: <%= post.content %></h2><br>
+			<% end %>
+		<% end %>
+	</body>
+</html>
