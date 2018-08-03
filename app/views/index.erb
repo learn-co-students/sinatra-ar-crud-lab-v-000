@@ -5,7 +5,9 @@
     <title>Index</title>
   </head>
   <body>
-    <h1><%=@post.name%></h1>
-    <p><%=@post.content%></p>
+    <% @posts.each do |post| %>
+    <h1>Post Name: <%=post.name%></h1>
+    <p>Post Content: <%=post.content%></p>
+    <% end %>
   </body>
 </html>
