@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Posts</title>
+  </head>
+  <body>
+    <h1>Posts</h1>
+
+    <% if @posts %>
+      <% @posts.each do |post| %>
+        <div class="post">
+          <h2>Post Title: <%= post.name %></h2><br>
+          <p><%= post.content %></p>
+        </div><br>
+      <% end %>
+    <% end %>
+  </body>
+</html>
