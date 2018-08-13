@@ -1,1 +1,6 @@
-<%= Post.all %>
+<ul>
+<%= @posts.all.each do |p| %>
+<li> Name: <%= p.name %> </ul>
+<li> Content: <%= p.content %> </ul>
+<%= end %>
+</ul>
