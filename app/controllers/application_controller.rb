@@ -8,18 +8,18 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/index' do
-    erb :index
-  end
-
   get '/posts/new' do
     erb :new
   end
 
   post '/posts' do
-    Post.create(name:params[:name], content:params[:content])
+    new_post = Post.create(name:params[:name], content:params[:content]).save
     @posts = Post.all
     redirect 'index'
+  end
+
+  get '/index' do
+    erb :index
   end
 
 end
