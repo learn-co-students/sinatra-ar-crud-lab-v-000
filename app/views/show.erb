@@ -1,2 +1,8 @@
-<!-- Shows individual posts -->
-<h1> hello world! </p>
+Post #: <%= @post.id %><br>
+Title: <%= @post.name %><br>
+Content: <%= @post.content %><br>
+
+<form method="post" action="/posts/<%= @post.id %>/delete">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+</form>
