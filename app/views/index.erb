@@ -1,2 +1,7 @@
-
-<%= @posts %>
+<!-- Shows all posts -->
+<% @posts.each do |p| %>
+  Post #: <%= p.id %><br>
+  Title: <%= p.name %><br>
+  Content: <%= p.content %><br>
+  <br>
+<% end %>
