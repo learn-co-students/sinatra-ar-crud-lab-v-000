@@ -3,13 +3,15 @@
 class Post < ActiveRecord::Base
   attr_accessor :name, :content
 
- ALL = []
+ @@all = []
+ 
   def initialize(params)
     @name = params[:name]
     @content = params[:content]
+    @@all << self
   end
 
   def self.all
-    ALL 
+    @@all 
   end
 end

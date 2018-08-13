@@ -18,8 +18,9 @@ class ApplicationController < Sinatra::Base
 
   post '/posts' do
     Post.new(params)
-    redirect 'index'
     binding.pry
+    redirect 'index'
+
   end
 
 end
