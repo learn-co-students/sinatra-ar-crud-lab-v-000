@@ -1,0 +1,10 @@
+<h1>Show One Blog Post</h1>
+<div class="post">
+  <h4><%= @post.name %></h4><br>
+  <h4><%= @post.content %></h4>
+<form action="/posts/<%= @post.id %>/delete" method="POST">
+<input id="hidden" type="hidden" name="_method" value="delete">
+<input type="submit" value="delete">
+</form>
+<a href="/posts/@post.id/edit"> Edit Post</a>
+</div><br>
