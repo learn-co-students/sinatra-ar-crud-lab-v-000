@@ -1,0 +1,7 @@
+<h1>Timeline</h1>
+<% if @posts != nil %>
+  <% @posts.each do |post| %>
+    <h3><%= post.name %></h3>
+    <h5><%= post.content %></h5>
+  <% end %>
+<% end %>
