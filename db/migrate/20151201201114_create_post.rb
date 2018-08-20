@@ -5,5 +5,8 @@ class CreatePost < ActiveRecord::Migration[5.1]
       t.string :content
 
     end
+
+    def down
+      DELETE FROM posts
+    end 
   end
-end
