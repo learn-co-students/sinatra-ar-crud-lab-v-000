@@ -125,7 +125,7 @@ describe "Blog Post App" do
       visit "/posts/#{@post2.id}"
       click_button "delete"
       expect(Post.all.count).to eq(1)
-      expect(Post.last.name).to eq("Hello World")
+      expect(Post.last.name).to eq("second post")
     end
 
     it "submits the form via a delete request" do
