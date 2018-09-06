@@ -1,0 +1,10 @@
+<h3>Name</h3>
+<%=@post.name %>
+
+<h3>Blog post</h3>
+<%=@post.content %>
+
+<form method="POST" action="/posts/<%=@post.id%>/delete">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="submit" value="delete">
+</form>
