@@ -1,0 +1,9 @@
+<h1>The page that will list all the posts</h1>
+
+<% @posts.each do |post| %>
+    <h3>Name:</h3>
+    
+    <p><%= post.name %></p>
+    <h3>Blog post:</h3>
+    <p><%= post.content %></p>
+<% end %>
