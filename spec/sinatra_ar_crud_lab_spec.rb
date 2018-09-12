@@ -94,7 +94,7 @@ describe "Blog Post App" do
 
       click_button 'submit'
       expect(Post.all.count).to eq(2)
-      expect(Post.last.name).to eq("Second Post!!")
+      expect(Post.all.last.name).to eq("Second Post!!")
     end
 
     it "redirects to '/posts/:id'" do
