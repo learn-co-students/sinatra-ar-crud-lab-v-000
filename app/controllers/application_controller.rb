@@ -18,8 +18,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts' do
-    @posts = []
-    Post.all.each {|post| @posts << post }
+    @posts = Post.all
     erb :index
   end
 
