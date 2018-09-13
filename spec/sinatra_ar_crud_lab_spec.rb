@@ -88,7 +88,6 @@ describe "Blog Post App" do
     end
 
     it "saves edits to a blog post" do
-      binding.pry
       visit "/posts/#{@post2.id}/edit"
       fill_in :name, :with => "Second Post!!"
       fill_in :content, :with => "this is the best blog post ever written"
