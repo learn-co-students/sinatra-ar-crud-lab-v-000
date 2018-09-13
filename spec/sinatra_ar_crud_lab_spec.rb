@@ -88,13 +88,14 @@ describe "Blog Post App" do
     end
 
     it "saves edits to a blog post" do
+      binding.pry
       visit "/posts/#{@post2.id}/edit"
       fill_in :name, :with => "Second Post!!"
       fill_in :content, :with => "this is the best blog post ever written"
 
       click_button 'submit'
       expect(Post.all.count).to eq(2)
-      expect(Post.all.last.name).to eq("Second Post!!")
+      expect(Post.last.name).to eq("Second Post!!")
     end
 
     it "redirects to '/posts/:id'" do
