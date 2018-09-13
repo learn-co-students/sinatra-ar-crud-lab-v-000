@@ -38,6 +38,9 @@ class ApplicationController < Sinatra::Base
     # @post.update(params[:name])
     # @post.update(params[:content])
     # redirect to '/posts/#{@post.id}'
+
+    # Why does @post.update not work?
+    # The ActiveRecord doc says that #save is included in the method
     @post.name = params[:name]
     @post.content = params[:content]
     @post.save
