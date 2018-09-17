@@ -3,8 +3,8 @@
 
   <h1>All Blog Posts:</h1>
   <ul>Blog Post:
-    <% Post.all.each do |post| %>
-      <%= post.name %> <!-- create posts variable in controller...think we're just printing whole object...for iteration use <% b/c its whats inside of iteration that we're printing -->
+    <% @posts.each do |post| %>
+      <%= post.name %>
     <% end %>
   </ul>
 

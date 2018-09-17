@@ -17,8 +17,13 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts' do
-    @new_post = Post.create(params)
+    @posts = Post.all
     erb :index
+  end
+
+  post '/posts' do
+    @new_post = Post.create(params)
+    redirect to '/posts'
   end
 
   get '/posts/:id' do
@@ -26,7 +31,7 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
-  get '/posts/:id/edit' do
+  get '/posts/:id/edit' do #id is being interpolated here-colon makes dynamic route
     erb :edit
   end
 
