@@ -10,11 +10,13 @@ gem 'rspec'
 gem 'rack-test'
 gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
 gem 'require_all'
+gem 'thin'
 
 
 group :development do
   gem "capybara"
   gem "pry"
+  gem "tux"
   gem "sqlite3"
   gem "shotgun"
 end
