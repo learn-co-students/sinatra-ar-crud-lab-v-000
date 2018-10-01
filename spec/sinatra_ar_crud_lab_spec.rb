@@ -34,7 +34,7 @@ describe "Blog Post App" do
       expect(page.current_path).to eq('/posts')
       expect(page.body).to include("blog blog blog blog blog")
     end
-
+ 
   end
 
   describe "Read Action " do
