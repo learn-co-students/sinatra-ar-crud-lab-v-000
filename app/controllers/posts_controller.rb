@@ -10,10 +10,13 @@ class PostsController < ApplicationController
   end
 
   post '/posts' do
+    # raise params.inspect
+    @post = Post.new
+    @post.name = params[:name]
+    @post.content = params[:content]
+    @post.save
 
-    @name = params['name']
-    @content = params['content']
-    erb :'posts/index'
+    redirect "/posts"
   end
 
   get '/posts/:id' do
@@ -21,4 +24,12 @@ class PostsController < ApplicationController
     erb :'posts/show'
   end
 
+  get 'posts/:id/edit' do
+    @post = Post.find(params[:id])
+    erb :'posts/edit'
+  end
+
+  patch '/posts/:id' do
+    # raise params.inspect
+  end
 end
