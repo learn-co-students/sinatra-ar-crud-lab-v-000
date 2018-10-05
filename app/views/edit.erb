@@ -1,0 +1,14 @@
+<h1> Edit Your Post: </h1>
+
+<p>Current Name: <%= @post.name %></p>
+<p>Current Content: <%= @post.content %></p>
+
+<form action="/posts/<%= @post.id %>" method="post">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <label for "name">Change Name To:</label>
+    <p><input type="text" name="name"></p>
+    <label for "content">Change Content To:</label>
+    <p><textarea id="content" class="text" cols="86" rows="20" name="content">Enter text here...</textarea></p>
+    <p><input type="submit" id="button" value="submit"></p>
+</form>
+
