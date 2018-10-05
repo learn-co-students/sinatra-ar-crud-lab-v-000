@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Welcome to The Blog Post Page</title>
+</head>
+<body>
+  <h2>
+    <p><%= @post.name %></p>
+    <p><%= @post.content %></p>
+    <form method="post" action="/posts/<%=@post.id%>/delete">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      <input type="submit" value="delete">
+      <form>
+      </h2>
+    </body>
+    </html>
