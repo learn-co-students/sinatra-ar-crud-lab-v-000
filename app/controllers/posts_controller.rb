@@ -24,12 +24,24 @@ class PostsController < ApplicationController
     erb :'posts/show'
   end
 
-  get 'posts/:id/edit' do
+  get '/posts/:id/edit' do
     @post = Post.find(params[:id])
     erb :'posts/edit'
   end
 
   patch '/posts/:id' do
-    # raise params.inspect
+    @post = Post.find(params[:id])
+    @post.name = params[:name]
+    @post.content = params[:content]
+    @post.save
+
+    redirect "/posts/#{@post.id}"
+  end
+
+  delete '/posts/:id' do
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    redirect 'posts'
   end
 end
