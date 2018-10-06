@@ -1,0 +1,5 @@
+#this page should use erb to iterate through @posts to display them
+<%collection = @posts.collect do |post|%>
+  <%=post.name%>
+  <%=post.content%>
+<%end%>
