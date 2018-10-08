@@ -5,9 +5,12 @@
   </head>
   <body>
     <h1>Blog Posts</h1>
-      <%=@post1%><br>
-      <%=@post2%>
 
+      <% @posts.each do |post| %>
+      <%= post.name %><br>
+      <%= post.content %>
+      <%end%>
+      
   </body>
 
 </html>
