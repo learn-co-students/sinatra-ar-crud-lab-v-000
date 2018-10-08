@@ -6,11 +6,11 @@
   <body>
     <h1>Blog Posts</h1>
 
-      <% @posts.each do |post| %>
+      <% @posts.collect do |post| %>
       <%= post.name %><br>
       <%= post.content %>
       <%end%>
-      
+
   </body>
 
 </html>
