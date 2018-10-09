@@ -5,7 +5,7 @@
   </head>
   <body>
     <h1>Blog Posts</h1>
-    <%Blog_posts = @posts.collect do |post| %>
+    <%@posts.collect do |post| %>
   <p>Post Title: <%=post.name %><br>
     Post Content: <%=post.content %><br>
     <%end%></p>
