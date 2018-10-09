@@ -19,7 +19,7 @@ end
   end
 
   post '/posts' do
-    @post = Post.create(id: params[:id], name: params[:name], content: params[:content])
+    @post = Post.create(name: [:post][][:name], content: [:post][][:content])
     @post.save
     redirect '/posts'
   end
