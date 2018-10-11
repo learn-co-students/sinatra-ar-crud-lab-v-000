@@ -5,12 +5,11 @@
     <title>title</title>
   </head>
   <body>
+    <h1>Posts</h1>
     <div class="container">
       <% @posts.all.each do |post| %>
-      <div>
-        <p><%= post.name%> </p>
+        <h1><%= post.name %> </h1>
         <p><%= post.content %></p>
-      </div>
       <% end %>
     </div>
   </body>
