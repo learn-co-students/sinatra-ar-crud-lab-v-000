@@ -1,19 +1,13 @@
  <!DOCTYPE html>
 <html>
   <head>
-    <title>Team & Heroes</title>
+    <title>Blog Post</title>
   </head>
 <body>
-    <h1>Post Name:<%= name %></h2>
-    <h2>Post Content: <%=content %></h3>
+<% @posts.each do |post| %>-->
+  <h2><%= post.name %></h3>
+  <p><%= post.content %></p>
   <br>
-
-<!--<h1>Heroes</h1>-->
-<!--<% @heroes.each do |hero| %>-->
-<!--  <h3>Hero Name: <%= hero.name %></h3>-->
-<!--  <h4>Hero Power: <%= hero.power %></h4>-->
-<!--  <h4>Hero Biography: <%= hero.bio %></h4>-->
-<!--  <br>-->
-<!--  <% end %>-->
+  <% end %>
   </body>
-  </html>
+  </htm
