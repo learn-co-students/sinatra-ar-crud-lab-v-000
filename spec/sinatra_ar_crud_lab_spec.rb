@@ -5,8 +5,8 @@ describe "Blog Post App" do
   let(:post_content) { "This is my first blog post!!!" }
 
   before do
-    @post1 = Post.create(name: [:post][][:name], content: [:post][][:content])
-    @post2 = Post.create(name => "second post", :content => "i'm a really good blogger")
+    @post1 = Post.create(:name => post_name, :content => post_content)
+    @post2 = Post.create(:name => "second post", :content => "i'm a really good blogger")
   end
 
   describe "Create Action" do
