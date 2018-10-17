@@ -1,4 +1,8 @@
-<h2>Is this what you're looking for?</h2>
-<br>
+
 <p><b><%=@post.name%></b></p>
 <p><%=@post.content%></p>
+<br>
+<form method="post" action="delete">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <input type="submit" value="delete">
+</form>
