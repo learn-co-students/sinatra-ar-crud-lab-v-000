@@ -1,7 +1,6 @@
 <h1>WELCOME!</h1>
 <h2>index.erb</h2>
-<h2>Posts:</h2>
-<br>
+<h2>Posts: <%= Post.all.count %></h2>
 <br>
 <br>
 <%@posts.each.with_index do |item, index|%>
