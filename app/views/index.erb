@@ -1,11 +1,16 @@
 <h1>WELCOME!</h1>
+<h2>index.erb</h2>
 <h2>Posts:</h2>
 <br>
 <br>
 <br>
-<p><%= @post.name %></p>
-<p><%= @post.content %></p>
+<%@posts.each.with_index do |item, index|%>
+<div class="post_list">
 
-<%@posts.map do |p|%>
-<p><%= p.name %></p>
+  <p><%=index + 1%></p>
+  <br>
+<p><%= item.name %></p>
+<p><%= item.content %></p>
+
+</div>
 <%end%>
