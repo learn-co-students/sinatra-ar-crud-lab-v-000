@@ -1,0 +1,7 @@
+<% @posts.each do |post| %>
+  <div>
+    <p><%= post.name %></p>
+    <p><%= post.content %></p>
+  </div>
+<% end %>
+<a href="/posts/new">Create Post</a>  
