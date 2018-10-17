@@ -1,0 +1,15 @@
+<h1>WELCOME!</h1>
+<h2>index.erb</h2>
+<h2>Posts: <%= Post.all.count %></h2>
+<br>
+<br>
+<%@posts.each.with_index do |item, index|%>
+<div class="post_list">
+
+  <p><%=index + 1%></p>
+  <br>
+<p><%= item.name %></p>
+<p><%= item.content %></p>
+
+</div>
+<%end%>
