@@ -20,8 +20,8 @@ class ApplicationController < Sinatra::Base
 
   post '/posts' do
     #binding.pry
-    @post = Post.new(name: params[:post][:name], content: params[:post][:content])
-    @post
+    Post.create(:name => params[:post][:name], :content => params[:post][:content])
+
     #binding.pry
 
   end

@@ -3,17 +3,17 @@ require 'pry'
 class Post < ActiveRecord::Base
   attr_accessor :name, :content
 
-  POSTS = []
+  #POSTS = []
 
-  def initialize(params)
-    @name = params[:name]
-    @content = params[:content]
+  #def initialize(params)
+  #  @name = params[:name]
+  #  @content = params[:content]
     #binding.pry
-    POSTS << self
-    binding.pry
-  end
+  #  POSTS << self
+    #binding.pry
+  #end
 
   #def self.all
   #  POSTS
-#  end
+  #end
 end
