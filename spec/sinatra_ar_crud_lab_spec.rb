@@ -49,6 +49,7 @@ describe "Blog Post App" do
         expect(last_response.body).to include(post_name)
         expect(last_response.body).to include(@post2.name)
       end
+
     end
 
     describe 'show action' do
@@ -95,6 +96,7 @@ describe "Blog Post App" do
       click_button 'submit'
       expect(Post.all.count).to eq(2)
       expect(Post.last.name).to eq("Second Post!!")
+
     end
 
     it "redirects to '/posts/:id'" do
