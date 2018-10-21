@@ -1,5 +1,6 @@
 
 require_relative '../../config/environment'
+require 'pry'
 
 class ApplicationController < Sinatra::Base
 
@@ -14,8 +15,17 @@ class ApplicationController < Sinatra::Base
 
   get '/posts/new' do
     erb :new
+    #binding.pry
   end
 
-  
+  post '/posts' do
+    #binding.pry
+    @post = Post.new(name: params[:post][:name], content: params[:post][:content])
+    @post
+    #binding.pry
+
+  end
+
+
 
 end
