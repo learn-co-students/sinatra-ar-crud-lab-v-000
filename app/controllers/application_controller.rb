@@ -19,8 +19,15 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts' do
+    post = Post.new(params[:post])
+    binding.pry
+    post.save
+    redirect'/posts'
     #binding.pry
-    post = Post.create(name: params[:post][:name], content: params[:post][:content])
+
+
+    #binding.pry
+    #post = Post.create(name: params[:post][:name], content: params[:post][:content])
 
     #binding.pry
 
