@@ -20,17 +20,15 @@ class ApplicationController < Sinatra::Base
 
   post '/posts' do
     post = Post.new(params[:post])
-    binding.pry
+    #binding.pry
     post.save
     redirect'/posts'
-    #binding.pry
 
+  end
 
-    #binding.pry
-    #post = Post.create(name: params[:post][:name], content: params[:post][:content])
-
-    #binding.pry
-
+  get '/posts' do
+    @posts = Post.all
+    erb :index
   end
 
 
