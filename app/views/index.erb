@@ -1,4 +1,9 @@
+<h1> Posts </h1>
+
 <% @posts.each do |post| %>
-<h2>Title: <%= post.title%> </h2>
+<% #binding.pry %>
+<%=post.name%>
+<% #binding.pry %>
 <h2> Content: <%= post.content %> </h2>
+<% #binding.pry %>
 <% end %>
