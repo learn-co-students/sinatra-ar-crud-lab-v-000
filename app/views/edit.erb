@@ -1,5 +1,8 @@
 <form action="/posts/<%=@post.id%>" method="POST">
 <%#binding.pry%>
+  <h2>Current Name:<%= @post.name%></h2>
+  <h2>Current Content:<%= @post.content%></h2>
+
 
   <label for="name">Name</label><br>
   <input type="text" id = "name" name="@post.name"><br>
