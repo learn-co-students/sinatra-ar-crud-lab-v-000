@@ -43,13 +43,15 @@ class ApplicationController < Sinatra::Base
   end
 
   patch '/posts/:id' do
+    #binding.pry
     @post = Post.find(params[:id])
     #binding.pry
-    @post.title = params[:title]
-    binding.pry
+    @post.name = params[:name]
+    #binding.pry
     @post.content = params[:content]
+    #binding.pry
     @post.save
-    redirect to '/@post.id>posts/#{@post.id}'
+    redirect to "/posts/#{@post.id}"
   end
 
 
