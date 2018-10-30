@@ -17,12 +17,17 @@ class ApplicationController < Sinatra::Base
     erb :new
   end
 #<<<<<<< HEAD
+#<<<<<<< HEAD
+#=======
+#<<<<<<< HEAD
+#>>>>>>> 61b3befb5416db1451f4e4031207befd2f0f3dcf
 
   post '/posts' do
   #  binding.pry
     #@post = Post.create(params)
     @post=Post.create(name: params[:name], content: params[:content])
-    erb :index
+    redirect "/posts"
+    #erb :index
   end
 
   get '/posts' do
@@ -50,20 +55,14 @@ class ApplicationController < Sinatra::Base
 
 delete '/posts/:id/delete' do
   @post = Post.find_by_id(params[:id])
-   @post.delete
+   @post.destroy
    erb :deleted
 end
-#=======
-
-  post '/posts' do
-  #  binding.pry
-    Post.create(name: params[:name], content: params[:content])
-    erb :index
-  end
 
 
 
 
-#>>>>>>> ec0710b79dad021a411b81760ccfa037833579bc
+
+
 
 end
