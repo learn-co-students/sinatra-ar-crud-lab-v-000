@@ -17,6 +17,10 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts' do
+    @posts = Post.all
+    @posts.all.each do |post|
+
+    end
     erb :index
   end
 end
