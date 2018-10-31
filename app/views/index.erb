@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Posts!</title>
+  </head>
+  <body>
+
+    <h1>All existing posts</h1>
+    <ul>
+      <% @all.each do |p| %>
+        <li>Name: <%= p.name %></li>
+        <li>ID: <%= p.id %></li>
+        <li>Content: <%= p.content %></li><br>
+      <% end %>
+    </ul>
+
+  </body>
+</html>
