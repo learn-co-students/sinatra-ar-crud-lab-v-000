@@ -8,16 +8,21 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-
   get '/posts/new' do
     erb :new
   end
 
   post '/posts' do
     @posts = Post.all
-    @posts.all.each do |post|
-      
-    end
+
     erb :index
+
+    end
+
+    get '/posts/:id' do
+      @posts = Post.find(params[:id])
+      erb :show
+    end
   end
-end
+
+  end
