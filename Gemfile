@@ -5,6 +5,7 @@ gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 
 gem 'sinatra'
 gem 'pry-nav'
+gem 'tux'
 gem 'rake'
 gem 'rspec'
 gem 'rack-test'
@@ -17,4 +18,5 @@ group :development do
   gem "pry"
   gem "sqlite3"
   gem "shotgun"
+  gem "tux"
 end
