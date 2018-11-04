@@ -1,5 +1,5 @@
 require 'spec_helper'
-
+require 'pry'
 describe "Blog Post App" do
   let(:post_name) { "Hello World" }
   let(:post_content) { "This is my first blog post!!!" }
@@ -18,7 +18,7 @@ describe "Blog Post App" do
       fill_in :content, :with => "blogging!!!!"
 
       click_button 'submit'
-
+      # binding.pry
       expect(Post.all.count).to eq(3)
       expect(Post.last.name).to eq("my favorite blog post")
     end
