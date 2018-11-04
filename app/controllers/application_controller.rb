@@ -30,10 +30,4 @@ class ApplicationController < Sinatra::Base
     @post = Post.find(params[:id])
     erb :show
   end
-
-
-
-
-
-
 end
