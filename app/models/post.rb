@@ -1,4 +1,3 @@
-#Placeholder for a model
-
 class Post < ActiveRecord::Base
+  has_many :posts
 end
