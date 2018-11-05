@@ -1,51 +1,44 @@
-require 'pry'
-require_relative '../../config/environment'
-
 class ApplicationController < Sinatra::Base
+  register Sinatra::ActiveRecordExtension
+  set :views, Proc.new { File.join(root, "../views/") }
 
   configure do
-    set :public_folder, 'public'
-    set :views, 'app/views'
+    enable :sessions
+    set :session_secret, "secret"
   end
 
   get '/' do
-    erb :index
+    erb :home
   end
 
-  get '/posts/new' do
-    erb :new
+  get '/registrations/signup' do
+    erb :'/registrations/signup'
   end
 
-  post '/posts' do
-    @post = Post.create(params)
-    redirect to '/posts'
+  post '/registrations' do
+    @user = User.new(name: params["name"], email: params["email"], password: params["password"])
+    @user.save
+    session[:id] = @user.id
+    redirect '/users/home'
   end
 
-  get '/posts' do
-    @posts = Post.all
-    erb :index
+  get '/sessions/login' do
+    erb 'sessions/login'
   end
 
-  get '/posts/:id' do
-    @post = Post.find_by_id(params[:id])
-    erb :show
+  post '/sessions' do
+    @user = User.find_by(email: params["email"], password: params["password"])
+    session[:id] = @user.id
+    redirect '/users/home'
   end
 
-  get '/posts/:id/edit' do
-    @post = Post.find_by_id(params[:id])
-    erb :edit
+  get '/sessions/logout' do
+    session.clear
+    redirect '/'
   end
 
-  patch '/posts/:id' do
-    post = Post.find_by_id(params[:id])
-    post.update(name: params[:name], content: params[:content])
-    post.save
-    redirect "/posts/#{post.id}"
-  end
-
-  delete '/posts/:id/delete' do
-    post = Post.find_by_id(params[:id])
-    post.delete
-    erb :deleted
+  get '/users/home' do
+    @user = User.find(session[:id])
+    erb :'/users/home'
   end
 end
