@@ -5,8 +5,10 @@
     <title></title>
   </head>
   <body>
-    <form action="/posts/<%= @post.id %>" method="post">
-      <p><input type="hidden" name="_method" value="patch" id="hidden"></p>
+    <h1><%= @post.name %></h1>
+    <p><%= @post.content %></p>
+    <form action="/posts/<%= @post.id %>" method="POST">
+      <input type="hidden" name="_method" value="patch" id="hidden">
       <p>Post Title: <input type="text" name="name" id="post"></p>
       <p>Post Content: <input type="text" name="content" id="post"></p>
       <input type="submit" id="submit">
