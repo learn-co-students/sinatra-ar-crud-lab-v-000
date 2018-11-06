@@ -25,18 +25,18 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts/:id' do #loads show page
-    @post = Post.find(params[:id])
+    @post = Post.find_by_id(params[:id])
     erb :show
   end
 
-  get '/posts/:id/edit' do #find a post by id and edit
-    @post = Post.find(params[:id])
-    erb :edit
-  end
 #####RESUME VIDEO AT 1:04:01#######
+get '/posts/:id/edit' do #find a post by id and edit
+  @post = Post.find_by_id(params[:id])
+  erb :edit
+end
 
   patch '/posts/:id' do #updates a post and then shows it
-    @post = Post.find(params[:id])
+    @post = Post.find_by_id(params[:id])
     @post.name = params[:name]
     @post.content = params[:content]
     @post.save
@@ -44,10 +44,11 @@ class ApplicationController < Sinatra::Base
     redirect "/posts/#{@post.id}"
   end
 
-  delete '/posts/:id' do #delete post by id
-    @post = Post.find(params[:id])
+
+  delete '/posts/:id/delete' do #delete post by id
+    @post = Post.find_by_id(params[:id])
     @post.destroy
 
-    redirect '/posts'
+    erb :delete
   end
 end
