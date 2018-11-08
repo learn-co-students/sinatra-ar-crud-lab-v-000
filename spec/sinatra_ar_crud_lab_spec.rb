@@ -12,10 +12,10 @@ describe "Blog Post App" do
   describe "Create Action" do
 
     it "creates a new blog post" do
-      visit '/posts/new'
+      visit '/new'
 
-      fill_in :name, :with => "my favorite blog post"
-      fill_in :content, :with => "blogging!!!!"
+      fill_in :name, :with => "my favorite blog post", visible: false
+      fill_in :content, :with => "blogging!!!!", visible: false
 
       click_button 'submit'
 
@@ -24,10 +24,10 @@ describe "Blog Post App" do
     end
 
     it "redirects to '/posts'" do
-      visit '/posts/new'
+      visit '/new'
 
-      fill_in :name, :with => "a post"
-      fill_in :content, :with => "blog blog blog blog blog"
+      fill_in :name, :with => "a post", visible: false
+      fill_in :content, :with => "blog blog blog blog blog", visible: false
 
       click_button 'submit'
 
