@@ -1,0 +1,14 @@
+<h1>Bloggable</h1>
+
+<h2>Create a New Blog Post</h2>
+<p><a href="./new">Click Here</a></p> </br>
+
+
+<h2>Read Existing Posts</h2>
+<%@posts.each do |post|%>
+  <h4><%=post.name%></h4>
+  <p><%=post.content%></p> </br>
+<%end%>
+
+
+
