@@ -1,0 +1,9 @@
+<h1>Post by ID</h1>
+
+<h3><%= @post.name %></h3>
+<p><%= @post.content %></p>
+
+<form action="/posts/<%= @post.id %>/delete" method="POST">
+  <input type="hidden" id="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+</form>

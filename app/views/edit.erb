@@ -1,0 +1,11 @@
+<h1>Edit Your Blog Post</h1>
+
+<h2><%= @post.name %></h2>
+<p><%= @post.content %></p>
+
+<form action="/posts/<%= @post.id %>" method="POST">
+  <input type="hidden" name="_method" id="hidden" value="patch">
+  <p><label for="name">Name: </label><input type="text" name="name" id="name"></p>
+  <p><label for="content">Content: </label><input type="text" name="content" id="content"></p>
+  <p><input type="submit" value="submit"></p>
+</form>
