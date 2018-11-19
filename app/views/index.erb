@@ -1,0 +1,17 @@
+<!DOCTYPEhtml>
+<html>
+  <head>
+    <title>A Blog</title>
+  </head>
+
+  <body>
+    <h1>Your Posts:</h1>
+    <% @posts.each do |post| %>
+      <h2><%= post.name %></h2>
+      <h3><%= post.content %></h3>
+      <p></p>
+      <% end %>
+      <p></p>
+      <p><a href="/posts/new">Create a new post here!</a></p>
+  </body>
+</html>
