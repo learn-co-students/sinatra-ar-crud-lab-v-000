@@ -1,4 +1,4 @@
-class CreatePost < ActiveRecord::Base
+class Posts < ActiveRecord::Base
   def change
     create_table :posts do |t|
       t.string :name
