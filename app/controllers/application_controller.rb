@@ -1,4 +1,4 @@
-
+require 'pry'
 require_relative '../../config/environment'
 
 class ApplicationController < Sinatra::Base
@@ -12,14 +12,26 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
-  get '/articles/new' do
+  get '/posts/new' do
     erb :new
   end
 
-  post '/articles' do
-    erb :index
+  post '/posts' do
+    @post = Post.create(name: params[:name], content: params[:content])
+    redirect "/posts"
   end
 
+
+  get '/posts' do
+    # binding.pry
+    @posts = Post.all
+    erb :index
+  end
+  #
+  get 'posts/:id' do
+    @post = Post.find_by_id(params[:id])
+    erb :show
+  end
 
   patch '/posts/:id' do  #updates a post
     @post = Post.find_by_id(params[:id])
