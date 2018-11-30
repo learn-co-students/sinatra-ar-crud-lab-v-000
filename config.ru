@@ -6,4 +6,8 @@ end
 
 use Rack::MethodOverride
 
+
 run ApplicationController
+
+run ApplicationController
+#>>>>>>> 9c6464d9607186bb92210f4fcc4f928725d5ad16
