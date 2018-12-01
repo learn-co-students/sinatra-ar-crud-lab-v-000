@@ -11,6 +11,7 @@ class ApplicationController < Sinatra::Base
   get '/' do
   end
 
+<<<<<<< HEAD
   get '/article/new' do
     erb :new
   end
@@ -37,6 +38,11 @@ class ApplicationController < Sinatra::Base
 
   patch '/articles/:id' do  #updates a post
     @article = Article.find_by_id(params[:id])
+=======
+
+  patch '/articles/:id' do  #updates a post
+    @article = Post.find_by_id(params[:id])
+>>>>>>> 8e6954d7d13b3ac4eeebdc36b4c601256e0581cd
     @article.name = params[:name]
     @article.content = params[:content]
     @article.save
