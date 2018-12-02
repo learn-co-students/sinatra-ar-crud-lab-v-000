@@ -1,6 +1,6 @@
 class Articles < ActiveRecord::Migration[5.1]
   def change
-    create_table :posts do |t|
+    create_table :articles do |t|
       t.string :name
       t.string :content
     end
