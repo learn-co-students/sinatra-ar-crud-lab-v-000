@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Articles</title>
+  </head>
+
+  <body>
+    <% @articles.each do |article| %>
+      <%= article.title %>
+      <%= article.content %>
+    <% end %>
+  </body>
+</html>
