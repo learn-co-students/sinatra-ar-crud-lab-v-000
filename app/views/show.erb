@@ -7,5 +7,10 @@
   <body>
     <%= @article.title %>
     <%= @article.content %>
+
+    <form method="post" action="/articles/<%= @article.id %>/delete">
+      <input type="hidden" id="hidden" name="_method" value="DELETE">
+      <button type="submit" value="delete">Delete</button>
+    </form>
   </body>
 </html>
