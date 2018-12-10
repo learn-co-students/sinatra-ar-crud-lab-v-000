@@ -5,12 +5,13 @@
   </head>
 
   <body>
+    <h1>Update an Article</h1>
     <form method="post" action="/articles/<%= @article.id %>">
       <input type="hidden" id="hidden" name="_method" value="PATCH">
       <label for="title">Edit Title:</label>
-      <input type="text" id="title" name="article[title]" value="<%= @article.title %>">
+      <input type="text" id="title" name="updated_article[title]" value="<%= @article.title %>"><br>
       <label for="content">Edit Content:</label>
-      <input type="text" id="content" name="article[content]" value="<%= @article.content %>">
+      <input type="text" id="content" name="updated_article[content]" value="<%= @article.content %>"></textarea><br>
       <button type="submit" value="submit">Submit</button>
     </form>
   </body>
