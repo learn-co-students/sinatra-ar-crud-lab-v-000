@@ -11,4 +11,6 @@ class Article < ActiveRecord::Base
     ARTICLES << self
   end
 
+
+
 end
