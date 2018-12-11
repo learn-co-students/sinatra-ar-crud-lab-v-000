@@ -21,6 +21,12 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
+  # get 'articles/:id' do
+  #   @id = id
+  #
+  #   erb :show
+  # end
+
 
   patch '/posts/:id' do  #updates a post
     @post = Post.find_by_id(params[:id])
