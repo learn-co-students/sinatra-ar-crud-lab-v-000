@@ -5,20 +5,17 @@ class Article < ActiveRecord::Base
 
   ARTICLES = []
 
-  def initialize(args)
-     @title = args[:title]
-     @content = args[:content]
-
-  end
-
-  def create(params)
-    ARTICLES << self.new(params)
-  end
-
-  def self.all
-    ARTICLES
-  end
-
-
-
+  # def initialize(args)
+  #    @title = args[:title]
+  #    @content = args[:content]
+  # end
+  #
+  # def self.create(params)
+  #   ARTICLES << Self.new(params)
+  #     binding.pry
+  # end
+  #
+  # def self.all
+  #   ARTICLES
+  # end
 end
