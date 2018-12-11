@@ -16,7 +16,9 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/articles' do
+    binding.pry
     @article = Article.create(params)
+
     redirect "/articles/#{@article.id}"
   end
 
@@ -51,6 +53,4 @@ class ApplicationController < Sinatra::Base
     @post.delete
     redirect to '/posts'
   end
-
-
 end
