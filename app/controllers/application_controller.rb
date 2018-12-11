@@ -17,7 +17,6 @@ class ApplicationController < Sinatra::Base
 
   post '/articles' do
     @new_article = Article.new(params[:article])
-    binding.pry
     erb :show
   end
 
@@ -27,7 +26,7 @@ class ApplicationController < Sinatra::Base
   end
 
   # get 'articles/:id' do
-  #   @id = id
+  #   @id = params[:id]
   #
   #   erb :show
   # end
