@@ -8,7 +8,15 @@ class Article < ActiveRecord::Base
   def initialize(args)
      @title = args[:title]
      @content = args[:content]
-    ARTICLES << self
+
+  end
+
+  def create(params)
+    ARTICLES << self.new(params)
+  end
+
+  def self.all
+    ARTICLES
   end
 
 
