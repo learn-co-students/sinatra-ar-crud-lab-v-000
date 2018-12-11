@@ -17,10 +17,12 @@ class ApplicationController < Sinatra::Base
 
   post '/articles' do
     @new_article = Article.new(params[:article])
+    binding.pry
     erb :show
   end
 
   get 'articles/index' do
+    @articles = Article.all
     erb :index
   end
 
