@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    
+    <title></title>
+  </head>
+  <body>
+    
+    <h1>In this edit.erb</h1>
+    <form action="/articles/<%=params[:id]%>" method="POST">
+      <input id="hidden" type="hidden" name="_method" value="PATCH">
+      <div>
+        <label for="title">Title</label>
+        <textarea id="title" name="title"><%=@article.title%></textarea>
+      </div>
+      
+      </br> 
+      
+      <div>
+        <div>
+          <label for="content">Content:</label>
+        </div>
+        <div>
+          <textarea id="content" name="content" rows="15" cols="40"><%=@article.content%></textarea>
+        </div>
+      </div>
+      <input type="submit" value="Submit">
+    </form>
+
+  </body>
+</html>
