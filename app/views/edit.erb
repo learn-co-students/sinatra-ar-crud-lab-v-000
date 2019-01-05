@@ -1,0 +1,36 @@
+<h1>Edit an article!</h1>
+<form action='/articles/<%=@article.id%>' method='post'>
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <h3>Article: 
+  <input id="title" type="text" name="article[title]" value="<%=@article.title%>">
+  </h3><br>
+  <p>
+    <input id="content" type="text" name="article[content]" value="<%=@article.content%>">
+  </p><br>
+  <input type="submit">
+</form>
+
+
+    it "saves edits to an article" do
+      visit "/articles/#{@article2.id}/edit"
+      fill_in :title, :with => "Second Article!!"
+      fill_in :content, :with => "this is the best article ever written"
+
+      page.find(:css, "[type=submit]").click
+      expect(Article.all.count).to eq(2)
+      expect(Article.last.title).to eq("Second Article!!")
+    end
+
+    it "redirects to '/articles/:id'" do
+      visit "/articles/#{@article2.id}/edit"
+      fill_in :content, :with => "this is even better than the last"
+
+      page.find(:css, "[type=submit]").click
+      expect(page.current_path).to eq("/articles/#{@article2.id}")
+      expect(page.body).to include("this is even better than the last")
+    end
+
+    it "submits the form via a patch request" do
+      visit "/articles/#{@article2.id}/edit"
+      expect(find("[name=_method]", :visible => false).value).to match(/patch/i)
+    end
