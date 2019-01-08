@@ -1,10 +1,11 @@
-<h1>I found your article!</h1>
+<h1>Show Page</h1>
 
-<h2><%= "#{@article.title}" %></h2>
+<%= @article.title %>
+<br>
+<%= @article.content %>
 
-<%= "#{@article.content}" %>
 
-<form action="/articles/<%= @article.id %>" method="post">
-  <input type="hidden" id = "hidden" name="_method" value="DELETE">
-  <input type="submit" value="delete">
+<form action="/articles/<%=@article.id%>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Article?">
 </form>
