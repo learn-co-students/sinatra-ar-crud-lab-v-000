@@ -1,5 +1,6 @@
 
 require_relative '../../config/environment'
+require 'pry'
 
 class ApplicationController < Sinatra::Base
 
@@ -42,10 +43,10 @@ class ApplicationController < Sinatra::Base
     redirect to "/articles/#{@article.id}"
   end
 
-  delete 'articles/:id/delete' do
+  delete '/articles/:id' do
     @article = Article.find_by_id(params[:id])
-    @article.destroy
-    erb :delete
+    @article.delete
+    redirect to "/articles"
   end
 
 
