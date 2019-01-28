@@ -9,5 +9,5 @@ class CreateArticles < ActiveRecord::Migration[5.1]
     def down
       drop_table :articles
     end
-
+  end
 end
