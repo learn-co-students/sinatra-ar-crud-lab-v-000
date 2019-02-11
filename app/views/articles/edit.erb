@@ -1,0 +1,23 @@
+<!--This view should contain a form to update a specific article and POSTs to a controller action, patch '/articles/:id'
+You'll need to make sure the edit form includes:
+
+ -->
+<h1>Edit <%=@article.title %></h2>
+
+<form action="/articles/<%= @article.id %>" method="post">
+    <input type="hidden" name="_method" value="PATCH">
+
+    <p>
+<!--<label for="title">Article Title: </label>-->
+    <input type="text" name="title" value="<%=@article.title %>"/>
+</p>
+
+<!--<label for="content">Article Content: </label>-->
+
+<p>
+    <textarea name="content"><%=@article.content %></textarea>
+</p>
+
+<input type="submit" id="submit"/>
+
+</form>
