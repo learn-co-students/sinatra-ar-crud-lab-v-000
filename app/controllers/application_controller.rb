@@ -1,4 +1,4 @@
-
+ require 'pry'
 require_relative '../../config/environment'
 
 class ApplicationController < Sinatra::Base
@@ -9,6 +9,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    redirect to '/articles'
   end
 
   get '/articles/new' do
@@ -36,9 +37,21 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
-  get '/articles/:id/edit' do
-    
+  patch '/articles/:id' do #this is the corresponding action to the patch in edit.erb
+    @article = Article.find(params[:id])
+    @article.update(:title => params[:title],:content => params[:content])
+    @article.save
+    redirect to "/articles/#{@article.id}"
+  end
 
+  delete '/articles/:id' do
+    @article = Article.find(params[:id])
+    @article.delete
+    redirect to "/articles/#{@article.id}"
+  end
+
+  get '/articles/:id/edit' do
+    @article = Article.find(params[:id])
     erb :edit
   end
 end
