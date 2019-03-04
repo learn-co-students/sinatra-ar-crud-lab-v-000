@@ -1,9 +1,10 @@
-Current article:
-<%= @article.title %>
-<%= @article.content %>
-
-<<form action="/articles/<%= @model.id %>" method="post">
-    <input id="hidden" type="hidden" name="_method" value="patch">
-    <!--Title: <input type="text" name="title">-->
-    <!--Content: <input type="text" name="title">-->
+<form method='post' action='/articles/<%=@article.id%>'>
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
 </form>
+
+
+
+
+
+<!--    <input id="hidden" type="hidden" name="_method" value="patch">-->
+<!--    <input type="text" ...>-->
