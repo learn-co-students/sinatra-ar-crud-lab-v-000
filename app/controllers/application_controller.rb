@@ -8,16 +8,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    erb :index
-  end
-  
-  get '/articles/new' do
-    erb :new
-  end
-  
-  post '/articles' do
-    @article= Article.create(params)
-    erb :index
   end
   
   get '/articles' do
@@ -25,10 +15,20 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
   
+  get '/articles/new' do
+    erb :new
+  end
+  
+  post '/articles' do
+    @article = Article.create(params)
+     redirect to "/articles/#{@article.id}"
+  end
+  
   get '/articles/:id' do
-    @id= params[:id]
-    @article= Article.find_by(id: @id)
+    @article= Article.find(params[:id])
     erb :show
   end
   
+  
 end
+
