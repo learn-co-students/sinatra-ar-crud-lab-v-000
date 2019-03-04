@@ -35,11 +35,15 @@ class ApplicationController < Sinatra::Base
     erb :edit
   end
   
-  patch '/articles/:id' do
-    
+  post '/articles/:id' do
+    params
   end
   
 end
 
 
+
+# id: 2,
+# title: "second article",
+# content: "I'm a really good writer">
 
