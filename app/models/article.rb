@@ -1,16 +1,21 @@
 
 class Article < ActiveRecord::Base
-  attr_accessor :title, :content
+  attr_reader :title, :content
 
-  @@all = []
+  # ARTICLES = []
+  #
+  # def self.all
+  #   @@all
+  # end
+  #
+  # def initialize(params)
+  #   @title = params[:title]
+  #   @content = params[:content]
+  #   ARTICLES << self
+  # end
+  #
+  # def self.all
+  #   ARTICLES
+  # end
 
-  def self.all
-    @@all
-  end
-
-  def initialize(params)
-    @title = params[:title]
-    @content = params[:content]
-    @@all << self
-  end
 end
