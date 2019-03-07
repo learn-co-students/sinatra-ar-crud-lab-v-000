@@ -1,6 +1,6 @@
 
 class Article < ActiveRecord::Base
-  attr_reader :title, :content
+  # attr_reader :title, :content
 
   # ARTICLES = []
   #
