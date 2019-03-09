@@ -2,13 +2,15 @@
 <html>
   <head> Edit </head>
   <body>
-    <form action="patch '/articles/<%= @article.id %>'" method="post">
+    <h1>Article Title: <%= @article2[:title] %></h1>
+    <h1>Article Content: <%= @article2[:content] %> </h1>
+
+    <form action="/articles/<%= @article2.id %>" method="post">
         <input id="hidden" type="hidden" name="_method" value="PATCH">
-        <p>Update article title: <input type="text" name:"title"></p>
+        <p>Update article title: <input type="text" name="title"></p>
         <p>Update article content: <input type="text" name="content"></p>
         <input type="submit" value="submit">
-          </form>
-    <h1></h1>
-    <p></p>
+    </form>
+
   </body>
 </html>
