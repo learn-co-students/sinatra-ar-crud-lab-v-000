@@ -7,7 +7,7 @@ class App < Sinatra::Base
   end
 
   post '/articles' do
-    Model.create(title: params[:article_title], content: paramas[:article_content])
+    Model.create(title: params[:article_title], content: params[:article_content])
     erb :index.erb
   end
 
