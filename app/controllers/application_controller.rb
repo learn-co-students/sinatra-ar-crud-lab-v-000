@@ -40,8 +40,8 @@ class ApplicationController < Sinatra::Base
   patch '/articles/:id' do
     @article = Article.find(params[:id].to_i)
     # binding.pry
-    @article.update(title: params[:title])
-    @article.update(content: params[:content])
+    @article.update(title: params[:article_title])
+    @article.update(content: params[:article_content])
     @article.save
 
 
@@ -51,6 +51,14 @@ class ApplicationController < Sinatra::Base
   get '/articles/:id/edit' do
     @article = Article.find(params[:id].to_i)
     erb :edit
+  end
+
+  delete '/articles/:id' do
+    @article = Article.find(params[:id].to_i)
+    @title = @article.title
+    @article.destroy
+
+    redirect to '/articles'
   end
 
 
