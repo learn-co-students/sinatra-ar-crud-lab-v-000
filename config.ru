@@ -1,6 +1,7 @@
 ENV["SINATRA_ENV"] = "test"
 require './config/environment'
 
+
 begin
   fi_check_migration
 
