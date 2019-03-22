@@ -1,4 +1,4 @@
-@article params[:title, :content]
+<!-- @article params[:title, :content]
 
 <h1>Articles</h1>
 
@@ -7,6 +7,14 @@
   <h3>Article: <%=@article.title%></h3>
   <h3>Article: <%=@article.content%></h3>
 
-</div>
+</div> -->
 
-<% end %>
+
+
+<form method="POST" action='/articles/:id'<%= @article.id %>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="delete">
+</form>
+
+
+ <% end %>
