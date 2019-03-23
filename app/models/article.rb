@@ -1,14 +1,20 @@
 #Placeholder for a model
 
 class Article < ActiveRecord::Base
-  #@@all = []
+  attr_accessor :title, :content
 
-  #def initialize(text)
-    #@article = params[:text]
-    #@@all << @article
-  #end
+  @@all = []
 
-  #def self.all
-    #@@all
-  #end
+  def initialize(title, content)
+    @title = params[:title]
+    @content = params[:content]
+  end
+
+  def self.create
+    @@all << self
+  end
+
+  def self.all
+    @@all
+  end
 end

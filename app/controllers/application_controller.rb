@@ -28,7 +28,7 @@ class ApplicationController < Sinatra::Base
   #saves user data, and shows new published post
   post '/articles' do
     @article = Article.create(params)
-    redirect to "/articles/#{@article.id}"
+    redirect to '/articles/#{@article.id}'
   end
 
   #show specific article based on article id
@@ -37,4 +37,20 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
+  #finds article and sends user to edit page
+  get '/articles/:id/edit' do
+    @article = Article.find(params[:id])
+    erb :edit
+  end
+
+  patch '/articles/:id' do
+    @article = Article.find(params[:id])
+    @article.update(paratms[:article])
+    redirect to '/articles/#{@article.id}'
+  end
+
+  delete '/articles/:id' do
+    Article.destroy(params[:id])
+    redirect '/articles'
+  end
 end
