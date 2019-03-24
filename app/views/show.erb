@@ -1,20 +1,5 @@
-<!-- @article params[:title, :content]
-
-<h1>Articles</h1>
-
-<div class="article"
-
-  <h3>Article: <%=@article.title%></h3>
-  <h3>Article: <%=@article.content%></h3>
-
-</div> -->
-
-
-
-<form method="POST" action='/articles/:id'<%= @article.id %>/delete">
-  <input id="hidden" type="hidden" name="_method" value="DELETE">
-  <input type="submit" 
-</form>
-
-
- <% end %>
+<h1><%=@article.title%></h1>
+<%=article.content%>
+<form method="post" action="/articles/<%=@article.id%>">
+  <input type="hidden" name= "method" value= "delete"/>
+  <input type="submit"/>
