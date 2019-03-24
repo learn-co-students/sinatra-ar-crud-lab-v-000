@@ -5,4 +5,9 @@
 <h2>Content:<%=@article.content%></h2>
 
 
+<%@articles.each do|article|%>
+<a href="/articles/<%=article.id%>
+  <%=article.title%>"
+
+
 <%end%>
