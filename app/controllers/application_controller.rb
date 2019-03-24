@@ -8,48 +8,55 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  @article = []
 
-  get '/articles/new' do
-
-    @article = article
-    @article = params[:title][:content]
+  get'/articles/new' do
+    @article = Article.new
+    # @article = []
+    # @article = params[:title]
+    # @article = params[:content]
     erb :new
   end
 
 
-  post '/articles/new' do
+  post '/articles' do
     @article = params[:title][:content]
     erb :new
   end
 
+  #
+  # get '/articles' do
+  #   @articles = all_of_the_articles.select do |article|
+  #     article.id == params[:id]
+  #   end
+  # erb :index
+  # end
+  #
+  #
+  #
+  # get '/articles/:id' do
+  #   @article = Article.find(params[:id])
+  #   erb :show
+  # end
+  #
+  #
+  #
+  # patch '/articles/:id/edit' do
+  #   @article = Article.find(params[:id])
+  #   erb :edit
+  # end
+  #
 
-  get '/articles' do
-    @articles = all_of_the_articles.select do |article|
-      article.id == params[:id]
-    end
-  erb :index
-  end
-
-
-
-
-  get '/articles/:id' do
+  update '/articles' do
     @article = Article.find(params[:id])
-    erb :show
+    @article.update(params[:id])
+
+
   end
 
-
-
-  patch '/articles/:id/edit' do
-    @article = Article.find(params[:id])
-    erb :edit
-  end
-
-  delete '/articles/:id' do
-    erb :show
-  end
-
- # binding.pry
+  # delete '/articles/:id' do
+  #   erb :show
+  # end
+  #
+  #  binding.pry
 
 end
