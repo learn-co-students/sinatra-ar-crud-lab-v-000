@@ -1,6 +1,7 @@
 
 <form action="/articles/<%=@article.id%>" method="post">
-  <input type="hidden" name="_method" value= "patch">
+  <input id="hidden" type="hidden" name="_method" value= "patch">
+  <input type = "text" method="post"/>
 
 
 <label for="title">Title</label>
@@ -9,8 +10,8 @@
 <label for="content">Content</label>
 <input id="content" type="text" name="article[content]" value="<%=@article.content%>"/>
 
-<!-- <input type="submit"/> -->
-<input type="submit" name="submit" value="submit"/>
+<input type="submit"/>
+<!-- <input type="submit" name="submit" value="submit"/> -->
 
 
 </form>

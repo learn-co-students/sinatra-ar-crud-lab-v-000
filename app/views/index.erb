@@ -1,13 +1,13 @@
-<h1>Articles</h1>
+<!-- <h1>Articles</h1>
 <div class="article">
 
 <h2>Title:<%=@article.title%></h2>
-<h2>Content:<%=@article.content%></h2>
+<h2>Content:<%=@article.content%></h2> -->
 
 
-<%@articles.each do|article|%>
-<a href="/articles/<%=article.id%>
+<% @articles.each do |article| %>
+  <a href="/articles/<%=article.id%>">
   <%=article.title%>"
 
 
-<%end%>
+<% end %>

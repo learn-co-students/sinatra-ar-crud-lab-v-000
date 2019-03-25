@@ -9,18 +9,8 @@ class ApplicationController < Sinatra::Base
   end
 
 
-  get'/articles/new' do
-    @article = Article.new
-    erb :new
-  end
-
-
-
-  post '/articles' do
-        # binding.pry
-    @article = Article.create(params)
-
-    redirect to "/articles/#{@article.id}"
+  get '/' do
+    redirect to '/articles'
   end
 
 
@@ -30,19 +20,29 @@ class ApplicationController < Sinatra::Base
   end
 
 
+  get'/articles/new' do
+    @article = Article.new
+    erb :new
+  end
+
+
+  post '/articles' do
+    @article = Article.create(params)
+    redirect to "/articles/#{@article.id}"
+  end
+
 
   get '/articles/:id' do
     @article = Article.find(params[:id])
     erb :show
   end
-  #
-  #
+
 
   get '/articles/:id/edit' do
     @article = Article.find(params[:id])
     erb :edit
   end
-  #
+
 
   patch '/articles/:id' do
     @article = Article.find(params[:id])
@@ -52,7 +52,18 @@ class ApplicationController < Sinatra::Base
 
   delete '/articles/:id' do
     Article.destroy(params[:id])
-    redirect to "/articles"
+    redirect to '/articles'
   end
 
-end 
+*****
+it "deletes an article from the database" do
+  visit "/articles/#{@article2.id}"
+  page.find(:css, "form [type=submit]").click
+  expect(Article.all.count).to eq(1)
+  expect(Article.last.title).to eq("Hello World")
+
+
+
+
+
+end
