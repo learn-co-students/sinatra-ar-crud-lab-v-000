@@ -6,6 +6,7 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
+    set :method_override, true
   end
 
   get '/' do
@@ -17,10 +18,8 @@ class ApplicationController < Sinatra::Base
 
   post '/articles' do
     Article.create(params)
-    @articles = Article.all
 
-    redirect '/articles/:id'
-    erb :index
+    redirect "/articles/#{Article.last.id}"
   end
 
   get '/articles/:id' do
@@ -28,4 +27,20 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
+  get '/articles' do
+    @articles = Article.all
+    erb :index
+  end
+
+  get "/articles/:id/edit" do
+    @article = Article.find(params[:id])
+
+    erb :edit
+  end
+
+  patch "/articles/:id" do
+    @article = Article.update(params[:id], params[:title], params[:content])
+
+    redirect "/articles/#{@article.id}"
+  end
 end
