@@ -25,12 +25,12 @@ and content.
 
 Next, set up the corresponding `Article` model. Make sure the class inherits from `ActiveRecord::Base`.
 
-### Create
+✅### Create
 
 Now that we have the database and model set up, it's time to set up the ability
 to create an article.
 
-First, create a route in your controller, `get '/articles/new'`, that renders the
+✅First, create a route in your controller, `get '/articles/new'`, that renders the
 `new.erb` view.
 
 We need to create an ERB file in the views directory, `new.erb`, with a form
