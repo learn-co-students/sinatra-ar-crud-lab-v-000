@@ -15,6 +15,7 @@ gem 'require_all'
 group :development do
   gem "capybara"
   gem "pry"
+  gem "pry-rails"
   gem 'sqlite3', '~> 1.3.6'
   gem "shotgun"
 end

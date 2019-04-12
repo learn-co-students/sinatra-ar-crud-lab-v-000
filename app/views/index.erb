@@ -3,7 +3,7 @@
 <p><%= @article.content %><p> -->
 
 <% @articles.each do |article| %>
-  <a href="/articles/<%= article.id %>">
-      <%= article.title %>
+  <!-- <% require 'pry'; binding.pry %>       -->
+  <%= article.title %>
 
 <% end %>
