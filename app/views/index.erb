@@ -1,9 +1,6 @@
-<!-- <p><%= @article.title %><p>
+ <% @articles.each do |article| %>
+   <%= article.title %>
+ <% end %>
 
-<p><%= @article.content %><p> -->
 
-<% @articles.each do |article| %>
-  <!-- <% require 'pry'; binding.pry %>       -->
-  <%= article.title %>
-
-<% end %>
+ <!-- <% require 'pry'; binding.pry %> -->
