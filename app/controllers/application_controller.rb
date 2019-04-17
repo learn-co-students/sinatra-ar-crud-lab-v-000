@@ -28,8 +28,10 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
+  get '/articles/:id' do
+    @article = Article.find(params[:id])
+    erb :show
+  end
+
 
 end
-
-# check issues flag on github for config.rg
-# https://github.com/learn-co-students/sinatra-ar-crud-lab-v-000/issues
