@@ -1,22 +1,9 @@
 <!-- show individual articles -->
-<% @articles.each do |article| %>
-  <%= article.title %>
-  <%= article.content %>
-<% end %>
+   <%= @article.title %>
+   <%= @article.content %>
 
-<!-- put article.title and article.content inside the below form somehow - render
-view like new.erb - look at ActiveRecord in Sinatra lab under Read section  -->
 
-<form action="/articles/:id" method="POST">
-  <ul>
-    <li>
-      <label for="title"> Title </label>
-      <input id="title" type="text" name="title"/>
-    </li>
-    <li>
-      <label for="content"> Content </label>
-      <textarea id= "content" type="text" name="content"></textarea>
-    </li>
-  </ul>
-  <button type="submit" value="submit" id="submit">Submit</button>
+<form method="POST" action= "/articles/<%= @article.id %>">
+  <input type="hidden" name="_method" value="delete" />
+  <input type="submit" />
 </form>

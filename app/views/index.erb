@@ -1,6 +1,6 @@
  <% @articles.each do |article| %>
-   <%= article.title %>
+    <a href="/articles/<%= article.id %>">
+      <%= article.title %>
+    </a>
+
  <% end %>
-
-
- <!-- <% require 'pry'; binding.pry %> -->
