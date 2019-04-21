@@ -3,9 +3,9 @@
 <div class="post">
   <h4><%= @article.title %></h4><br>
   <h4><%= @article.content %></h4>
-<form action="/articles/<%= @article.id %>" method="POST">
-<input id="hidden" type="hidden" name="_method" value="delete">
-<input type="submit" value="delete">
-</form>
-<a href="/articles/@article.id/edit"> Edit Article</a>
+  <form action="/articles/<%= @article.id %>" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+  </form>
+  <a href="/articles/@article.id/edit"> Edit Article</a>
 </div><br>
