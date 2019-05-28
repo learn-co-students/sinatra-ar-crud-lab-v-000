@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <% @articles.each_with_index do |article, i| %>
+    <h3>Article # <%= i + 1 %></h3>
+    <h4>Title: <%= article.title %></h4>
+    <p><%= article.content %></p>
+    <% end %>
+
+  </body>
+</html>
