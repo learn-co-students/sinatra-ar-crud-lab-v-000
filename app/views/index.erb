@@ -1,5 +1,5 @@
 <h1>All Articles</h1>
-<% @articles.each do |article| %>
+<% Article.all.each do |article| %>
   <div class="article">
     <h2><%= article.title %></h2>
     <p><%= article.content %></p>
