@@ -1,4 +1,3 @@
-
 require_relative '../../config/environment'
 
 class ApplicationController < Sinatra::Base
@@ -32,7 +31,6 @@ class ApplicationController < Sinatra::Base
   end
   
   get '/articles/:id/edit' do
-    @article
     erb :edit
   end
   
