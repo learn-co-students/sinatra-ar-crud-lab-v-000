@@ -15,13 +15,12 @@ class ApplicationController < Sinatra::Base
   end
   
   post '/articles' do
-    article = Article.create(:title => params[:title], :content => params[:content])
-    article.save
+    Article.create(params[:title], params[:content])
     redirect '/articles'
   end
   
   get '/articles' do
-    @rticles = Article.all
+    @articles = Article.all
     erb :index
   end
   
@@ -41,7 +40,7 @@ class ApplicationController < Sinatra::Base
     redirect '/articles/#{@article.id}'
   end
   
-  delete '/books/:id' do
+  delete '/articles/:id' do
     @article = Article.find(params[:id])
     @Article.destroy
     redirect "articles"
