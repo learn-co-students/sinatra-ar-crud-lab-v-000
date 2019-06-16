@@ -15,9 +15,7 @@ class ApplicationController < Sinatra::Base
   end
   
   post '/articles' do
-    article = Article.create(:title => params[:title], :content => params[:content])
-    article.save
-    redirect '/articles'
+    Article.create(:title => params[:article][:title], :content => params[:article][:content])
   end
   
   get '/articles' do
@@ -37,8 +35,8 @@ class ApplicationController < Sinatra::Base
   
   patch '/articles/:id' do
     @article = Article.find(params[:id])
-    @article.update(:title => params[:title], :content => params[:content])
-    redirect '/articles/#{@article.id}'
+    @article.update(:title => params[:article][:title], :content => params[:article][:content])
+    redirect '/articles/:id'
   end
   
   delete '/articles/:id' do
