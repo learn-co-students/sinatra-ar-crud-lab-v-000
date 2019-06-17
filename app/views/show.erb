@@ -1,9 +1,9 @@
 <form action="/books/<%= @article.id %>" method="POST">
-<h1>Selected Article</h1>
+  <h1>Selected Article</h1>
   <div class="article">
     <h2><%= @article.title %></h2>
     <p><%= @article.content %></p>
   </div>
- <input type="hidden" name="_method" value="DELETE"/>
- <input type="submit" value="Delete Article">
- </form>
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Article">
+</form>
