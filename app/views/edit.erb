@@ -1,0 +1,9 @@
+<!-- This view should contain a form to update a specific
+article and POSTs to a controller action -->
+
+<form action="/articles/<%= @article.id %>" method="post">
+  <label>Title: </label><input type="text" value="<%=@article.title%>" name="title"/><br>
+  <label>Content: </label><input type="text" value="<%=@article.content%>" name="content"/><br>
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <p><input type="submit" id="submit" content="submit"></p>
+</form>
