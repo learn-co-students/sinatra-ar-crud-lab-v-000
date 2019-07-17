@@ -12,7 +12,13 @@ class ApplicationController < Sinatra::Base
   end
   
   get '/articles/new' do 
-    #"This works!"
+    # "This works!"
     erb :new
   end
+  
+  post '/articles' do
+    binding.pry
+    erb :show
+  end
+  
 end
