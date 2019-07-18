@@ -34,10 +34,15 @@ class ApplicationController < Sinatra::Base
     redirect to "/articles/#{article.id}"
   end
   
-  patch '/articles/:id' do 
-    binding.pry
-    old_article = Article.find(params[:id])
-    # Somehow, I need to update this article without params["_method"].
+  patch '/articles/:id' do
+    updated_article = Article.find(params[:id]).tap do |article|
+        new_params = params.keep_if {|key, value| key == "id" || key == "title" || key == "content"}
+        # I could have also done params.reject {|key, value| key == "_method"}, but the other way is easier to understand.
+        
+        article.update(new_params)
+    end # This returns the new, updated article
+    
+    redirect to "/articles/#{updated_article.id}"
   end
   
 end
