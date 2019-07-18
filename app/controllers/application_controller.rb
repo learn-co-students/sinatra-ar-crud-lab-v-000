@@ -38,11 +38,21 @@ class ApplicationController < Sinatra::Base
     updated_article = Article.find(params[:id]).tap do |article|
         new_params = params.keep_if {|key, value| key == "id" || key == "title" || key == "content"}
         # I could have also done params.reject {|key, value| key == "_method"}, but the other way is easier to understand.
+        # Not sure if this is the easiest code to extend (without bugs), though...
         
         article.update(new_params)
     end # This returns the new, updated article
     
     redirect to "/articles/#{updated_article.id}"
+  end
+  
+  delete '/articles/:id' do
+    # "The article was successfully deleted!"
+    binding.pry
+    Article.find(params[:id]).destroy
+    # The #delete CRUD method works as well
+    
+    redirect to "/articles"
   end
   
 end
