@@ -1,4 +1,3 @@
-
 require_relative '../../config/environment'
 
 class ApplicationController < Sinatra::Base
@@ -11,20 +10,23 @@ class ApplicationController < Sinatra::Base
   get '/' do
   end
   
+  get '/articles' do
+    @articles = Article.all
+    erb :index
+  end
+  
   get '/articles/new' do 
-    # "This works!"
     erb :new
   end
   
-  get '/articles/:id' do 
-    binding.pry
+  get '/articles/:id' do
+    @article = Article.find(params[:id])
     erb :show
   end
   
   post '/articles' do
-    @article = Article.create(params)
-    redirect to "/articles/#{@article.id}"
-    # erb :show
+    article = Article.create(params)
+    redirect to "/articles/#{article.id}"
   end
   
 end
