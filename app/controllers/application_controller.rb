@@ -36,8 +36,9 @@ class ApplicationController < Sinatra::Base
   
   patch '/articles/:id' do
     updated_article = Article.find(params[:id]).tap do |article|
-        new_params = params.keep_if {|key, value| key == "id" || key == "title" || key == "content"}
-        # I could have also done params.reject {|key, value| key == "_method"}, but the other way is easier to understand.
+        new_params = params.keep_if {|key, value| key == "title" || key == "content"}
+        # I could have also done params.reject {|key, value| key == "_method"}, but the other way is easier to understand. 
+        # Also, I'd rather not change the "id" accidentally.
         # Not sure if this is the easiest code to extend (without bugs), though...
         
         article.update(new_params)
@@ -48,7 +49,7 @@ class ApplicationController < Sinatra::Base
   
   delete '/articles/:id' do
     # "The article was successfully deleted!"
-    binding.pry
+    
     Article.find(params[:id]).destroy
     # The #delete CRUD method works as well
     
