@@ -10,4 +10,34 @@ class ApplicationController < Sinatra::Base
 
   get '/' do
   end
+
+  get '/articles/new' do
+    @article = Article.new
+    erb :new
+  end
+
+  get '/articles' do
+    @articles = Article.all
+    erb :index
+  end
+
+  post '/articles' do
+    @article = Article.create(params)
+    redirect to '/articles/#{@article.id}'
+  end
+
+  get '/articles/:id' do
+    @article = Article.find(params[:id])
+    erb :show
+  end
+
+  get '/articles/:id/edit' do
+    @article = Article.find(params[:id])
+    erb :edit
+  end
+
+  delete '/articles/:id' do
+    Article.destroy(params[:id])
+    erb :show
+  end
 end
