@@ -22,9 +22,11 @@ describe "Magazine App" do
       expect(Article.all.count).to eq(3)
       expect(Article.last.title).to eq("my favorite article")
     end
-
-    it "redirects to '/articles/:id'" do
+    
+    
+      it "redirects to '/articles/:id'" do
       visit '/articles/new'
+
 
       fill_in :title, :with => "an article"
       fill_in :content, :with => "content content content content content"
