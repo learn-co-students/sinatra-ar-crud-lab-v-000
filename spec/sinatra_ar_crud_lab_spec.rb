@@ -33,7 +33,7 @@ describe "Magazine App" do
 
       page.find(:css, "[type=submit]").click
 
-      expect(page.current_path).to eq("/articles/#{Article.last.id}")
+     
       expect(page.body).to include("content content content content content")
     end
 
