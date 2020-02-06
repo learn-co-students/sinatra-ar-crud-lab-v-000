@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
   
-  
+    
   get '/' do
 
   end
@@ -55,4 +55,6 @@ class ApplicationController < Sinatra::Base
     erb :delete
 
 end
-end
+
+
+end 
