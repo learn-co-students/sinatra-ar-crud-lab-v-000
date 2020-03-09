@@ -1,3 +1,5 @@
+#  RUN rake db:migrate SINATRA_ENV=test
+
 
 require_relative '../../config/environment'
 
@@ -43,6 +45,13 @@ class ApplicationController < Sinatra::Base
     redirect to "/articles/#{@article.id}"
   end
 
-
+  delete '/articles/:id' do 
+    @article = Article.find_by_id(params[:id])
+    @article.title = params[:title]
+    @article.content = params[:content]
+    @article.delete
+    @article.save
+    redirect to "/articles/"
+  end
 
 end
