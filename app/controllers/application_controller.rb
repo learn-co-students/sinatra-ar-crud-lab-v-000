@@ -10,4 +10,14 @@ class ApplicationController < Sinatra::Base
 
   get '/' do
   end
+
+  # get '/articles/new' do
+  #   erb :new.erb
+  # end
+
+  post '/articles/new' do
+    # @title= :title
+    # fill_in "Title", :with => @article[:title]
+  end
+
 end
