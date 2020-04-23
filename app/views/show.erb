@@ -1,25 +1,10 @@
-<% @content%>
-
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-        <title>Articles</title>
-        <link rel="stylesheet" href="stylesheets/style.css" type="text/css">
-  </head>
-
-  <body> -->
-
-    <!-- <form method="POST" action="/articles/#{Article.last.id}"> -->
-      <!-- <p>Title: <%= @article%></p> -->
-      <!-- <p>Content: <input type="text" name="content"></p> -->
-
-      <!-- <input type="submit"> -->
-    <!-- </form>
-  </body>
-
-</html> -->
+<!-- <p>Title: <%=:title%></p>
+<p>Content: <%=:content%></p>
+<p><%=@article(:title)%></p>
+<p><%=@article(:content)%></p>
+<p><%=@article(title)%></p>
+<p><%=@article(content)%></p> -->
 
 
-
-<!-- \n" to include "content content content content content" -->
+<!-- <p>Title: <%= @article.title %></p> -->
+<p>Content: <%= @article %></p>
