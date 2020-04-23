@@ -15,19 +15,31 @@ class ApplicationController < Sinatra::Base
 
   post '/articles' do
     @article = Article.create(params)
-    redirect to "/articles/#{Article.last.id}"
+    redirect to "/articles/#{@article.id}"
+  end
+
+  get '/articles/:id' do
+    @article = Article.find(params[:id])
     erb :show
   end
 
   get '/articles' do
-    # @articles = Article.all
+    @articles = Article.all
     erb :index
   end
 
-#The first 2 tests passes with this code below, but fails without it. 4/22/20, DJL
-  get '/articles/:id' do
-    @article = Article.find([params:id])
-    erb :index
+  get '/articles/:id/edit' do
+    @article2 = Article.find(params[:id])
+    # binding.pry
+    erb :edit
+  end
+
+  patch '/articles/:id' do
+    @article2 = Article.find(params[:id])
+    @article2.title = params[:title]
+    @article2.content = params[:content]
+    @article2.save
+    redirect to "/articles/#{@article2.id}"
   end
 
 end
