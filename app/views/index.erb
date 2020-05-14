@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Titles</h1>
+    <% @articles.each do |articles| %>
+      <strong><%= articles.title %></strong><br />
+      <%= articles.content %>
+      <br /><br />
+    <% end %>
+  </body>
+</html>
+
+<!--Iterate over each song in the @articles collection.
+
+Render a link pointing to the song’s show route/URL with
+the ID as the identifier in the URL and the song’s name as the link text.
+ -->
