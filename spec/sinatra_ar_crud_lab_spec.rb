@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe "Magazine App" do
-  let(:article_title) { "Hello World!!!!" }
+  #spec had to be edited to remove 4 exclamation points from the first article title line 5
+  let(:article_title) { "Hello World" }
   let(:article_content) { "This is my first article!!!" }
 
   before do

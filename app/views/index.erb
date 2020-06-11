@@ -1,0 +1,7 @@
+<h2>Posts</h2>
+<% @articles.each do |article|%>
+
+  <h3><%= "#{article.id}" + " | " + "#{article.title}" %></h3>
+  <p><%= article.content %></p>
+
+<% end %>
