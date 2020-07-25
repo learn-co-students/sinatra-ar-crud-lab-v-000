@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'activerecord', '~> 5.2.3', require: 'active_record'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 
+#removed duplicate gems  
 gem 'sinatra'
 gem 'pry-nav'
 gem 'rake'
