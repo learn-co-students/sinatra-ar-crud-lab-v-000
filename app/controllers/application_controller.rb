@@ -1,6 +1,6 @@
 
 require_relative '../../config/environment'
-
+require "pry"
 class ApplicationController < Sinatra::Base
 
   configure do
@@ -36,10 +36,9 @@ class ApplicationController < Sinatra::Base
     erb :edit
   end    #renders edit page, form sends a patch request below
   
-
   patch '/articles/:id' do #controller action will find the instance of the model to update, using the id from params, update and save that instance.
     @article = Article.find(params[:id])
-    @article.update(title: params[:title],content: params[:content])
+    @article.update(title: params[:title], content: params[:content])
     @article.save
     redirect to "/articles/#{@article.id}"
   end

@@ -91,7 +91,6 @@ describe "Magazine App" do
       visit "/articles/#{@article2.id}/edit"
       fill_in :title, :with => "Second Article!!"
       fill_in :content, :with => "this is the best article ever written"
-
       page.find(:css, "[type=submit]").click
       expect(Article.all.count).to eq(2)
       expect(Article.last.title).to eq("Second Article!!")
