@@ -1,8 +1,8 @@
 ## Sinatra ActiveRecord CRUD
 
-1. Implement all four CRUD actions in a Sinatra application.
-2. Understand how each CRUD action corresponds to a controller action and `POST`
-   request.
+1.  Implement all four CRUD actions in a Sinatra application.
+2.  Understand how each CRUD action corresponds to a controller action and `POST`
+    request.
 
 ## Instructions
 
@@ -25,10 +25,21 @@ and content (string).
 
 Next, set up the corresponding `Article` model. Make sure the class inherits from `ActiveRecord::Base`.
 
-If you've done everything correctly, you should be able to run `rake db:seed` to populate your database 
-with a few sample articles.  Spend some time in `rake console` and make sure you know how to retrieve
-all of the articles as well as get a single article using its id.  Create at least one article of 
-your own from inside the console.
+### Create
+
+Now that we have the database and model set up, it's time to set up the ability
+to create an article.
+
+First, create a route in your controller, `get '/articles/new'`, that renders the
+`new.erb` view.
+
+We need to create an ERB file in the views directory, `new.erb`, with a form
+that `POST`s to a controller action, `/articles`. The controller action should use
+the Create CRUD action to create the article and save it to the database.
+When the form on `new.erb` is submitted, the action, pointing to `/articles`,
+will redirect to another action which will trigger a render of a `show.erb` file
+automatically. Before we can fully test if our form is working, we need to create
+that `show.erb` file, as our site will currently crash upon submission.
 
 ### Read
 
@@ -84,12 +95,11 @@ requests!
 
 ### Delete
 
-The Delete CRUD action corresponds to the delete controller action, `delete
-'/articles/:id'`. To initiate this action, we'll add a "delete" button to the
-*show page* (i.e., deleting won't have its own view). This button will be in a form, 
-but the form won't have any other fields in it... just the single button. 
-The form will send a request to the delete controller action, 
-where we will identify the article to delete and delete it.  Then, the action should redirect
+The Delete CRUD action corresponds to the delete controller action, `delete '/articles/:id'`. To initiate this action, we'll add a "delete" button to the
+show page. This button will be in a form, but since the form isn't visible by
+default, you should only be able to see the button (intriguing, I know). The
+form will send a request to the delete controller action, where we will
+identify the article to delete and delete it. Then, the action should redirect
 to the index of all articles — we can't go back to the show page, since the
 article has been deleted!
 
