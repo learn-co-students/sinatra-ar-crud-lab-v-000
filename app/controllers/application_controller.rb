@@ -30,5 +30,13 @@ class ApplicationController < Sinatra::Base
     article = Article.create(title: params[:article][:title], content: params[:article][:content])
     redirect to "/articles/#{article.id}"
   end
+
+  get '/articles/:id/edit' do
+    erb :'articles/edit'
+  end
+
+  patch '/articles/:id'
+    
+  end
   
 end
