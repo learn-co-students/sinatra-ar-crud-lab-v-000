@@ -10,14 +10,14 @@ class ApplicationController < Sinatra::Base
 
   get '/articles' do
     @articles = Article.all
-    erb :index
+    erb :'articles/index'
   end
 
   get '/articles/:id' do
     # binding.pry
     @article = Article.find(params["id"])
 
-    erb :show
+    erb :'articles/show'
   end
 
   # get '/articles/new' do
