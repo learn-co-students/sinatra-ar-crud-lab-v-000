@@ -13,6 +13,12 @@ class ApplicationController < Sinatra::Base
     erb :'articles/index'
   end
 
+  get '/articles/new' do
+    # binding.pry
+    
+    erb :'articles/new'
+  end
+
   get '/articles/:id' do
     # binding.pry
     @article = Article.find(params["id"])
@@ -20,9 +26,7 @@ class ApplicationController < Sinatra::Base
     erb :'articles/show'
   end
 
-  # get '/articles/new' do
-  #   # binding.pry
-  #   @articles = Article.all
-  #   erb :index
-  # end
+  post '/articles' do
+    binding.pry
+  end
 end
