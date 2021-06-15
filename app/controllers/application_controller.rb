@@ -43,7 +43,7 @@ class ApplicationController < Sinatra::Base
     @article.title = params[:title]
     @article.content = params[:content]
     @article.save
-    erb :show
+    erb :'articles/show'
   end
 
   delete '/articles/:id' do
