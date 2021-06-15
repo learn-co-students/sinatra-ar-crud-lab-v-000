@@ -38,11 +38,17 @@ class ApplicationController < Sinatra::Base
 
   patch '/articles/:id' do
     # binding.pry
-    @article = Article.find_by(id: params[:id])
+    # @article = Article.find_by(id: params[:id])
+    @article = Article.find(params["id"])
     @article.title = params[:title]
     @article.content = params[:content]
     @article.save
     erb :show
+  end
+
+  delete '/articles/:id' do
+    @article = Article.delete(params["id"])
+  
   end
   
 end
